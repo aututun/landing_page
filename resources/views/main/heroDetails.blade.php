@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Kiếm Võ</title>
+      <link rel="icon" type="image/x-icon" href="../images/favicon512.png">
+    <!--meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Dragon Hunt Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--//meta tags ends here-->
+    <!--booststrap-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!--//booststrap end-->
+    <!-- font-awesome icons -->
+    <link href="../css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- //font-awesome icons -->
+    <!--stylesheets-->
+    <link href="../css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//stylesheets-->
+    <!-- Nav-CSS -->
+    <link href="../css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../js/modernizr.custom.js"></script>
+    <!-- //Nav-CSS -->
+    <!--      <link href="//fonts.googleapis.com/css?family=Cinzel+Decorative:400,700" rel="stylesheet">-->
+    <!--      <link href="//fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">-->
+    <!--      <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">-->
+</head>
+<body>
+<!--headder-->
+<div class="header-outs">
+    <div class="header-w3layouts">
+        <div class="container">
+            <div class="right-side">
+                <p>
+                    <button id="trigger-overlay" type="button">
+                        <span class="fa fa-bars" aria-hidden="true"></span>
+                    </button>
+                </p>
+            </div>
+            <!-- open/close -->
+            <div class="overlay overlay-hugeinc">
+                <button type="button" class="overlay-close">Close</button>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html" >Trang Chủ</a></li>
+<!--                        <li><a href="../about.html" >Về chúng tôi</a></li>-->
+<!--                        <li><a href="../history.html" >Lịch sử</a></li>-->
+                        <li><a href="../hero.html" >Môn phái</a></li>
+                        <li><a href="../gallery.html" >Thư viện ảnh</a></li>
+<!--                        <li><a href="../contact.html"  >Liên hệ</a></li>-->
+                    </ul>
+                </nav>
+            </div>
+            <div class="hedder-logo">
+                <h1><a href="../index.html">
+                    <img src="../images/logo.png" class="img-fluid" alt="Responsive image"></a>
+                </h1>
+            </div>
+            <!-- /open/close -->
+            <!-- /navigation section -->
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//headder-->
+<!-- banner -->
+<div class="inner_page-banner">
+</div>
+<!--//banner -->
+<!--about-->
+<section class="about-inner py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Môn phái</h3>
+        <div class="row">
+            <div class="col-lg-8 about-txt-left">
+                <img src="../images/at9.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-4 about-txt-right">
+                <div class="jst-wthree-text">
+                    <h2>Cái<br>Bang
+                    </h2>
+                </div>
+                <div class="info-sub-w3">
+                    <p>Bổng Pháp hệ ngoại công, Lấy gậy làm vũ khí,
+                        tính thông tuyệt kỹ Đá Cẩu Bồng
+                    </p>
+                    <p class="pt-2">Chưởng Pháp hệ nội công, bao tay làm vũ khí,
+                        tính thông Hàng Long Chưởng Pháp
+                    </p>
+                </div>
+                <div class="abut-fst-img pt-3">
+                    <img src="../images/ab2.jpg" alt=" " class="img-fluid">
+                    <div class="abut-secound-img">
+                        <img src="../images/ab3.jpg" alt=" " class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-2">
+    <div class="icons text-center py-md-3 pb-2">
+        <ul>
+            <li><a href="https://www.facebook.com/KiemVo.KiemTheMobile"><span class="fab fa-facebook-f"></span></a></li>
+            <li><a href="https://zalo.me/g/qdfoeh733"><span class="fas fa-envelope"></span></a></li>
+            <li><a href="#"><span class="fas fa-rss"></span></a></li>
+            <li><a href="#"><span class="fab fa-vk"></span></a></li>
+        </ul>
+    </div>
+    <div class="footer-below text-center">
+        <p>©2024 Kiếm võ. All Rights Reserved</p>
+    </div>
+</footer>
+<!-- //Footer -->
+<!--js working-->
+<script src='../js/jquery-2.2.3.min.js'></script>
+<!-- For the demo ad only -->
+<!--nav menu-->
+<script src="../js/classie.js"></script>
+<script src="../js/demonav.js"></script>
+<!-- //nav menu-->
+<!-- //nav menu-->
+<!--bootstrap working-->
+<script src="../js/bootstrap.min.js"></script>
+<!-- //bootstrap working-->
+</body>
+</html>
