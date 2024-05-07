@@ -48,12 +48,12 @@
 
         <div id="w3lDemoBar" class="w3l-demo-bar">
             <div class="demo-btns">
-                <!--               <a href="https://w3layouts.com/?p=">-->
-                <!--            <span class="w3l-icon -back">-->
-                <!--                <span class="fa fa-arrow-left"></span>-->
-                <!--            </span>-->
-                <!--                  <span class="w3l-text">Back</span>-->
-                <!--               </a>-->
+               <a href="{{asset('/login')}}">
+                    <span class="w3l-icon -back">
+                        <span class="fa fa-check"></span>
+                    </span>
+                   <span class="w3l-text">Login</span>
+               </a>
                 <a href="{{asset('/KiemVo.apk')}}">
                   <span class="w3l-icon -download">
                       <span class="fa fa-download"></span>
