@@ -1,12 +1,11 @@
-// Small devices (landscape phones, 576px and up)
-//@media screen and (min-width: 576px) { ... }
+$tablet-width: 768px;
 
-// Medium devices (tablets, 768px and up)
-@media screen and (min-width: 768px) {
-    .main {
-        width: 65%;
+@media (min-width: $tablet-width) {
+    .main{
+        width: 50%;
     }
 }
+
 body{
     margin: 0;
     padding: 0;
