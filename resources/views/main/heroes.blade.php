@@ -8,9 +8,8 @@
                 $count = 0; // Initialize a counter
             @endphp
             @foreach($listHeroes as $hero)
-                @if ($count % 3 == 0) <div class="row mt-lg-5 mt-md-3 mt-3">
-                    @endif
-
+                @if ($count % 3 == 0) <div class="row mt-lg-5 mt-md-3 mt-3"> @endif
+                    <h2>{{$count}}</h2>
                     <div class="col-lg-4 col-md-4 col-sm-4 latest-jewel-grid">
                         <figure class="snip1321">
                             <img src="{{$hero['image']}}" class="img-thumbnail" alt="">
@@ -21,13 +20,8 @@
                             <a href="{{$hero['link']}}"></a>
                         </figure>
                     </div>
-
-                    @if ($count == 2 || $loop->last) </div>
-                @endif
-
-                @php
-                    $count++; // Increment the counter
-                @endphp
+                @if ($count == 2) </div> @endif
+                @php $count++;@endphp
             @endforeach
         </div>
     </div>

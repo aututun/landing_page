@@ -20,3 +20,4 @@ Route::get('/gallery', function () {return view('main/gallery');});
 
 
 Route::get('/KiemVo', function () {return view('KiemVo.apk');});
+Route::get('/login', function () {return view('login');});
