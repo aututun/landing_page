@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getUserInformation($id){
+        return "User id is : ".$id;
+    }
+
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    public function verifyPassword($password){
+        return password_verify($password, $this->password);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {return view('main/index');});
-Route::get('/heroes', 'App\Http\Controllers\heroes@getListHeroes');
-Route::get('/heroDetails/{id}', 'App\Http\Controllers\heroes@getDetailHero');
+Route::get('/heroes', 'App\Http\Controllers\Heroes@getListHeroes');
+Route::get('/heroDetails/{id}', 'App\Http\Controllers\Heroes@getDetailHero');
 Route::get('/gallery', function () {return view('main/gallery');});
 
 
 
 Route::get('/KiemVo', function () {return view('KiemVo.apk');});
 Route::get('/login', function () {return view('main/login');});
+Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');
+Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
+
+Route::get('/clear-cache-all', function() {Artisan::call('cache:clear');dd("Cache Clear All");});

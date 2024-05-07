@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class heroes extends Controller
+class Heroes extends Controller
 {
     public $listHeroes = array(
         array(
