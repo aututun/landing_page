@@ -13,7 +13,7 @@
             {{ csrf_field() }}
             @csrf
             <label for="chk" aria-hidden="true">Login</label>
-            <input type="hidden" name="action" value="signup">
+            <input type="hidden" name="action" value="login">
             <input type="text" name="username" placeholder="User name" required="">
             <input type="password" name="password" placeholder="Password" required="">
             <button>Login</button>
@@ -33,7 +33,7 @@
             {{ csrf_field() }}
             @csrf
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="hidden" name="action" value="login">
+            <input type="hidden" name="action" value="signup">
             <input type="text" name="username" placeholder="User name" required="">
             <input type="email" name="email" placeholder="Email" required="">
             <input type="password" name="password" placeholder="Password" required="">
