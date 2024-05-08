@@ -45,7 +45,6 @@ class User extends Authenticatable
 
     static public function getUserInformation($username,$password){
         $user = User::where('username', $username)->first();
-
         if ($user && Hash::check($password, $user->password)) {
             return $user;
         }
