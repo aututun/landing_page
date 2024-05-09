@@ -14,12 +14,8 @@
                     </h2>
                 </div>
                 <div class="info-sub-w3">
-                    <p>Bổng Pháp hệ ngoại công, Lấy gậy làm vũ khí,
-                        tính thông tuyệt kỹ Đá Cẩu Bồng
-                    </p>
-                    <p class="pt-2">Chưởng Pháp hệ nội công, bao tay làm vũ khí,
-                        tính thông Hàng Long Chưởng Pháp
-                    </p>
+                    <p>{{$hero['noi_cong']}}</p>
+                    <p class="pt-2">{{$hero['ngoai_cong']}}</p>
                 </div>
                 <div class="abut-fst-img pt-3">
                     <img src="{{asset('main/images/ab2.jpg')}}" alt=" " class="img-fluid">

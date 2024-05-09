@@ -26,7 +26,7 @@ class User extends Controller
             return redirect('/login')->with('wrong_credentials', true);
         } else {
             session()->put('user_id', $userInfo->id);
-            return redirect()->route('dashboard');
+            return redirect('/dashboard')->with('userInfo', $userInfo);
         }
     }
 
