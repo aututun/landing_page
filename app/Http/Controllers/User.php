@@ -21,23 +21,34 @@ class User extends Controller
 
     function postLogin(Request $request){
         $userInfo = $this->getUserInfo($request);
-        return view('cms.dashboard')->with('user_details', $userInfo)->with('status', 1);
+        if (!$userInfo) {
+            session()->flash('wrong_credentials', true);
+            return redirect('/login')->with('wrong_credentials', true);
+        } else {
+            session()->put('user_id', $userInfo->id);
+            return redirect()->route('dashboard');
+        }
     }
 
     function postSignUp(Request $request){
-        $data = $request->all();
-//        $request->validate([
-//            'name' => 'required',
-//            'email' => 'required|email|unique:users',
-//            'password' => 'required|min:6',
-//        ]);
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|unique:users', // Unique email check
+            'password' => 'required|string|min:8|confirmed', // Minimum length and confirmation
+        ]);
 
-        $check = UserModel::createUser($data);
-        echo '<pre>';
-        print_r($check);
-        echo '</pre>';
-        exit();
-//        return redirect("cms.dashboard")->withSuccess('You have signed-in');
+        // 2. Create New User
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password), // Hash password for security
+        ]);
+
+        // 3. Optional: Send Welcome Email or Perform Other Actions
+
+        // 4. Redirect or Login User (Choose one)
+        // Option A: Redirect to Login Page with Success Message
+        return redirect('/login')->with('signup_success', true);
     }
 
 }

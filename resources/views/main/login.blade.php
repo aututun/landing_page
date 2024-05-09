@@ -13,6 +13,10 @@
             {{ csrf_field() }}
             @csrf
             <label for="chk" aria-hidden="true">Login</label>
+            @if(session()->has('wrong_credentials'))
+                <label aria-hidden="true">Sai thông tin xác thực</label>
+                {{ session()->forget('wrong_credentials') }} @endif
+
             <input type="hidden" name="action" value="login">
             <input type="text" name="username" placeholder="User name" required="">
             <input type="password" name="password" placeholder="Password" required="">
