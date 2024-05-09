@@ -41,6 +41,7 @@ class User extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'deleted' => 0,
             'password' => bcrypt($request->password), // Hash password for security
         ]);
 
