@@ -18,11 +18,8 @@ class UsersTableSeeder extends Seeder
             [
                 'username' => 'admin',
                 'email' => 'admin@example.com',
-                'email_verified_at' => time(),
                 'password' => bcrypt('password'), // Hash the password securely
                 'deleted' => 0,
-                'created_at' => time(),
-                'updated_at' => time(),
             ],
             // Add more user data as needed
         ]);

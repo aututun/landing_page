@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Chuyển đến thư mục gốc của project Laravel
-cd /path/to/project
-
 # Xóa bộ nhớ cache ứng dụng
 php artisan cache:clear
 
