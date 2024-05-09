@@ -44,8 +44,7 @@ class User extends Authenticatable
     ];
 
     static public function getUserInformation($username,$password){
-        $user = User::where('username', $username)->first();
-
+        $user = User::where('username', $username)->where('deleted', 0)->first();
         if ($user && Hash::check($password, $user->password)) {
             return $user;
         }

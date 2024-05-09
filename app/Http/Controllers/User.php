@@ -16,12 +16,12 @@ class User extends Controller
     function getUserInfo(Request $request){
         $username = $request['username'];
         $password = $request['password'];
-        return UserModel::getUserInformation($password,$username);
+        return UserModel::getUserInformation($username,$password);
     }
 
     function postLogin(Request $request){
         $userInfo = $this->getUserInfo($request);
-        return view('cms.dashboard')->with('user_details', $userInfo);
+        return view('cms.dashboard')->with('user_details', $userInfo)->with('status', 1);
     }
 
     function postSignUp(Request $request){
