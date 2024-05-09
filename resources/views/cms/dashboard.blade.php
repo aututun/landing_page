@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
     lang="en"
     class="light-style layout-menu-fixed"
@@ -32,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico{{asset('cms/assets/img/favicon/favicon.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('main/images/favicon512.png')}}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,26 +30,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{asset('cms/assets/vendor/fonts/boxicons.css')}}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{asset('cms/assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{asset('cms/assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{asset('cms/assets/css/demo.css')}}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href=""{{asset('cms/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}} />
 
-    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="{{asset('cms/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{asset('cms/assets/vendor/js/helpers.js')}}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{asset('cms/assets/js/config.js')}}"></script>
 </head>
 
 <body>
@@ -73,7 +60,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="{{asset('/dashboard')}}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                     width="25"
@@ -142,46 +129,10 @@
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                    <a href="{{asset('/dashboard')}}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </a>
-                </li>
-
-                <!-- Layouts -->
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-layout"></i>
-                        <div data-i18n="Layouts">Layouts</div>
-                    </a>
-
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="layouts-without-menu.html" class="menu-link">
-                                <div data-i18n="Without menu">Without menu</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-without-navbar.html" class="menu-link">
-                                <div data-i18n="Without navbar">Without navbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-container.html" class="menu-link">
-                                <div data-i18n="Container">Container</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-fluid.html" class="menu-link">
-                                <div data-i18n="Fluid">Fluid</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-blank.html" class="menu-link">
-                                <div data-i18n="Blank">Blank</div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="menu-header small text-uppercase">
@@ -365,79 +316,15 @@
                     </ul>
                 </li>
 
-                <!-- Extended components -->
-                <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-copy"></i>
-                        <div data-i18n="Extended UI">Extended UI</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="extended-ui-text-divider.html" class="menu-link">
-                                <div data-i18n="Text Divider">Text Divider</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu-item">
-                    <a href="icons-boxicons.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-crown"></i>
-                        <div data-i18n="Boxicons">Boxicons</div>
-                    </a>
-                </li>
-
                 <!-- Forms & Tables -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-                <!-- Forms -->
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Elements">Form Elements</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="forms-basic-inputs.html" class="menu-link">
-                                <div data-i18n="Basic Inputs">Basic Inputs</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="forms-input-groups.html" class="menu-link">
-                                <div data-i18n="Input groups">Input groups</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Layouts">Form Layouts</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="form-layouts-vertical.html" class="menu-link">
-                                <div data-i18n="Vertical Form">Vertical Form</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="form-layouts-horizontal.html" class="menu-link">
-                                <div data-i18n="Horizontal Form">Horizontal Form</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <!-- Tables -->
-                <li class="menu-item">
-                    <a href="tables-basic.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-table"></i>
-                        <div data-i18n="Tables">Tables</div>
-                    </a>
-                </li>
+{{--                <li class="menu-item">--}}
+{{--                    <a href="tables-basic.html" class="menu-link">--}}
+{{--                        <i class="menu-icon tf-icons bx bx-table"></i>--}}
+{{--                        <div data-i18n="Tables">Tables</div>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <!-- Misc -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
                 <li class="menu-item">
@@ -448,16 +335,6 @@
                     >
                         <i class="menu-icon tf-icons bx bx-support"></i>
                         <div data-i18n="Support">Support</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                        target="_blank"
-                        class="menu-link"
-                    >
-                        <i class="menu-icon tf-icons bx bx-file"></i>
-                        <div data-i18n="Documentation">Documentation</div>
                     </a>
                 </li>
             </ul>
@@ -494,24 +371,11 @@
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
-                        <!-- Place this tag where you want the button to render. -->
-                        <li class="nav-item lh-1 me-3">
-                            <a
-                                class="github-button"
-                                href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                data-icon="octicon-star"
-                                data-size="large"
-                                data-show-count="true"
-                                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
-                        </li>
-
                         <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <img src="{{asset('cms/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -520,7 +384,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    <img src="{{asset('cms/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -595,7 +459,7 @@
                                     <div class="col-sm-5 text-center text-sm-left">
                                         <div class="card-body pb-0 px-0 px-md-4">
                                             <img
-                                                src="../assets/img/illustrations/man-with-laptop-light.png"
+                                                src="{{asset('cms/assets/img/illustrations/man-with-laptop-light.png')}}"
                                                 height="140"
                                                 alt="View Badge User"
                                                 data-app-dark-img="illustrations/man-with-laptop-dark.png"
@@ -614,7 +478,7 @@
                                             <div class="card-title d-flex align-items-start justify-content-between">
                                                 <div class="avatar flex-shrink-0">
                                                     <img
-                                                        src="../assets/img/icons/unicons/chart-success.png"
+                                                        src="{{asset('cms/assets/img/icons/unicons/chart-success.png')}}"
                                                         alt="chart success"
                                                         class="rounded"
                                                     />
@@ -648,7 +512,7 @@
                                             <div class="card-title d-flex align-items-start justify-content-between">
                                                 <div class="avatar flex-shrink-0">
                                                     <img
-                                                        src="../assets/img/icons/unicons/wallet-info.png"
+                                                        src="{{asset('cms/assets/img/icons/unicons/wallet-info.png')}}"
                                                         alt="Credit Card"
                                                         class="rounded"
                                                     />
@@ -743,7 +607,7 @@
                                         <div class="card-body">
                                             <div class="card-title d-flex align-items-start justify-content-between">
                                                 <div class="avatar flex-shrink-0">
-                                                    <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                                                    <img src="{{asset('cms/assets/img/icons/unicons/paypal.png')}}" alt="Credit Card" class="rounded" />
                                                 </div>
                                                 <div class="dropdown">
                                                     <button
@@ -773,7 +637,7 @@
                                         <div class="card-body">
                                             <div class="card-title d-flex align-items-start justify-content-between">
                                                 <div class="avatar flex-shrink-0">
-                                                    <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                                                    <img src="{{asset('cms/assets/img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded" />
                                                 </div>
                                                 <div class="dropdown">
                                                     <button
@@ -957,7 +821,7 @@
                                         <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
                                             <div class="d-flex p-4 pt-3">
                                                 <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                                                    <img src="{{asset('cms/assets/img/icons/unicons/wallet.png')}}" alt="User" />
                                                 </div>
                                                 <div>
                                                     <small class="text-muted d-block">Total Balance</small>
@@ -1014,7 +878,7 @@
                                     <ul class="p-0 m-0">
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/paypal.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1029,7 +893,7 @@
                                         </li>
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1044,7 +908,7 @@
                                         </li>
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/chart.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1059,7 +923,7 @@
                                         </li>
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/cc-success.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1074,7 +938,7 @@
                                         </li>
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1089,7 +953,7 @@
                                         </li>
                                         <li class="d-flex">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                                                <img src="{{asset('cms/assets/img/icons/unicons/cc-warning.png')}}" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
@@ -1122,24 +986,6 @@
                             , made with ❤️ by
                             <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
                         </div>
-                        <div>
-                            <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                            <a
-                                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                                target="_blank"
-                                class="footer-link me-4"
-                            >Documentation</a
-                            >
-
-                            <a
-                                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                                target="_blank"
-                                class="footer-link me-4"
-                            >Support</a
-                            >
-                        </div>
                     </div>
                 </footer>
                 <!-- / Footer -->
@@ -1161,28 +1007,28 @@
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
-    >Upgrade to Pro</a
+    >Nạp tiền</a
     >
 </div>
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
-<script src="../assets/vendor/libs/jquery/jquery.js"></script>
-<script src="../assets/vendor/libs/popper/popper.js"></script>
-<script src="../assets/vendor/js/bootstrap.js"></script>
-<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="{{asset('cms/assets/vendor/libs/jquery/jquery.js')}}"></script>
+<script src="{{asset('cms/assets/vendor/libs/popper/popper.js')}}"></script>
+<script src="{{asset('cms/assets/vendor/js/bootstrap.js')}}"></script>
+<script src="{{asset('cms/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
 
-<script src="../assets/vendor/js/menu.js"></script>
+<script src="{{asset('cms/assets/vendor/js/menu.js')}}"></script>
 <!-- endbuild -->
 
 <!-- Vendors JS -->
-<script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="{{asset('cms/assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
 
 <!-- Main JS -->
-<script src="../assets/js/main.js"></script>
+<script src="{{asset('cms/assets/js/main.js')}}"></script>
 
 <!-- Page JS -->
-<script src="../assets/js/dashboards-analytics.js"></script>
+<script src="{{asset('cms/assets/js/dashboards-analytics.js')}}"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
