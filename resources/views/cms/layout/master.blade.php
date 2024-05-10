@@ -1,13 +1,17 @@
-@include('main.layout.header')
+@include('cms.layout.header')
 <body>
-@include('main.layout.rightBanner')
-{{--@include('main.layout.navbar')--}}
-@include('main.layout.navbar')
-@include('main.layout.image')
-<div>
-    @yield('heroes')
-    @yield('gallery')
-    @yield('heroDetails')
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        @include('cms.layout.menu')
+        <div class="layout-page">
+            @include('cms.layout.navbar')
+            @yield('dashboard')
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <div class="buy-now">
+        <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Nạp tiền</a>
+    </div>
 </div>
 </body>
-@include('main.layout.footer')
+@include('cms.layout.footer')
