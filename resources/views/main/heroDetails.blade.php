@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-4 about-txt-right">
                 <div class="jst-wthree-text">
-                    <h2>{{$hero['name']}}
+                    <h2>{{$hero['title']}}
                     </h2>
                 </div>
                 <div class="info-sub-w3">

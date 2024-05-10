@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Heroes extends Model
 {
     use HasFactory;
+    static public function getListHeroes(){
+        return Heroes::all() ?: array();
+    }
 }
