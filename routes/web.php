@@ -20,7 +20,15 @@ Route::get('/gallery', function () {return view('main/gallery');});
 
 
 
-Route::get('/login', function () {return view('main/login');});
+Route::get('/login', function () {
+    session_start();
+    if (session()->has('user_id')) {
+        return redirect('/dashboard');
+    } else {
+        return view('main/login');
+    }
+});
+Route::get('/logout', 'App\Http\Controllers\User@logout');
 Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');
 Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
 

@@ -36,7 +36,6 @@
 
     gtag('config', 'G-98H8KRKT85');
 </script>
-
 <meta name="robots" content="noindex">
 <!-- New toolbar-->
 <div class="pull-right toggle-right-sidebar">
@@ -48,12 +47,21 @@
 
         <div id="w3lDemoBar" class="w3l-demo-bar">
             <div class="demo-btns">
-               <a href="{{asset('/login')}}">
+                @if(session()->has('user_id'))
+                    <a href="{{asset('/dashboard')}}">
                     <span class="w3l-icon -back">
                         <span class="fa fa-check"></span>
                     </span>
-                   <span class="w3l-text">Login</span>
-               </a>
+                        <span class="w3l-text">Tài khoản</span>
+                    </a>
+                @else
+                    <a href="{{asset('/login')}}">
+                    <span class="w3l-icon -back">
+                        <span class="fa fa-check"></span>
+                    </span>
+                        <span class="w3l-text">Login</span>
+                    </a>
+                @endif
                 <a href="{{asset('/KiemVo.apk')}}">
                   <span class="w3l-icon -download">
                       <span class="fa fa-download"></span>

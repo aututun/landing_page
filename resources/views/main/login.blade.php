@@ -15,8 +15,11 @@
             <label for="chk" aria-hidden="true">Login</label>
             @if(session()->has('wrong_credentials'))
                 <label aria-hidden="true">Sai thông tin xác thực</label>
-                {{ session()->forget('wrong_credentials') }} @endif
-
+                {{ session()->forget('wrong_credentials') }}
+            @endif
+            @if(isset($signup_success))
+                <label aria-hidden="true">Đăng ký thành công</label>
+            @endif
             <input type="hidden" name="action" value="login">
             <input type="text" name="username" placeholder="User name" required="">
             <input type="password" name="password" placeholder="Password" required="">

@@ -30,19 +30,19 @@ class User extends Controller
     }
 
     function postSignUp(Request $request){
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users', // Unique email check
-            'password' => 'required|string|min:8|confirmed', // Minimum length and confirmation
-        ]);
-
-        // 2. Create New User
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'deleted' => 0,
-            'password' => bcrypt($request->password), // Hash password for security
-        ]);
+//        $this->validate($request, [
+//            'name' => 'required|string|max:255',
+//            'email' => 'required|string|email|unique:users', // Unique email check
+//            'password' => 'required|string|min:8|confirmed', // Minimum length and confirmation
+//        ]);
+//
+//        // 2. Create New User
+//        $user = User::create([
+//            'name' => $request->name,
+//            'email' => $request->email,
+//            'deleted' => 0,
+//            'password' => bcrypt($request->password), // Hash password for security
+//        ]);
 
         // 3. Optional: Send Welcome Email or Perform Other Actions
 
@@ -51,4 +51,12 @@ class User extends Controller
         return redirect('/login')->with('signup_success', true);
     }
 
+    function logout(Request $request){
+        session_start();
+        if (session()->has('user_id')) {
+            session()->forget('user_id');
+            return redirect('/');
+        }
+        return redirect('/dashboard');
+    }
 }
