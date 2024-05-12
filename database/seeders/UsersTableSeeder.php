@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class UsersTableSeeder extends Seeder
             [
                 'username' => 'admin',
                 'email' => 'admin@example.com',
-                'password' => bcrypt('password'), // Hash the password securely
+                'password' => Hash::make('password'), // Hash the password securely
                 'deleted' => 0,
             ],
             // Add more user data as needed

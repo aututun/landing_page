@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -19,9 +20,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'deleted',
     ];
 
     /**
@@ -43,32 +45,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    static public function getUserInformation($username,$password){
-        $user = User::where('username', $username)->where('deleted', 0)->first();
+    static public function getUserInformation($username,$email,$password){
+        $user = User::where('username', $username)->where('email', $email)->where('deleted', 0)->first();
         if ($user && Hash::check($password, $user->password)) {
             return $user;
         }
         return null;
     }
 
-    public function setPasswordAttribute($password){
-        $this->attributes['password'] = password_hash($password, PASSWORD_DEFAULT);
-    }
-
-    public function verifyPassword($password){
-        return password_verify($password, $this->password);
-    }
-
     static public function createUser($data){
-        return User::create($id);
+        return static::query()->create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'deleted' =>   0,
+            'password' => Hash::make($data['password']),
+        ]);
     }
 
     static public function updateUser($data){
-
+        return static::query()->update([
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
     }
 
-    public function getById(int $id): ?User
-    {
-        return User::find($id);
+    static public function deleteUser(){
+        return static::query()->update([
+            'deleted' => 1,
+        ]);
     }
 }
