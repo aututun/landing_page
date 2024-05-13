@@ -20,21 +20,15 @@ Route::get('/gallery', function () {return view('main/gallery');});
 
 
 
-Route::get('/login', function () {
-    session_start();
-    if (session()->has('user_id')) {
-        return redirect('/dashboard');
-    } else {
-        return view('main/login');
-    }
-});
+Route::get('/login',  'App\Http\Controllers\Dashboard@checkLogin');
+Route::get('/listUser',  'App\Http\Controllers\User@getListUser');
+Route::get('/dashboard',  'App\Http\Controllers\Dashboard@checkLogin');
 Route::get('/logout', 'App\Http\Controllers\User@logout');
 Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');
 Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
 
-Route::get('/dashboard', function () {return view('cms/dashboard');});
-
-
+Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
+Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
 
 
 

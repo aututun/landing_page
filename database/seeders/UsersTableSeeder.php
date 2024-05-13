@@ -15,14 +15,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            [
-                'username' => 'admin',
-                'email' => 'admin@example.com',
-                'password' => Hash::make('password'), // Hash the password securely
-                'deleted' => 0,
-            ],
-            // Add more user data as needed
-        ]);
+//        DB::table('users')->insert([
+//            [
+//                'username' => 'admin',
+//                'email' => 'admin@example.com',
+//                'password' => Hash::make('password'), // Hash the password securely
+//                'deleted' => 0,
+//            ],
+//            // Add more user data as needed
+//        ]);
     }
 }

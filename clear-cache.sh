@@ -10,4 +10,6 @@ php artisan route:cache
 php artisan view:clear
 
 # Xóa bộ nhớ cache cấu hình
+php artisan config:clear
 php artisan config:cache
+

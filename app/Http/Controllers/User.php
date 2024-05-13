@@ -10,16 +10,11 @@ use Illuminate\Contracts\Mail\Mailable;
 
 class User extends Controller
 {
-    protected $users;
-    public function __construct(){
-        $this->users = new UserModel();
-    }
-
     function getUserInfo(Request $request){
-        $username = $request['username'];
-        $email = $request['email'];
-        $password = $request['password'];
-        return UserModel::getUserInformation($username,$email,$password);
+        $username = $request['LoginName'];
+        $email = $request['Email'];
+        $password = $request['Password'];
+        return UserModel::getUserInformation($username,$password,$email);
     }
 
     function postLogin(Request $request){
@@ -28,27 +23,27 @@ class User extends Controller
             session()->flash('wrong_credentials', true);
             return redirect('/login')->with('wrong_credentials', true);
         } else {
-            session()->put('user_id', $userInfo->id);
+            session()->put('user_id', $userInfo->ID);
             return redirect('/dashboard')->with('userInfo', $userInfo);
         }
     }
 
     function postSignUp(Request $request){
-        $username = $request['username'];
-        $email = $request['email'];
-        $password = $request['password'];
-        $user = UserModel::getUserInformation($username,$email,$password);
+        $username = $request['LoginName'];
+        $email = $request['Email'];
+        $password = $request['Password'];
+        $user = UserModel::getUserInformation($username,$password,$email);
         if (!$user) {
-            $user = UserModel::createUser([
-                'username' => $username,
-                'email' => $email,
-                'deleted' => 0,
-                'password' => $password,
+            UserModel::createUser([
+                'LoginName' => $username,
+                'Email' => $email,
+                'Password' => $password,
             ]);
         } else {
+            session()->flash('exist', true);
             return redirect('/login')->with('exist', false);
         }
-        $this->sendWelcomeEmail($user);
+//        $this->sendWelcomeEmail($user);
         // 3. Optional: Send Welcome Email or Perform Other Actions
 
         // 4. Redirect or Login User (Choose one)
@@ -56,8 +51,7 @@ class User extends Controller
         return redirect('/login')->with('signup_success', true);
     }
 
-    public function sendWelcomeEmail($user)
-    {
+    public function sendWelcomeEmail($user){
         \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\WelcomeEmail($user->username));
     }
 
@@ -68,5 +62,9 @@ class User extends Controller
             return redirect('/');
         }
         return redirect('/dashboard');
+    }
+
+    function getListUser(Request $request){
+        return view('cms/listUser');
     }
 }

@@ -2,8 +2,20 @@
 @section('dashboard')
 <div class="content-wrapper">
     <!-- Content -->
-
     <div class="container-xxl flex-grow-1 container-p-y">
+        @isset($status)
+            @if($status)
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    This is a success dismissible alert — check it out!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @else
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    This is a danger dismissible alert — check it out!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        @endisset
         <div class="row">
             <!-- Total Revenue -->
             <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
@@ -28,9 +40,9 @@
                                             2022
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
-                                            <a class="dropdown-item" href="javascript:void(0);">2021</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">2020</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                                            <a class="dropdown-item" href="javascript:void(0);">2024</a>
+{{--                                            <a class="dropdown-item" href="javascript:void(0);">2023</a>--}}
+{{--                                            <a class="dropdown-item" href="javascript:void(0);">2022</a>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +77,11 @@
             <!--/ Total Revenue -->
             <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                 <div class="row">
-                    @include('cms.layout.current_money', ['kvcoin' => "2457", 'dong' => "46763467"])
+                    @php
+                        $kvcoin = App\Http\Controllers\Money::getKTcoin();
+                        $dong = App\Http\Controllers\Money::getDong();
+                    @endphp
+                    @include('cms.layout.currentMoney', ['kvcoin' => $kvcoin, 'dong' => $dong])
                     <!-- </div>
     <div class="row"> -->
                     <div class="col-12 mb-4">
@@ -388,7 +404,7 @@
                     document.write(new Date().getFullYear());
                 </script>
                 , made with ❤️ by
-                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                <a href="/" target="_blank" class="footer-link fw-bolder">Noisyboyy</a>
             </div>
         </div>
     </footer>

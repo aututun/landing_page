@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{env('SITE_NAME')}}</title>
+    <title>{{env('SITE_NAME','Kiếm Võ')}}</title>
     <link rel="icon" type="image/x-icon" href="{{asset('main/images/favicon512.png')}}">
     <!--meta tags -->
     <meta charset="UTF-8">
