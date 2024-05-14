@@ -49,8 +49,8 @@ class Dong extends Model
         $user = User::where('ID', $usernameId)->first();
         $userid = $usernameId.'_'.$user->LoginName;
         $userT_money = Dong::where('userid', $userid)->first();
-        $dong = $userT_money->money;
-        if ($dong) {
+        if ($userT_money) {
+            $dong = $userT_money->money;
             return $dong;
         }
         return 0;

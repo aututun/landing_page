@@ -69,8 +69,8 @@ class KTcoin extends Model
     static public function getKTcoin(){
         $usernameId = session()->get('user_id');
         $user = KTcoin::where('UserID', $usernameId)->first();
-        $KTcoin = $user->KCoin;
-        if ($KTcoin) {
+        if ($user) {
+            $KTcoin = $user->KCoin;
             return $KTcoin;
         }
         return 0;
