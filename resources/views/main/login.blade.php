@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Login / Signup</title>
-    <link href="{{asset('main/login.scss')}}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{asset('main/login.css')}}" rel="stylesheet" type="text/css" media="all">
     <link href="{{asset('main/css/fontawesome-all.min.css')}}" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
