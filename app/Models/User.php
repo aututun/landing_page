@@ -23,6 +23,7 @@ class User extends Authenticatable
         'LoginName',
         'Email',
         'Password',
+        'RoleCms',
         'Date',
     ];
 
@@ -38,12 +39,20 @@ class User extends Authenticatable
     public $timestamps = false;
 
     protected $primaryKey = 'ID';
-
+    protected $pages;
+    protected $itemsPerPage = 20;
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
+
+    function getTotalPage()
+    {
+        $count = User::count();
+        $pages = ceil( $count / $this->itemsPerPage );
+        return $pages;
+    }
 
     static public function getUserInformation($username,$password,$email = null){
         if ($email) {
@@ -57,13 +66,29 @@ class User extends Authenticatable
         return null;
     }
 
-    static public function createUser($data){
-        return static::query()->create([
+    static public function getCurrentUser($usernameId = null){
+        if (!$usernameId) {
+            $usernameId = session()->get('user_id');
+        }
+        $user = User::where('ID', $usernameId)->first();
+        if ($user) {
+            return $user;
+        }
+        return null;
+    }
+
+    static public function createUser($data,$isAdmin = false){
+        $user = [
             'LoginName' => $data['LoginName'],
             'Email' => $data['Email'],
             'Password' => hash('md5', $data['Password'], false),
+            'RoleCms' => 0,
             'Date' => date_format(now(),"Y/m/d H:i:s"),
-        ]);
+        ];
+        if($isAdmin) {
+            $user['RoleCms'] = 1;
+        }
+        return static::query()->create($user);
     }
 
     static public function updateUser($data){
@@ -71,6 +96,17 @@ class User extends Authenticatable
             'Email' => $data['Email'],
             'Password' => Hash::make($data['Password']),
         ]);
+    }
+
+    public function getListUsers($page = 0){
+        $skip = $page * $this->itemsPerPage;
+        $listUsers = User::all()->skip($skip)->take($this->itemsPerPage);
+        $newListUsers = array();
+        foreach ($listUsers as $user) {
+            $user->KTcoin = KTcoin::getKTcoin($user->ID);
+            $newListUsers[$user->ID] = $user;
+        }
+        return $newListUsers;
     }
 
 }

@@ -4,12 +4,13 @@
     <div class="layout-container">
         @include('cms.layout.menu')
         <div class="layout-page">
-            @include('cms.layout.navbar')
+            @php($user =App\Models\User::getCurrentUser())
+            @include('cms.layout.navbar',['user' => $user])
             @yield('dashboard')
             @yield('listUser')
-            @php
-                $kvcoin = App\Http\Controllers\Money::getKTcoin();
-            @endphp
+            @yield('account')
+            @yield('connections')
+            @php($kvcoin = App\Http\Controllers\Money::getKTcoin())
             @include('cms.modalKvcoin',['kvcoin' => $kvcoin])
             @include('cms.modalDong',['kvcoin' => $kvcoin])
         </div>

@@ -18,10 +18,10 @@ Route::get('/heroes', 'App\Http\Controllers\Heroes@getListHeroes');
 Route::get('/heroDetails/{id}', 'App\Http\Controllers\Heroes@getDetailHero');
 Route::get('/gallery', function () {return view('main/gallery');});
 
-
-
+Route::get('/account', function () {return view('cms/account');});
+Route::get('/connections', function () {return view('cms/connections');});
 Route::get('/login',  'App\Http\Controllers\Dashboard@checkLogin');
-Route::get('/listUser',  'App\Http\Controllers\User@getListUser');
+Route::get('/listUser/{page}',  'App\Http\Controllers\User@getListUser');
 Route::get('/dashboard',  'App\Http\Controllers\Dashboard@checkLogin');
 Route::get('/logout', 'App\Http\Controllers\User@logout');
 Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');

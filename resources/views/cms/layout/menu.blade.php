@@ -75,17 +75,18 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-account-settings-account.html" class="menu-link">
+                    <a href="{{asset('/account')}}" class="menu-link">
                         <div data-i18n="Account">Account</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="pages-account-settings-connections.html" class="menu-link">
-                        <div data-i18n="Connections">Connections</div>
-                    </a>
-                </li>
+{{--                <li class="menu-item">--}}
+{{--                    <a href="{{asset('/connections')}}" class="menu-link">--}}
+{{--                        <div data-i18n="Connections">Connections</div>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </li>
+        @if(session()->get('roleCms') == 1)
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -127,14 +128,12 @@
                 </li>
             </ul>
         </li>
-        @if(false)
         <li class="menu-item">
-            <a href="{{asset('/listUser')}}" class="menu-link">
+            <a href="{{asset('/listUser/1')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Danh sách người chơi</div>
             </a>
         </li>
-        @endif
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
@@ -259,6 +258,7 @@
         {{--                    </a>--}}
         {{--                </li>--}}
         <!-- Misc -->
+        @endif
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
         <li class="menu-item">
             <a

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateHeroesTable extends Migration
 {
+    protected $connection = 'sqlsrv';
     /**
      * Run the migrations.
      *

@@ -10,20 +10,17 @@ use Illuminate\Contracts\Mail\Mailable;
 
 class User extends Controller
 {
-    function getUserInfo(Request $request){
+    function postLogin(Request $request){
         $username = $request['LoginName'];
         $email = $request['Email'];
         $password = $request['Password'];
-        return UserModel::getUserInformation($username,$password,$email);
-    }
-
-    function postLogin(Request $request){
-        $userInfo = $this->getUserInfo($request);
+        $userInfo = UserModel::getUserInformation($username,$password,$email);
         if (!$userInfo) {
             session()->flash('wrong_credentials', true);
             return redirect('/login')->with('wrong_credentials', true);
         } else {
             session()->put('user_id', $userInfo->ID);
+            session()->put('roleCms', $userInfo->RoleCms);
             return redirect('/dashboard')->with('userInfo', $userInfo);
         }
     }
@@ -64,7 +61,16 @@ class User extends Controller
         return redirect('/dashboard');
     }
 
-    function getListUser(Request $request){
-        return view('cms/listUser');
+    function getListUser($page){
+        $listUser = array();
+        $UserModel = new UserModel();
+        $listUser = $UserModel->getListUsers($page);
+        return view('cms/listUser', ['listUser' => $listUser, 'page' => $page]);
+    }
+
+    static function getTotalPage()
+    {
+        $UserModel = new UserModel();
+        return $UserModel->getTotalPage();
     }
 }
