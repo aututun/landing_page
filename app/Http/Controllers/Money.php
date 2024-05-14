@@ -43,11 +43,11 @@ class Money extends Controller
     }
 
     static function getKTcoin(){
-        return KTcoinModel::getKTcoin();
+        return KTcoinModel::getKTcoin() ?: 0;
     }
 
     static function getDong(){
-        return DongModel::getDong();
+        return DongModel::getDong() ?: 0;
     }
 
 }
