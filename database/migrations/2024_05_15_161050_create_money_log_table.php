@@ -20,6 +20,8 @@ class CreateMoneyLogTable extends Migration
             $table->bigInteger('KTCoin');
             $table->bigInteger('KTCoinBefore');
             $table->bigInteger('KTCoinAfter');
+            $table->smallInteger('AddBy');
+            $table->smallInteger('IsDone');
             $table->timestamp('AddedDate')->default(date_format(now(),"Y/m/d H:i:s"));
         });
     }

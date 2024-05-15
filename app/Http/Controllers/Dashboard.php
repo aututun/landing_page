@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Server as ServerModel;
 
-use App\Models\KTcoin as KTcoinModel;
-use App\Models\Dong as DongModel;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
@@ -15,12 +14,9 @@ class Dashboard extends Controller
         return view('main/login');
     }
 
-    public function getListUser(Request $request){
-
-    }
-    public function getKvCoin(Request $request, $userId = null){
-    }
-
-    public function getDong(Request $request, $userId = null){
+    static function getListServer(){
+        $serverModel = new ServerModel;
+        $listServer = $serverModel->getListServer();
+        return $listServer;
     }
 }

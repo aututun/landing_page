@@ -38,6 +38,21 @@
                                 </select>
                             </div>
                         </div>
+                        <br>
+                        <div class="row g-2">
+                            <div class="col mb-0">
+                                <label for="ServerID" class="form-label">Danh sách máy chủ</label>
+                                <select id="ServerID" name="ServerID" class="form-select color-dropdown">
+                                    @php($serverList = App\Http\Controllers\Dashboard::getListServer())
+                                    <option selected disabled value="0">Chọn máy chủ bạn muốn nạp</option>
+                                    @foreach($serverList as $server)
+                                        @if($server->isTestServer == 3)
+                                            <option value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>

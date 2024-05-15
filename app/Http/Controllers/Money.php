@@ -6,6 +6,7 @@ use App\Models\Giftcode;
 use Illuminate\Http\Request;
 use App\Models\KTcoin as KTcoinModel;
 use App\Models\Dong as DongModel;
+use App\Models\MoneyLog as MoneyLogModel;
 
 class Money extends Controller
 {
@@ -28,15 +29,24 @@ class Money extends Controller
 //    }
     function postNapDong(Request $request){
         $kvCoin = $request['KVcoin'];
+        $serverId = $request['ServerID'];
         $curentKvCoin = self::getKTcoin();
         if ($curentKvCoin >=$kvCoin) {
-            $addDong = $kvCoin * $this->rate;
-            $currentDong = self::getDong();
-            $newDong = $currentDong+$addDong;
+//            $addDong = $kvCoin * $this->rate;
+//            $currentDong = self::getDong();
+//            $newDong = $currentDong+$addDong;
             $newKvCoin = $curentKvCoin-$kvCoin;
-            DongModel::setDong($newDong);
-            KTcoinModel::setKTcoin($newKvCoin);
-            $status = true;
+            $moneyLog = MoneyLogModel::addToMoneyLogTable($serverId,$curentKvCoin,$kvCoin);
+            if ($moneyLog) {
+//                DongModel::setDong($newDong);
+                $setCoinModel = KTcoinModel::setKTcoin($newKvCoin);
+                if ($setCoinModel) {
+                    $moneyLog->update(['IsDone' => 1]);
+                }
+                $status = true;
+            } else {
+                $status = false;
+            }
         } else {
             $status = false;
         }
@@ -70,7 +80,6 @@ class Money extends Controller
     function getListBankLog(Request $request){
         $id = $request['id'];
         $serverId = $request['serverid'];
-
-        echo $request;
+        return MoneyLogModel::getListBankLog($id,$serverId);
     }
 }
