@@ -75,7 +75,13 @@ class Money extends Controller
     }
 
     function editGiftCode($id){
-        return view('cms/editGiftCode')->with('id', $id);
+        $giftCodeObj = new GiftCode();
+        $giftCodeModel = $giftCodeObj->getGiftCodeById($id);
+        echo '<pre>';
+        print_r($giftCodeModel);
+        echo '<pre>';
+        die();
+        return view('cms/editGiftCode')->with('id', $id)->with('giftCode', $giftCodeModel);
     }
     function getListBankLog(Request $request){
         $id = $request['id'];

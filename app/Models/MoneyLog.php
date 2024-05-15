@@ -48,16 +48,16 @@ class MoneyLog extends Model
             ->get();
         $newList = array();
         foreach ($listMoneyLog as $moneyLog) {
-            $newList[$moneyLog['id']]['id'] = $moneyLog['id'];
-            $newList[$moneyLog['id']]['UserID'] = $moneyLog['UserID'];
-            $newList[$moneyLog['id']]['ServerID'] = $moneyLog['ServerID'];
-            $newList[$moneyLog['id']]['KTCoin'] = $moneyLog['KTCoin'];
-            $newList[$moneyLog['id']]['KTCoinBefore'] = $moneyLog['KTCoinBefore'];
-            $newList[$moneyLog['id']]['KTCoinAfter'] = $moneyLog['KTCoinAfter'];
-            $newList[$moneyLog['id']]['AddBy'] = $moneyLog['AddBy'];
-            $newList[$moneyLog['id']]['IsDone'] = $moneyLog['IsDone'];
-            $newList[$moneyLog['id']]['AddedDate'] = $moneyLog['AddedDate'];
+            $newList[$moneyLog->id]['id'] = $moneyLog->id;
+            $newList[$moneyLog->id]['UserID'] = $moneyLog->UserID;
+            $newList[$moneyLog->id]['ServerID'] = $moneyLog->ServerID;
+            $newList[$moneyLog->id]['KTCoin'] = $moneyLog->KTCoin;
+            $newList[$moneyLog->id]['KTCoinBefore'] = $moneyLog->KTCoinBefore;
+            $newList[$moneyLog->id]['KTCoinAfter'] = $moneyLog->KTCoinAfter;
+            $newList[$moneyLog->id]['AddBy'] = $moneyLog->AddBy;
+            $newList[$moneyLog->id]['IsDone'] = $moneyLog->IsDone;
+            $newList[$moneyLog->id]['AddedDate'] = $moneyLog->AddedDate;
         }
-        return json_encode($newList);
+        return $newList;
     }
 }

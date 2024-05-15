@@ -28,26 +28,26 @@
                         </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
-                        {{--                        @foreach($listUser as $user)--}}
+                        @foreach($listGiftCode as $giftCode)
                         <tr>
-                            <td>Server 1</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>AJKF_235</strong></td>
-                            <td>Active</td>
-                            <td>xeng | cac | coc | helo</td>
-                            <td>15/05/2024</td>
-                            <td>100</td>
-                            @if(false)
+                            <td>{{$giftCode->ServerID}}</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$giftCode->Code}}</strong></td>
+                            @if($giftCode->Status == 1)
                                 <td><span class="badge bg-label-success me-1">Active</span></td>
                             @else
                                 <td><span class="badge bg-label-danger me-1">In Active</span></td>
                             @endif
+                            <td>{{$giftCode->ItemList}}</td>
+                            <td>{{$giftCode->TimeCreate}}</td>
+                            <td>{{$giftCode->MaxActive}}</td>
+                            <td>{{$giftCode->UserName}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{asset('/editGiftCode')}}/2"
+                                        <a class="dropdown-item" href="{{asset('/editGiftCode')}}/{{$giftCode->ID}}"
                                         ><i class="bx bx-edit-alt me-1"></i> Edit</a
                                         >
                                         <a class="dropdown-item" href="javascript:void(0);"
@@ -57,7 +57,7 @@
                                 </div>
                             </td>
                         </tr>
-                        {{--                        @endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

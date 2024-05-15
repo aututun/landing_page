@@ -45,4 +45,12 @@ class Giftcode extends Model
         }
 
     }
+
+    function getListGiftCode(){
+        return Giftcode::all();
+    }
+
+    function getGiftCodeById($id){
+        return Giftcode::where('ID', $id)->get();
+    }
 }

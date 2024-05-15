@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
 
 use Illuminate\Http\Request;
@@ -18,5 +19,11 @@ class Dashboard extends Controller
         $serverModel = new ServerModel;
         $listServer = $serverModel->getListServer();
         return $listServer;
+    }
+
+    static function listGiftCode(){
+        $giftCodeModel = new GiftcodeModel();
+        $giftCode = $giftCodeModel->getListGiftCode();
+        return view('cms/listGiftCode')->with('listGiftCode',$giftCode);
     }
 }

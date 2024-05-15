@@ -71,12 +71,12 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
+                <div data-i18n="Account Settings">Quản lý tài khoản</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="{{asset('/account')}}" class="menu-link">
-                        <div data-i18n="Account">Account</div>
+                        <div data-i18n="Account">Đổi thông tin cá nhân</div>
                     </a>
                 </li>
 {{--                <li class="menu-item">--}}

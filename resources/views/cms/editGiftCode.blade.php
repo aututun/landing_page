@@ -34,20 +34,24 @@
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Danh sách Server</label>
                                     <select required name="ServerID" class="form-select" id="exampleFormControlSelect1">
-                                        <option value="1">Server 1</option>
-                                        <option value="2">Server 2</option>
-                                        <option value="3">Server 3</option>
+                                        @php($serverList = App\Http\Controllers\Dashboard::getListServer())
+                                        <option selected disabled value="0">Chọn máy chủ</option>
+                                        @foreach($serverList as $server)
+                                            @if($server->isTestServer == 3)
+                                                <option @if($server->ID == $giftCode->ServerID) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                            @endif
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Code</label>
-                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1"/>
+                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="{{$giftCode->Code}}"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Status</label>
                                     <select required name="Status" class="form-select" id="exampleFormControlSelect1">
-                                        <option selected value="0">In Active</option>
-                                        <option value="1">Active</option>
+                                        <option @if($giftCode->Status == 0) selected @endif value="0">In Active</option>
+                                        <option @if($giftCode->Status == 1) selected @endif value="1">Active</option>
                                     </select>
                                 </div>
                                 {{--                            <div class="mb-3 row">--}}
@@ -58,17 +62,17 @@
                                 {{--                            </div>--}}
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Max Active</label>
-                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1"/>
+                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="{{$giftCode->MaxActive}}"/>
                                 </div>
                                 <div>
                                     <label for="exampleFormControlTextarea1" class="form-label">Danh sách vật phẩm</label>
-                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">{{$giftCode->ItemList}}</textarea>
                                 </div>
                                 <br>
                                 <div class="mb-3">
                                     <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Created By</label>
                                     <input
-                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="Admin"/>
+                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="{{$giftCode->UserName}}"/>
                                 </div>
                                 <br>
                                 @if($id != 0)
