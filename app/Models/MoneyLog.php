@@ -42,18 +42,21 @@ class MoneyLog extends Model
 
     static function getListBankLog($id, $serverId)
     {
-        $listMoneyLog = MoneyLog::query()->where('id', '>=',$id)->where('ServerId', $serverId)->get();
+        $listMoneyLog = MoneyLog::query()
+            ->where('id', '>',$id)
+            ->where('ServerId', $serverId)
+            ->get();
         $newList = array();
         foreach ($listMoneyLog as $moneyLog) {
-            $newList[$moneyLog['UserID']]['id'] = $moneyLog['id'];
-            $newList[$moneyLog['UserID']]['UserID'] = $moneyLog['UserID'];
-            $newList[$moneyLog['UserID']]['ServerID'] = $moneyLog['ServerID'];
-            $newList[$moneyLog['UserID']]['KTCoin'] = $moneyLog['KTCoin'];
-            $newList[$moneyLog['UserID']]['KTCoinBefore'] = $moneyLog['KTCoinBefore'];
-            $newList[$moneyLog['UserID']]['KTCoinAfter'] = $moneyLog['KTCoinAfter'];
-            $newList[$moneyLog['UserID']]['AddBy'] = $moneyLog['AddBy'];
-            $newList[$moneyLog['UserID']]['IsDone'] = $moneyLog['IsDone'];
-            $newList[$moneyLog['UserID']]['AddedDate'] = $moneyLog['AddedDate'];
+            $newList[]['id'] = $moneyLog['id'];
+            $newList[]['UserID'] = $moneyLog['UserID'];
+            $newList[]['ServerID'] = $moneyLog['ServerID'];
+            $newList[]['KTCoin'] = $moneyLog['KTCoin'];
+            $newList[]['KTCoinBefore'] = $moneyLog['KTCoinBefore'];
+            $newList[]['KTCoinAfter'] = $moneyLog['KTCoinAfter'];
+            $newList[]['AddBy'] = $moneyLog['AddBy'];
+            $newList[]['IsDone'] = $moneyLog['IsDone'];
+            $newList[]['AddedDate'] = $moneyLog['AddedDate'];
         }
         return json_encode($newList);
     }
