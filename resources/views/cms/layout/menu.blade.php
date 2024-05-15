@@ -134,6 +134,12 @@
                 <div data-i18n="Tables">Danh sách người chơi</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{asset('/listGiftCode')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Tables">Gift code</div>
+            </a>
+        </li>
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->

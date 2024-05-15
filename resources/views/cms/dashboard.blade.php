@@ -6,12 +6,12 @@
         @isset($status)
             @if($status)
                 <div class="alert alert-success alert-dismissible" role="alert">
-                    This is a success dismissible alert — check it out!
+                    Thành công
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @else
                 <div class="alert alert-danger alert-dismissible" role="alert">
-                    This is a danger dismissible alert — check it out!
+                    Thất bại
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

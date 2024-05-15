@@ -10,6 +10,7 @@
             @yield('listUser')
             @yield('account')
             @yield('connections')
+            @yield('giftcode')
             @php($kvcoin = App\Http\Controllers\Money::getKTcoin())
             @include('cms.modalKvcoin',['kvcoin' => $kvcoin])
             @include('cms.modalDong',['kvcoin' => $kvcoin])

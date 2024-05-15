@@ -20,6 +20,9 @@ Route::get('/gallery', function () {return view('main/gallery');});
 
 Route::get('/account', function () {return view('cms/account');});
 Route::get('/connections', function () {return view('cms/connections');});
+Route::get('/listGiftCode', function () {return view('cms/listGiftCode');});
+Route::get('/editGiftCode/{id}', 'App\Http\Controllers\Money@editGiftCode');
+Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
 Route::get('/login',  'App\Http\Controllers\Dashboard@checkLogin');
 Route::get('/listUser/{page}',  'App\Http\Controllers\User@getListUser');
 Route::get('/dashboard',  'App\Http\Controllers\Dashboard@checkLogin');
@@ -29,6 +32,7 @@ Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
 
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
 Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
+Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
 
 
 

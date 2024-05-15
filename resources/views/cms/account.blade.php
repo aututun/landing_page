@@ -207,69 +207,35 @@
                         </div>
                         <!-- /Account -->
                     </div>
-                    <div class="card">
-                        <h5 class="card-header">Delete Account</h5>
-                        <div class="card-body">
-                            <div class="mb-3 col-12 mb-0">
-                                <div class="alert alert-warning">
-                                    <h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
-                                    <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
-                                </div>
-                            </div>
-                            <form id="formAccountDeactivation" onsubmit="return false">
-                                <div class="form-check mb-3">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="accountActivation"
-                                        id="accountActivation"
-                                    />
-                                    <label class="form-check-label" for="accountActivation"
-                                    >I confirm my account deactivation</label
-                                    >
-                                </div>
-                                <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
-                            </form>
-                        </div>
-                    </div>
+{{--                    <div class="card">--}}
+{{--                        <h5 class="card-header">Delete Account</h5>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div class="mb-3 col-12 mb-0">--}}
+{{--                                <div class="alert alert-warning">--}}
+{{--                                    <h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>--}}
+{{--                                    <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <form id="formAccountDeactivation" onsubmit="return false">--}}
+{{--                                <div class="form-check mb-3">--}}
+{{--                                    <input--}}
+{{--                                        class="form-check-input"--}}
+{{--                                        type="checkbox"--}}
+{{--                                        name="accountActivation"--}}
+{{--                                        id="accountActivation"--}}
+{{--                                    />--}}
+{{--                                    <label class="form-check-label" for="accountActivation"--}}
+{{--                                    >I confirm my account deactivation</label--}}
+{{--                                    >--}}
+{{--                                </div>--}}
+{{--                                <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
         <!-- / Content -->
-
-        <!-- Footer -->
-        <footer class="content-footer footer bg-footer-theme">
-            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    , made with ❤️ by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                    <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                    <a
-                        href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                        target="_blank"
-                        class="footer-link me-4"
-                    >Documentation</a
-                    >
-
-                    <a
-                        href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                        target="_blank"
-                        class="footer-link me-4"
-                    >Support</a
-                    >
-                </div>
-            </div>
-        </footer>
-        <!-- / Footer -->
-
         <div class="content-backdrop fade"></div>
     </div>
 @endsection

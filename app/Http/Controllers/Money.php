@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Giftcode;
 use Illuminate\Http\Request;
 use App\Models\KTcoin as KTcoinModel;
 use App\Models\Dong as DongModel;
@@ -50,4 +51,26 @@ class Money extends Controller
         return DongModel::getDong() ?: 0;
     }
 
+    function postGiftCode(Request $request){
+        $data = $request->all();
+        $giftCodeObj = new GiftCode();
+        $id = $data['ID'];
+        $success = $giftCodeObj->createGiftCode($data);
+        if ($success) {
+            session()->flash('success', 'success');
+        } else {
+            session()->flash('success', 'error');
+        }
+        return redirect('editGiftCode/'.$id);
+    }
+
+    function editGiftCode($id){
+        return view('cms/editGiftCode')->with('id', $id);
+    }
+    function getListBankLog(Request $request){
+        $id = $request['id'];
+        $serverId = $request['serverid'];
+
+        echo $request;
+    }
 }

@@ -2,9 +2,6 @@
 @section('listUser')
     <div class="content-wrapper">
         <!-- Content -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
-
-        <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Danh sách người chơi</h4>
 
@@ -13,7 +10,7 @@
                 <h5 class="card-header"></h5>
 {{--                <h5 class="card-header">Table Basic</h5>--}}
                 <div class="table-responsive text-nowrap">
-                    <table class="table display">
+                    <table class="table display" style="text-align: center;">
                         <thead>
                         <tr>
                             <th>LoginName</th>
