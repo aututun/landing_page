@@ -38,20 +38,20 @@
                                         <option selected disabled value="0">Chọn máy chủ</option>
                                         @foreach($serverList as $server)
                                             @if($server->isTestServer == 3)
-                                                <option @if($server->ID == $giftCode->ServerID) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                                <option value="{{$server->ID}}">{{$server->strServerName}}</option>
                                             @endif
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Code</label>
-                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="{{$giftCode->Code}}"/>
+                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="@if($id != 0) {{$giftCode->Code}}@endif"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Status</label>
                                     <select required name="Status" class="form-select" id="exampleFormControlSelect1">
-                                        <option @if($giftCode->Status == 0) selected @endif value="0">In Active</option>
-                                        <option @if($giftCode->Status == 1) selected @endif value="1">Active</option>
+                                        <option @if($id != 0) @if($giftCode->Status == 0) selected @endif @endif value="0">In Active</option>
+                                        <option @if($id != 0) @if($giftCode->Status == 1) selected @endif @endif value="1">Active</option>
                                     </select>
                                 </div>
                                 {{--                            <div class="mb-3 row">--}}
@@ -62,17 +62,17 @@
                                 {{--                            </div>--}}
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Max Active</label>
-                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="{{$giftCode->MaxActive}}"/>
+                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="@if($id != 0) {{$giftCode->MaxActive}} @endif"/>
                                 </div>
                                 <div>
                                     <label for="exampleFormControlTextarea1" class="form-label">Danh sách vật phẩm</label>
-                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">{{$giftCode->ItemList}}</textarea>
+                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">@if($id != 0) {{$giftCode->ItemList}} @endif</textarea>
                                 </div>
                                 <br>
                                 <div class="mb-3">
                                     <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Created By</label>
                                     <input
-                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="{{$giftCode->UserName}}"/>
+                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="@if($id != 0) {{$giftCode->UserName}} @else @php($user = App\Models\User::getCurrentUser()){{$user->LoginName}}@endif"/>
                                 </div>
                                 <br>
                                 @if($id != 0)

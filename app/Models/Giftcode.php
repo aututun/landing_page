@@ -52,7 +52,7 @@ class Giftcode extends Model
     }
 
     function getGiftCodeById($id){
-        return Giftcode::where('ID', $id)->get();
+        return Giftcode::where('ID', $id)->first();
     }
 
     function getGiftCodeRep($CodeActive,$RoleID,$ServerID){

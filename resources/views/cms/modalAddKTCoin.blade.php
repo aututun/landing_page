@@ -1,9 +1,9 @@
 <div class="col-lg-4 col-md-6">
     <div class="mt-3">
-        <div class="modal fade" id="modalAddTKCoin" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modalAddTKCoin_{{$userId}}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <form action="{{asset('/congKTcoin')}}" method="post">
-                    {{ csrf_field() }}
+                    <input type="hidden" name="userDuocNap" value="{{$userId}}">
                     @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -40,16 +40,16 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Nạp đồng</button>
+                        <button type="submit" class="btn btn-primary">Nạp Coin</button>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
-        <div class="modal fade" id="modalMinusTKCoin" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modalMinusTKCoin_{{$userId}}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <form action="{{asset('/truKTcoin')}}" method="post">
-                    {{ csrf_field() }}
+                    <input type="hidden" name="userDuocNap" value="{{$userId}}">
                     @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Nạp đồng</button>
+                        <button type="submit" class="btn btn-primary">Trừ Coin</button>
                     </div>
                 </div>
                 </form>

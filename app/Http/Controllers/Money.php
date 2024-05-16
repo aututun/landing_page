@@ -54,8 +54,8 @@ class Money extends Controller
         return redirect('/dashboard')->with('status', $status);
     }
 
-    static function getKTcoin(){
-        return KTcoinModel::getKTcoin() ?: 0;
+    static function getKTcoin($usernameId = null){
+        return KTcoinModel::getKTcoin($usernameId) ?: 0;
     }
 
     static function getDong(){
@@ -77,12 +77,11 @@ class Money extends Controller
 
     function editGiftCode($id){
         $giftCodeObj = new GiftCode();
-        $giftCodeModel = $giftCodeObj->getGiftCodeById($id);
-        echo '<pre>';
-        print_r($giftCodeModel);
-        echo '<pre>';
-        die();
-        return view('cms/editGiftCode')->with('id', $id)->with('giftCode', $giftCodeModel);
+        if ($id != 0) {
+            $giftCodeModel = $giftCodeObj->getGiftCodeById($id);
+            return view('cms/editGiftCode')->with('id', $id)->with('giftCode', $giftCodeModel);
+        }
+        return view('cms/editGiftCode')->with('id', $id);
     }
     function getListBankLog(Request $request){
         list($id,$serverId) = $this->extractIdAndServerIdFromUrl($request->getRequestUri());

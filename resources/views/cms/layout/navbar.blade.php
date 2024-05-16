@@ -13,8 +13,8 @@
                 <input
                     type="text"
                     class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
+                    placeholder="Tìm username"
+                    aria-label="Tìm username"
                 />
             </div>
         </div>

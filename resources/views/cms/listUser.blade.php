@@ -45,6 +45,8 @@
                                 </div>
                             </td>
                         </tr>
+                        @php($kvcoin = App\Http\Controllers\Money::getKTcoin($user->ID))
+                        @include('cms.modalAddKTCoin',['kvcoin' => $kvcoin, 'userId' => $user->ID])
                         @endforeach
                         </tbody>
                     </table>
