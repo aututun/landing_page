@@ -47,7 +47,7 @@
                                     <option selected disabled value="0">Chọn máy chủ bạn muốn nạp</option>
                                     @foreach($serverList as $server)
                                         @if($server->isTestServer == 3)
-                                            <option value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                            <option value="{{$server->nServerID}}">{{$server->strServerName}}</option>
                                         @endif
                                     @endforeach
                                 </select>
