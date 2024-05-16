@@ -43,7 +43,7 @@
 
                                         @foreach($serverList as $server)
                                             @if($server->isTestServer == 3)
-                                                <option @if($server->ID == $serverIdGC) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                                <option @if($server->nServerID == $serverIdGC) selected @endif value="{{$server->nServerID}}">{{$server->strServerName}}</option>
                                             @endif
                                         @endforeach
                                     </select>

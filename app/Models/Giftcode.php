@@ -124,7 +124,12 @@ class Giftcode extends Model
                 $data[] = $newEntity;
             }
         } else {
+            $userModel = UserModel::getUserInformationById($UserId);
             $data = array(
+                'Status ' => -1,
+                'ItemList ' => "",
+                'ServerID ' => $ServerID,
+                'UserName ' => $userModel->LoginName,
                 'Msg ' => $Msg,
             );
         }
