@@ -26,4 +26,8 @@ class Dashboard extends Controller
         $giftCode = $giftCodeModel->getListGiftCode();
         return view('cms/listGiftCode')->with('listGiftCode',$giftCode);
     }
+
+    static function getListHistory(){
+
+    }
 }
