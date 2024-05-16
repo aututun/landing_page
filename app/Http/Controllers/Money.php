@@ -110,27 +110,35 @@ class Money extends Controller
     }
 
     function getGiftCodeRep(Request $request){
-        [$CodeActive,$RoleID,$ServerID,$UserID] = $this->extractIdAndServerIdFromUrl($request->getRequestUri());
-        $CodeActive = $request['CodeActive'];
-        $RoleID = $request['RoleID'];
-        $ServerID = $request['ServerID'];
-        $UserID = $request['UserID'];
+        [$CodeActive,$RoleID] = $this->extractCodeActiveAndRoleIDFromUrl($request->getRequestUri());
+        [$ServerID,$UserID] = $this->extractServerIDAndUserIDFromUrl($request->getRequestUri());
         GiftcodeModel::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
-        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
+//        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
     }
 
-    private function extractFromUrl($url)
+    private function extractCodeActiveAndRoleIDFromUrl($url)
     {
         $parts = parse_url($url);
         if (!isset($parts['query'])) {
-            return [null, null,null, null];
+            return [null, null];
         }
         parse_str($parts['query'], $params);
         $CodeActive = isset($params['CodeActive']) ? $params['CodeActive'] : null;
         $RoleID = isset($params['RoleID']) ? $params['RoleID'] : null;
+
+        return [$CodeActive,$RoleID];
+    }
+
+    private function extractServerIDAndUserIDFromUrl($url)
+    {
+        $parts = parse_url($url);
+        if (!isset($parts['query'])) {
+            return [null, null];
+        }
+        parse_str($parts['query'], $params);
         $ServerID = isset($params['ServerID']) ? $params['ServerID'] : null;
         $UserID = isset($params['UserID']) ? $params['UserID'] : null;
 
-        return [$CodeActive,$RoleID,$ServerID,$UserID];
+        return [$ServerID,$UserID];
     }
 }

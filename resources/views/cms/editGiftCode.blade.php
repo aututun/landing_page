@@ -35,9 +35,10 @@
                                     <label for="exampleFormControlSelect1" class="form-label">Danh sách Server</label>
                                     <select required name="ServerID" class="form-select" id="exampleFormControlSelect1">
          ServerID                               @php($serverList = App\Http\Controllers\Dashboard::getListServer())
+         ServerID                               @php($serverIdGC = $giftCode->ServerID ?: 0)
                                         @foreach($serverList as $server)
                                             @if($server->isTestServer == 3)
-                                                <option @if($server->ID == $giftCode->ServerID) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                                <option @if($server->ID == $serverIdGC) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
                                             @endif
                                         @endforeach
                                     </select>
