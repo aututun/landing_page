@@ -109,4 +109,15 @@ class User extends Authenticatable
         return $newListUsers;
     }
 
+    static public function getUserInformationById($usernameId = null){
+        if (!$usernameId) {
+            $usernameId = session()->get('user_id');
+        }
+        $user = User::where('ID', $usernameId)->first();
+        if ($user) {
+            return $user;
+        }
+        return null;
+    }
+
 }

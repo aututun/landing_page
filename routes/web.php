@@ -33,8 +33,7 @@ Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
 Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
 Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
-Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
-Route::get('/getUserBankLog', 'App\Http\Controllers\Money@getUserBankLog');
+Route::get('/getListCardLog', 'App\Http\Controllers\Money@getListBankLog');
 
 
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User as UserModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class MoneyLog extends Model
 {
@@ -46,17 +47,17 @@ class MoneyLog extends Model
             ->where('id', '>',$id)
             ->where('ServerId', $serverId)
             ->get();
+//        $listMoneyLog = DB::select("SELECT * FROM MoneyLog WHERE 'ServerId' = ".$serverId." AND 'id' > ".$id);
         $newList = array();
         foreach ($listMoneyLog as $moneyLog) {
             $newList[$moneyLog->id]['id'] = $moneyLog->id;
+            $user = UserModel::getUserInformationById($moneyLog->UserID);
+            $newList[$moneyLog->id]['UserName'] = $user->LoginName;
             $newList[$moneyLog->id]['UserID'] = $moneyLog->UserID;
             $newList[$moneyLog->id]['ServerID'] = $moneyLog->ServerID;
-            $newList[$moneyLog->id]['KTCoin'] = $moneyLog->KTCoin;
-            $newList[$moneyLog->id]['KTCoinBefore'] = $moneyLog->KTCoinBefore;
-            $newList[$moneyLog->id]['KTCoinAfter'] = $moneyLog->KTCoinAfter;
-            $newList[$moneyLog->id]['AddBy'] = $moneyLog->AddBy;
+            $newList[$moneyLog->id]['Amount '] = $moneyLog->KTCoin;
             $newList[$moneyLog->id]['IsDone'] = $moneyLog->IsDone;
-            $newList[$moneyLog->id]['AddedDate'] = $moneyLog->AddedDate;
+            $newList[$moneyLog->id]['Type'] = 1;
         }
         return $newList;
     }
