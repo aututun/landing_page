@@ -23,7 +23,7 @@
                             <th>Item List</th>
                             <th>Time Created</th>
                             <th>Max Active</th>
-                            <th>Created by</th>
+                            <th>User Name</th>
                             <th>Action</th>
                         </tr>
                         </thead>

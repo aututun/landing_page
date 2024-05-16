@@ -34,7 +34,7 @@ class Giftcode extends Model
             'ItemList' => $data['ItemList'],
             'TimeCreate' => date_format(now(),"Y/m/d H:i:s"),
             'MaxActive' => $data['MaxActive'],
-            'UserName' => $userName->LoginName,
+            'UserName' => $data['UserName'],
         ];
         if ($id != 0) {
             // Update

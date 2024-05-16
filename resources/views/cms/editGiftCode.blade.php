@@ -75,9 +75,9 @@
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Created By</label>
+                                    <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Username</label>
                                     <input
-                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="@if($id != 0){{$giftCode->UserName}}@else @php($user=App\Models\User::getCurrentUser()){{$user->LoginName}}@endif"/>
+                                        type="text" class="form-control-plaintext" name="UserName" value="@if($id != 0){{$giftCode->UserName}}@endif"/>
                                 </div>
                                 <br>
                                 @if($id != 0)
