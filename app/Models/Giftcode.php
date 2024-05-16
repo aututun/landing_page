@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class Giftcode extends Model
 {
+    static public $Msg;
     use HasFactory;
     protected $fillable = [
         'ServerID',
@@ -54,28 +55,68 @@ class Giftcode extends Model
         return Giftcode::where('ID', $id)->first();
     }
 
-    function insertGiftCodeRep($CodeActive,$RoleID,$ServerID){
+    static function insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId){
+        $queryFindGiftCodeMax = "SELECT TOP 1 * FROM [GiftCodes] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID;
+        $queryFindGiftCodeMaxResult = DB::select($queryFindGiftCodeMax);
 
+        // Case hết lượt sử dụng
+        $queryFindtGiftCode = "SELECT * FROM [GiftCodeLogs] WHERE [Code] = ? AND [ServerID] = ?";
+        $queryFindGiftCodeResult = DB::select($queryFindtGiftCode, [$CodeActive, $ServerID]);
+
+        // Case đã dùng code này
+        $queryFindtGiftCodeExist = "SELECT TOP 1 * FROM [GiftCodeLogs] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID." AND [UserIdGetCode] = ".$UserId;
+        $queryFindGiftCodeExistResult = DB::select($queryFindtGiftCodeExist);
+
+        $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
+        $isActive = $queryFindGiftCodeMaxResult[0]->Status;
+        if ($isActive == 0) {
+            Return 'Code đã hết hạn sử dụng';
+        }
+        if (count($queryFindGiftCodeResult) > $maxActive) {
+            Return 'Code hết lượt sử dụng';
+        }
+        if (count($queryFindGiftCodeExistResult) >= 1) {
+            Return 'Bạn đã nhập code này';
+        }
+        $queryInsertGiftCode = "INSERT INTO [GiftCodeLogs] ([Code], [AvtiveRole], [ServerID], [UserIdGetCode]) VALUES (?,?,?,?)";
+        $result = DB::insert($queryInsertGiftCode,[$CodeActive,$RoleID,$ServerID,$UserId]);
+        if ($result) {
+            $queryFindtGiftCodeAg = "SELECT * FROM [GiftCodeLogs] WHERE [Code] = ? AND [ServerID] = ?";
+            $queryFindGiftCodeResultAg = DB::select($queryFindtGiftCodeAg, [$CodeActive, $ServerID]);
+            if (count($queryFindGiftCodeResultAg) >= $maxActive) {
+                $queryUpdateMaxActive = "UPDATE [GiftCodes] SET [Status] = 1 WHERE [Code] = ? AND [ServerID] = ?";
+                DB::update($queryUpdateMaxActive, [$CodeActive, $ServerID]);
+            }
+            Return 'Nhập Code thành công';
+        } else {
+            Return 'Code không hợp lệ';
+        }
     }
 
-    function getGiftCodeRep($CodeActive,$RoleID,$ServerID){
-        $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodes.ActiveRole
-                    FROM GiftCodes INNER JOIN GiftCodeLogs
-                    ON GiftCodes.ServerID = GiftCodeLogs.ServerID
-                    AND GiftCodes.Code = GiftCodeLogs.Code
-                    WHERE GiftCodes.Code = '".$CodeActive."'
-                    AND GiftCodes.ActiveRole = ".$RoleID."
-                    AND GiftCodes.ServerID = ".$ServerID;
-        $listGiftCodeLog = DB::select($query);
-        foreach ($listGiftCodeLog as $giftCodeLog) {}
-        $userId = $giftCodeLog->UserIdGetCode;
-        $userModel = UserModel::getUserInformationById($userId);
-        $newEntity = array(
-            'Status' => $giftCodeLog->Status,
-            'ItemList' => $giftCodeLog->ItemList,
-            'ServerID' => $giftCodeLog->ServerID,
-            'UserIdGetCode' => $userModel->LoginName,
-        );
-        return $newEntity;
+    static function getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId){
+        $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodeLogs.UserIdGetCode, GiftCodeLogs.ActiveRole
+          FROM GiftCodes INNER JOIN GiftCodeLogs
+          ON GiftCodes.ServerID = GiftCodeLogs.ServerID
+          AND GiftCodes.Code = GiftCodeLogs.Code
+          WHERE GiftCodes.Code = ?
+          AND GiftCodeLogs.ActiveRole = ?
+          AND GiftCodes.ServerID = ?
+          AND GiftCodeLogs.UserIdGetCode = ?";
+        $listGiftCodeLog = DB::select($query, [$CodeActive, $RoleID, $ServerID, $UserId]);
+        $data = array();
+        $Msg = self::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId);
+        foreach ($listGiftCodeLog as $giftCodeLog) {
+            $userId = $giftCodeLog->UserIdGetCode;
+            $userModel = UserModel::getUserInformationById($userId);
+            $newEntity = array(
+                'Status' => $giftCodeLog->Status,
+                'ItemList' => $giftCodeLog->ItemList,
+                'ServerID' => $giftCodeLog->ServerID,
+                'UserName ' => $userModel->LoginName,
+                'Msg ' => $Msg,
+            );
+            $data[] = $newEntity;
+        }
+        return $data;
     }
 }

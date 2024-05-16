@@ -112,8 +112,8 @@ class Money extends Controller
     function getGiftCodeRep(Request $request){
         [$CodeActive,$RoleID] = $this->extractCodeActiveAndRoleIDFromUrl($request->getRequestUri());
         [$ServerID,$UserID] = $this->extractServerIDAndUserIDFromUrl($request->getRequestUri());
-//        GiftcodeModel::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
-        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
+        $giftCode =  GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
+        return $giftCode;
     }
 
     private function extractCodeActiveAndRoleIDFromUrl($url)
