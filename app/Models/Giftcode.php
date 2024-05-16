@@ -116,9 +116,9 @@ class Giftcode extends Model
                 $userModel = UserModel::getUserInformationById($userId);
                 $newEntity = array(
                     'Status' => $giftCodeLog->Status,
+                    'Msg ' => $Msg,
                     'ItemList' => $giftCodeLog->ItemList,
                     'UserName ' => $userModel->LoginName,
-                    'Msg ' => $Msg,
                 );
                 $data[] = $newEntity;
             }
@@ -126,9 +126,9 @@ class Giftcode extends Model
             $userModel = UserModel::getUserInformationById($UserId);
             $data = array(
                 'Status ' => -1,
+                'Msg ' => $Msg,
                 'ItemList ' => "",
                 'UserName ' => $userModel->LoginName,
-                'Msg ' => $Msg,
             );
         }
 
