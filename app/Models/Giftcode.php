@@ -38,8 +38,9 @@ class Giftcode extends Model
         ];
         if ($id != 0) {
             // Update
-            $giftCodeObj['ID'] = $id;
-            return static::query()->update($giftCodeObj);
+            return DB::table('GiftCodes')
+                ->where('ID', $id)
+                ->update($giftCodeObj);
         } else {
             // Create
             return static::query()->create($giftCodeObj);

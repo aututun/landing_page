@@ -69,6 +69,7 @@ class Money extends Controller
         $success = $giftCodeObj->createGiftCode($data);
         if ($success) {
             session()->flash('success', 'success');
+            $id = $success->ID;
         } else {
             session()->flash('success', 'error');
         }
