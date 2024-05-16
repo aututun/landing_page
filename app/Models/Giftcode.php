@@ -70,16 +70,19 @@ class Giftcode extends Model
         $queryFindtGiftCodeExist = "SELECT TOP 1 * FROM [GiftCodeLogs] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID." AND [UserIdGetCode] = ".$UserId;
         $queryFindGiftCodeExistResult = DB::select($queryFindtGiftCodeExist);
 
-        if (!$queryFindGiftCodeMaxResult || !$queryFindGiftCodeMaxResult2 || !$queryFindGiftCodeResult) {
+        if ((!$queryFindGiftCodeMaxResult && $queryFindGiftCodeMaxResult2)) {
             Return array('Code không hợp lệ',-1);
         }
-        $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
-        $isActive = $queryFindGiftCodeMaxResult[0]->Status;
-        if ($isActive == 0) {
-            Return array('Code đã hết hạn sử dụng',-2);
-        }
-        if (count($queryFindGiftCodeResult) > $maxActive) {
-            Return array('Code hết lượt sử dụng',-3);
+        $maxActive = '';
+        if ($queryFindGiftCodeMaxResult) {
+            $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
+            $isActive = $queryFindGiftCodeMaxResult[0]->Status;
+            if ($isActive == 0) {
+                Return array('Code đã hết hạn sử dụng',-2);
+            }
+            if (count($queryFindGiftCodeResult) > $maxActive) {
+                Return array('Code hết lượt sử dụng',-3);
+            }
         }
         if (count($queryFindGiftCodeExistResult) >= 1) {
             Return array('Bạn đã nhập code này',-4);
@@ -89,6 +92,11 @@ class Giftcode extends Model
         if ($result) {
             $queryFindtGiftCodeAg = "SELECT * FROM [GiftCodeLogs] WHERE [Code] = ? AND [ServerID] = ?";
             $queryFindGiftCodeResultAg = DB::select($queryFindtGiftCodeAg, [$CodeActive, $ServerID]);
+            if (!$maxActive) {
+                $queryFindGiftCodeMax = "SELECT TOP 1 * FROM [GiftCodes] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID;
+                $queryFindGiftCodeMaxResult = DB::select($queryFindGiftCodeMax);
+                $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
+            }
             if (count($queryFindGiftCodeResultAg) >= $maxActive) {
                 $queryUpdateMaxActive = "UPDATE [GiftCodes] SET [Status] = 1 WHERE [Code] = ? AND [ServerID] = ?";
                 DB::update($queryUpdateMaxActive, [$CodeActive, $ServerID]);
