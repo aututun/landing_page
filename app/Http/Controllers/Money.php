@@ -85,9 +85,28 @@ class Money extends Controller
         return view('cms/editGiftCode')->with('id', $id)->with('giftCode', $giftCodeModel);
     }
     function getListBankLog(Request $request){
-        $id = $request['id'];
-        $serverId = $request['serverid'];
+        list($id,$serverId) = $this->extractIdAndServerIdFromUrl($request->getRequestUri());
         return MoneyLogModel::getListBankLog($id,$serverId);
+    }
+
+    private function extractIdAndServerIdFromUrl($url)
+    {
+        // Parse the URL to extract the query string
+        $parts = parse_url($url);
+
+        // Check if query string exists, if not, return default values
+        if (!isset($parts['query'])) {
+            return [null, null];
+        }
+
+        // Parse the query string to get individual parameters
+        parse_str($parts['query'], $params);
+
+        // Extract id and serverid
+        $id = isset($params['id']) ? $params['id'] : null;
+        $serverId = isset($params['serverid']) ? $params['serverid'] : null;
+
+        return [$id, $serverId];
     }
 
     function getGiftCodeRep(Request $request){

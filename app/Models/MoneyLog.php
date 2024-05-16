@@ -43,21 +43,21 @@ class MoneyLog extends Model
 
     static function getListBankLog($id, $serverId)
     {
-        $listMoneyLog = MoneyLog::all();
+//        $listMoneyLog = MoneyLog::all();
 //        $listMoneyLog = MoneyLog::query()
 //            ->where('id', '>',$id)
 //            ->where('ServerId', $serverId)
 //            ->get();
-//        $listMoneyLog = DB::select("SELECT * FROM MoneyLog WHERE 'ServerId' = ".$serverId." AND 'id' > ".$id);
+        $listMoneyLog = DB::select("SELECT * FROM [MoneyLog] WHERE [ServerID] = '".$serverId."' AND [id] > ".$id);
         $newList = array();
         foreach ($listMoneyLog as $moneyLog) {
             $user = UserModel::getUserInformationById($moneyLog->UserID);
             $newEntry  = array(
-                'id' => $moneyLog['id'],
-                'UserName' => $user['LoginName'],
-                'UserID' => $moneyLog['UserID'],
-                'ServerID' => $moneyLog['ServerID'],
-                'Amount' => $moneyLog['KTCoin'],
+                'id' => $moneyLog->id,
+                'UserName' => $user->LoginName,
+                'UserID' => $moneyLog->UserID,
+                'ServerID' => $moneyLog->ServerID,
+                'Amount' => $moneyLog->KTCoin,
                 'Type' => 1,
             );
             $newList[] = $newEntry;
