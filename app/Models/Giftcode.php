@@ -80,7 +80,7 @@ class Giftcode extends Model
             if ($isActive == 0) {
                 Return array('Code đã hết hạn sử dụng',-2);
             }
-            if (count($queryFindGiftCodeResult) > $maxActive) {
+            if (count($queryFindGiftCodeResult) >= $maxActive) {
                 Return array('Code hết lượt sử dụng',-3);
             }
         }
