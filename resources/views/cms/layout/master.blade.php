@@ -18,7 +18,7 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <div class="buy-now">
-        <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Nạp tiền</a>
+        <a class="btn btn-danger btn-buy-now" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalKvcoin">Nạp tiền</a>
     </div>
 </div>
 </body>

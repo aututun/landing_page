@@ -117,7 +117,6 @@ class Giftcode extends Model
                 $newEntity = array(
                     'Status' => $giftCodeLog->Status,
                     'ItemList' => $giftCodeLog->ItemList,
-                    'ServerID' => $giftCodeLog->ServerID,
                     'UserName ' => $userModel->LoginName,
                     'Msg ' => $Msg,
                 );
@@ -128,7 +127,6 @@ class Giftcode extends Model
             $data = array(
                 'Status ' => -1,
                 'ItemList ' => "",
-                'ServerID ' => $ServerID,
                 'UserName ' => $userModel->LoginName,
                 'Msg ' => $Msg,
             );
