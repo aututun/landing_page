@@ -58,6 +58,8 @@ class Giftcode extends Model
     static function insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId){
         $queryFindGiftCodeMax = "SELECT TOP 1 * FROM [GiftCodes] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID;
         $queryFindGiftCodeMaxResult = DB::select($queryFindGiftCodeMax);
+        $queryFindGiftCodeMax2 = "SELECT TOP 1 * FROM [GiftCodeLogs] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID;
+        $queryFindGiftCodeMaxResult2 = DB::select($queryFindGiftCodeMax2);
 
         // Case hết lượt sử dụng
         $queryFindtGiftCode = "SELECT * FROM [GiftCodeLogs] WHERE [Code] = ? AND [ServerID] = ?";
@@ -67,6 +69,9 @@ class Giftcode extends Model
         $queryFindtGiftCodeExist = "SELECT TOP 1 * FROM [GiftCodeLogs] WHERE [Code] = '".$CodeActive."' AND [ServerID] = ".$ServerID." AND [UserIdGetCode] = ".$UserId;
         $queryFindGiftCodeExistResult = DB::select($queryFindtGiftCodeExist);
 
+        if (!$queryFindGiftCodeMaxResult || !$queryFindGiftCodeMaxResult2 || !$queryFindGiftCodeResult) {
+            Return 'Code không hợp lệ';
+        }
         $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
         $isActive = $queryFindGiftCodeMaxResult[0]->Status;
         if ($isActive == 0) {
@@ -78,7 +83,7 @@ class Giftcode extends Model
         if (count($queryFindGiftCodeExistResult) >= 1) {
             Return 'Bạn đã nhập code này';
         }
-        $queryInsertGiftCode = "INSERT INTO [GiftCodeLogs] ([Code], [AvtiveRole], [ServerID], [UserIdGetCode]) VALUES (?,?,?,?)";
+        $queryInsertGiftCode = "INSERT INTO [GiftCodeLogs] ([Code], [ActiveRole], [ServerID], [UserIdGetCode]) VALUES (?,?,?,?)";
         $result = DB::insert($queryInsertGiftCode,[$CodeActive,$RoleID,$ServerID,$UserId]);
         if ($result) {
             $queryFindtGiftCodeAg = "SELECT * FROM [GiftCodeLogs] WHERE [Code] = ? AND [ServerID] = ?";
@@ -94,6 +99,7 @@ class Giftcode extends Model
     }
 
     static function getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId){
+        $Msg = self::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId);
         $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodeLogs.UserIdGetCode, GiftCodeLogs.ActiveRole
           FROM GiftCodes INNER JOIN GiftCodeLogs
           ON GiftCodes.ServerID = GiftCodeLogs.ServerID
@@ -104,19 +110,25 @@ class Giftcode extends Model
           AND GiftCodeLogs.UserIdGetCode = ?";
         $listGiftCodeLog = DB::select($query, [$CodeActive, $RoleID, $ServerID, $UserId]);
         $data = array();
-        $Msg = self::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId);
-        foreach ($listGiftCodeLog as $giftCodeLog) {
-            $userId = $giftCodeLog->UserIdGetCode;
-            $userModel = UserModel::getUserInformationById($userId);
-            $newEntity = array(
-                'Status' => $giftCodeLog->Status,
-                'ItemList' => $giftCodeLog->ItemList,
-                'ServerID' => $giftCodeLog->ServerID,
-                'UserName ' => $userModel->LoginName,
+        if ($listGiftCodeLog) {
+            foreach ($listGiftCodeLog as $giftCodeLog) {
+                $userId = $giftCodeLog->UserIdGetCode;
+                $userModel = UserModel::getUserInformationById($userId);
+                $newEntity = array(
+                    'Status' => $giftCodeLog->Status,
+                    'ItemList' => $giftCodeLog->ItemList,
+                    'ServerID' => $giftCodeLog->ServerID,
+                    'UserName ' => $userModel->LoginName,
+                    'Msg ' => $Msg,
+                );
+                $data[] = $newEntity;
+            }
+        } else {
+            $data = array(
                 'Msg ' => $Msg,
             );
-            $data[] = $newEntity;
         }
+
         return $data;
     }
 }
