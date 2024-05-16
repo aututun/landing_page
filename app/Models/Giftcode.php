@@ -38,9 +38,7 @@ class Giftcode extends Model
         ];
         if ($id != 0) {
             // Update
-            return DB::table('GiftCodes')
-                ->where('ID', $id)
-                ->update($giftCodeObj);
+            return static::where('ID', $id)->update($giftCodeObj);
         } else {
             // Create
             return static::query()->create($giftCodeObj);
@@ -56,13 +54,17 @@ class Giftcode extends Model
         return Giftcode::where('ID', $id)->first();
     }
 
+    function insertGiftCodeRep($CodeActive,$RoleID,$ServerID){
+
+    }
+
     function getGiftCodeRep($CodeActive,$RoleID,$ServerID){
-        $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodeLogs.UserIdGetCode
+        $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodes.ActiveRole
                     FROM GiftCodes INNER JOIN GiftCodeLogs
                     ON GiftCodes.ServerID = GiftCodeLogs.ServerID
                     AND GiftCodes.Code = GiftCodeLogs.Code
                     WHERE GiftCodes.Code = '".$CodeActive."'
-                    AND GiftCodeLogs.UserIdGetCode = ".$RoleID."
+                    AND GiftCodes.ActiveRole = ".$RoleID."
                     AND GiftCodes.ServerID = ".$ServerID;
         $listGiftCodeLog = DB::select($query);
         foreach ($listGiftCodeLog as $giftCodeLog) {}

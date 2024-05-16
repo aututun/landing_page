@@ -69,7 +69,7 @@ class Money extends Controller
         $success = $giftCodeObj->createGiftCode($data);
         if ($success) {
             session()->flash('success', 'success');
-            $id = $success->ID;
+            if (is_object($success)) {$id = $success->ID;}
         } else {
             session()->flash('success', 'error');
         }
@@ -110,9 +110,27 @@ class Money extends Controller
     }
 
     function getGiftCodeRep(Request $request){
+        [$CodeActive,$RoleID,$ServerID,$UserID] = $this->extractIdAndServerIdFromUrl($request->getRequestUri());
         $CodeActive = $request['CodeActive'];
         $RoleID = $request['RoleID'];
         $ServerID = $request['ServerID'];
-        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID);
+        $UserID = $request['UserID'];
+        GiftcodeModel::insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
+        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserID);
+    }
+
+    private function extractFromUrl($url)
+    {
+        $parts = parse_url($url);
+        if (!isset($parts['query'])) {
+            return [null, null,null, null];
+        }
+        parse_str($parts['query'], $params);
+        $CodeActive = isset($params['CodeActive']) ? $params['CodeActive'] : null;
+        $RoleID = isset($params['RoleID']) ? $params['RoleID'] : null;
+        $ServerID = isset($params['ServerID']) ? $params['ServerID'] : null;
+        $UserID = isset($params['UserID']) ? $params['UserID'] : null;
+
+        return [$CodeActive,$RoleID,$ServerID,$UserID];
     }
 }

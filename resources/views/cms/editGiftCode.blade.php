@@ -27,25 +27,24 @@
                                 {{ csrf_field() }}
                                 @csrf
                                 @if($id != 0)
-                                    <input type="hidden" name="ID" value="1">
+                                    <input type="hidden" name="ID" value="{{$giftCode->ID}}">
                                 @else
                                     <input type="hidden" name="ID" value="0">
                                 @endif
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Danh sách Server</label>
                                     <select required name="ServerID" class="form-select" id="exampleFormControlSelect1">
-                                        @php($serverList = App\Http\Controllers\Dashboard::getListServer())
-                                        <option selected disabled value="0">Chọn máy chủ</option>
+         ServerID                               @php($serverList = App\Http\Controllers\Dashboard::getListServer())
                                         @foreach($serverList as $server)
                                             @if($server->isTestServer == 3)
-                                                <option value="{{$server->ID}}">{{$server->strServerName}}</option>
+                                                <option @if($server->ID == $giftCode->ServerID) selected @endif value="{{$server->ID}}">{{$server->strServerName}}</option>
                                             @endif
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Code</label>
-                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="@if($id != 0) {{$giftCode->Code}}@endif"/>
+                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="@if($id != 0){{$giftCode->Code}}@endif"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Status</label>
@@ -62,17 +61,17 @@
                                 {{--                            </div>--}}
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Max Active</label>
-                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="@if($id != 0) {{$giftCode->MaxActive}} @endif"/>
+                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="@if($id != 0){{$giftCode->MaxActive}}@endif"/>
                                 </div>
                                 <div>
                                     <label for="exampleFormControlTextarea1" class="form-label">Danh sách vật phẩm</label>
-                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">@if($id != 0) {{$giftCode->ItemList}} @endif</textarea>
+                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">@if($id != 0){{$giftCode->ItemList}}@endif</textarea>
                                 </div>
                                 <br>
                                 <div class="mb-3">
                                     <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Created By</label>
                                     <input
-                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="@if($id != 0) {{$giftCode->UserName}} @else @php($user = App\Models\User::getCurrentUser()){{$user->LoginName}}@endif"/>
+                                        type="text" readonly class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="@if($id != 0){{$giftCode->UserName}}@else @php($user=App\Models\User::getCurrentUser()){{$user->LoginName}}@endif"/>
                                 </div>
                                 <br>
                                 @if($id != 0)
