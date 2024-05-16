@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User as UserModel;
+use Illuminate\Support\Facades\DB;
 
 class Giftcode extends Model
 {
@@ -52,5 +53,26 @@ class Giftcode extends Model
 
     function getGiftCodeById($id){
         return Giftcode::where('ID', $id)->get();
+    }
+
+    function getGiftCodeRep($CodeActive,$RoleID,$ServerID){
+        $query = "SELECT GiftCodes.Status, GiftCodes.ItemList, GiftCodes.ServerID, GiftCodeLogs.UserIdGetCode
+                    FROM GiftCodes INNER JOIN GiftCodeLogs
+                    ON GiftCodes.ServerID = GiftCodeLogs.ServerID
+                    AND GiftCodes.Code = GiftCodeLogs.Code
+                    WHERE GiftCodes.Code = '".$CodeActive."'
+                    AND GiftCodeLogs.UserIdGetCode = ".$RoleID."
+                    AND GiftCodes.ServerID = ".$ServerID;
+        $listGiftCodeLog = DB::select($query);
+        foreach ($listGiftCodeLog as $giftCodeLog) {}
+        $userId = $giftCodeLog->UserIdGetCode;
+        $userModel = UserModel::getUserInformationById($userId);
+        $newEntity = array(
+            'Status' => $giftCodeLog->Status,
+            'ItemList' => $giftCodeLog->ItemList,
+            'ServerID' => $giftCodeLog->ServerID,
+            'UserIdGetCode' => $userModel->LoginName,
+        );
+        return $newEntity;
     }
 }

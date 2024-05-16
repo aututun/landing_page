@@ -14,6 +14,7 @@
             @php($kvcoin = App\Http\Controllers\Money::getKTcoin())
             @include('cms.modalKvcoin',['kvcoin' => $kvcoin])
             @include('cms.modalDong',['kvcoin' => $kvcoin])
+            @include('cms.modalAddKTCoin',['kvcoin' => $kvcoin])
         </div>
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>

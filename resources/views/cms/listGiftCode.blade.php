@@ -35,7 +35,7 @@
                             @if($giftCode->Status == 1)
                                 <td><span class="badge bg-label-success me-1">Active</span></td>
                             @else
-                                <td><span class="badge bg-label-danger me-1">In Active</span></td>
+                                <td><span class="badge bg-label-danger me-1">InActive</span></td>
                             @endif
                             <td>{{$giftCode->ItemList}}</td>
                             <td>{{$giftCode->TimeCreate}}</td>
@@ -47,12 +47,10 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{asset('/editGiftCode')}}/{{$giftCode->ID}}"
-                                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                                        >
-                                        <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-trash me-1"></i> Delete</a
-                                        >
+                                        <a class="dropdown-item" href="{{asset('/editGiftCode')}}/{{$giftCode->ID}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                        <a class="dropdown-item" href="javascript:void(0);"--}}
+{{--                                        ><i class="bx bx-trash me-1"></i> Delete</a--}}
+{{--                                        >--}}
                                     </div>
                                 </div>
                             </td>

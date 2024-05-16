@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\KTcoin as KTcoinModel;
 use App\Models\Dong as DongModel;
 use App\Models\MoneyLog as MoneyLogModel;
+use App\Models\Giftcode as GiftcodeModel;
 
 class Money extends Controller
 {
@@ -87,5 +88,12 @@ class Money extends Controller
         $id = $request['id'];
         $serverId = $request['serverid'];
         return MoneyLogModel::getListBankLog($id,$serverId);
+    }
+
+    function getGiftCodeRep(Request $request){
+        $CodeActive = $request['CodeActive'];
+        $RoleID = $request['RoleID'];
+        $ServerID = $request['ServerID'];
+        return GiftcodeModel::getGiftCodeRep($CodeActive,$RoleID,$ServerID);
     }
 }
