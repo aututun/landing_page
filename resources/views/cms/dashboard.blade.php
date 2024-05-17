@@ -336,7 +336,7 @@
                                             class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
                                                 <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                                                <span class="badge bg-label-warning rounded-pill">Year 2024</span>
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <small class="text-success text-nowrap fw-semibold"

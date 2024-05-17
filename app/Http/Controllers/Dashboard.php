@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
+use App\Models\User as UserModel;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +20,11 @@ class Dashboard extends Controller
         $serverModel = new ServerModel;
         $listServer = $serverModel->getListServer();
         return $listServer;
+    }
+
+    static function getListMoneyHistory(){
+        $user = UserModel::getCurrentUser();
+
     }
 
     static function listGiftCode(){

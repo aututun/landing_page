@@ -60,7 +60,7 @@ class User extends Authenticatable
         } else {
             $user = User::where('LoginName', $username)->first();
         }
-        if ($user && hash('md5', $password,false)) {
+        if ($user && strtoupper(hash('md5', $password,false)) == $user->Password) {
             return $user;
         }
         return null;
