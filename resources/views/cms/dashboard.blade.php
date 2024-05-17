@@ -74,250 +74,250 @@
                 {{--                    </div>--}}
                 {{--                </div>--}}
                 {{--            </div>--}}
-                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-                    <table class="table display" style="text-align: center;">
-                        <thead>
-                        <tr>
-                            <th>Server</th>
-                            <th>Code</th>
-                            <th>Status</th>
-                            <th>Item List</th>
-                            <th>Time Created</th>
-                            <th>Max Active</th>
-                            <th>User Name</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody class="table-border-bottom-0">
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_ABC</strong></td>
-                            <td><span class="badge bg-label-danger me-1">InActive</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:18:29.000</td>
-                            <td>12</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/6"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">--}}
+{{--                    <table class="table display" style="text-align: center;">--}}
+{{--                        <thead>--}}
+{{--                        <tr>--}}
+{{--                            <th>Server</th>--}}
+{{--                            <th>Code</th>--}}
+{{--                            <th>Status</th>--}}
+{{--                            <th>Item List</th>--}}
+{{--                            <th>Time Created</th>--}}
+{{--                            <th>Max Active</th>--}}
+{{--                            <th>User Name</th>--}}
+{{--                            <th>Action</th>--}}
+{{--                        </tr>--}}
+{{--                        </thead>--}}
+{{--                        <tbody class="table-border-bottom-0">--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_ABC</strong></td>--}}
+{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:18:29.000</td>--}}
+{{--                            <td>12</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/6"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>153</strong></td>
-                            <td><span class="badge bg-label-danger me-1">InActive</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:16:14.000</td>
-                            <td>34</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/7"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>153</strong></td>--}}
+{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:16:14.000</td>--}}
+{{--                            <td>34</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/7"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>`235`</strong></td>
-                            <td><span class="badge bg-label-danger me-1">InActive</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:16:14.000</td>
-                            <td>43</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/8"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>`235`</strong></td>--}}
+{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:16:14.000</td>--}}
+{{--                            <td>43</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/8"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>2346</strong></td>
-                            <td><span class="badge bg-label-danger me-1">InActive</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:16:14.000</td>
-                            <td>6</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/9"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>2346</strong></td>--}}
+{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:16:14.000</td>--}}
+{{--                            <td>6</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/9"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_123</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:44:54.000</td>
-                            <td>12</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/10"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>1</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_123</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:44:54.000</td>--}}
+{{--                            <td>12</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/10"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td>1074|1|0#506|1|0</td>
-                            <td>2024-05-16 17:46:15.000</td>
-                            <td>1000</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/11"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td>1074|1|0#506|1|0</td>--}}
+{{--                            <td>2024-05-16 17:46:15.000</td>--}}
+{{--                            <td>1000</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/11"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>ASD</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td></td>
-                            <td>2024-05-16 17:48:07.000</td>
-                            <td>22</td>
-                            <td>admin</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/12"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td>1074|1|0#506|1|0</td>
-                            <td>2024-05-16 17:50:44.000</td>
-                            <td>24</td>
-                            <td></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/13"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1234567</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td>1074|1|0#506|1|0</td>
-                            <td>2024-05-16 19:24:14.000</td>
-                            <td>123</td>
-                            <td></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/14"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>1</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>ASD</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>2024-05-16 17:48:07.000</td>--}}
+{{--                            <td>22</td>--}}
+{{--                            <td>admin</td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/12"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>1</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td>1074|1|0#506|1|0</td>--}}
+{{--                            <td>2024-05-16 17:50:44.000</td>--}}
+{{--                            <td>24</td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/13"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>4</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1234567</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td>1074|1|0#506|1|0</td>--}}
+{{--                            <td>2024-05-16 19:24:14.000</td>--}}
+{{--                            <td>123</td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/14"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123123</strong></td>
-                            <td><span class="badge bg-label-success me-1">Active</span></td>
-                            <td>1074|1|0#506|1|0</td>
-                            <td>2024-05-16 19:30:02.000</td>
-                            <td>10</td>
-                            <td></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/15"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td>2</td>--}}
+{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123123</strong></td>--}}
+{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
+{{--                            <td>1074|1|0#506|1|0</td>--}}
+{{--                            <td>2024-05-16 19:30:02.000</td>--}}
+{{--                            <td>10</td>--}}
+{{--                            <td></td>--}}
+{{--                            <td>--}}
+{{--                                <div class="dropdown">--}}
+{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
+{{--                                            data-bs-toggle="dropdown">--}}
+{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
+{{--                                    </button>--}}
+{{--                                    <div class="dropdown-menu">--}}
+{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/15"><i--}}
+{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
                 <!--/ Total Revenue -->
                 <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                     <div class="row">
