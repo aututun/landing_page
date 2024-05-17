@@ -58,8 +58,10 @@ class KTcoin extends Model
         if (!$userId) {
             $user = self::getUserInformationByIdFromLogin();
             $userId = $user->ID;
+        } else {
+            $user = UserModel::getUserInformationById($userId);
         }
-        if ($user) {
+        if ($userId) {
             return static::query()->create([
                 'UserID' => $userId,
                 'UserName' => $user->LoginName,
