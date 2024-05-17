@@ -61,7 +61,7 @@ class Money extends Controller
             $moneyLog = MoneyLogModel::addToMoneyLogTable($serverId,$curentKvCoin,$kvCoin);
             if ($moneyLog) {
 //                DongModel::setDong($newDong);
-                $setCoinModel = KTcoinModel::setKTcoin($newKvCoin);
+                $setCoinModel = KTcoinModel::setKTcoin($newKvCoin,null);
                 if ($setCoinModel) {
                     $moneyLog->update(['IsDone' => 1]);
                 }
