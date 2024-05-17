@@ -13,11 +13,11 @@
 {{--                </div>--}}
             </div>
             <span class="d-block mb-1"><h4>KV coin : {{number_format($kvcoin)}}</h4></span>
-            <button data-bs-toggle="modal" data-bs-target="#modalKvcoin" type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+            <button data-bs-toggle="modal" data-bs-target="#modalKvcoin" type="button" class="btn btn-outline-secondary account-image-reset">
                 <i class="bx bx-reset d-block d-sm-none"></i>
                 <span class="d-none d-sm-block">Nạp KV coin</span>
             </button>
-            {{--                                <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>--}}
+            <small class="text-danger fw-semibold">100.000 Đồng = 100 KVcoin</small>
         </div>
     </div>
 </div>

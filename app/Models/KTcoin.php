@@ -54,7 +54,7 @@ class KTcoin extends Model
         }
     }
 
-    static public function addKTcoin($ktCoin,$userId){
+    static public function addKTcoin($ktCoin,$userId = null){
         if (!$userId) {
             $user = self::getUserInformationByIdFromLogin();
             $userId = $user->ID;
