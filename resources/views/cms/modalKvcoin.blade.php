@@ -31,7 +31,7 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
                         <hr>
-                        <h4>Nội dung nạp là : nap tentaikhoan</h4>
+                        <h4>Nội dung nạp là : KV tentaikhoan</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
