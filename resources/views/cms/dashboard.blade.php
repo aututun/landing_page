@@ -17,64 +17,120 @@
                 @endif
             @endisset
             <div class="row">
-                <!-- Total Revenue -->
-                {{--            <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">--}}
-                {{--                <div class="card">--}}
-                {{--                    <div class="row row-bordered g-0">--}}
-                {{--                        <div class="col-md-8">--}}
-                {{--                            <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>--}}
-                {{--                            <div id="totalRevenueChart" class="px-2"></div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="col-md-4">--}}
-                {{--                            <div class="card-body">--}}
-                {{--                                <div class="text-center">--}}
-                {{--                                    <div class="dropdown">--}}
-                {{--                                        <button--}}
-                {{--                                            class="btn btn-sm btn-outline-primary dropdown-toggle"--}}
-                {{--                                            type="button"--}}
-                {{--                                            id="growthReportId"--}}
-                {{--                                            data-bs-toggle="dropdown"--}}
-                {{--                                            aria-haspopup="true"--}}
-                {{--                                            aria-expanded="false"--}}
-                {{--                                        >--}}
-                {{--                                            2022--}}
-                {{--                                        </button>--}}
-                {{--                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">--}}
-                {{--                                            <a class="dropdown-item" href="javascript:void(0);">2024</a>--}}
-                {{--                                            <a class="dropdown-item" href="javascript:void(0);">2023</a>--}}
-                {{--                                            <a class="dropdown-item" href="javascript:void(0);">2022</a>--}}
-                {{--                                        </div>--}}
-                {{--                                    </div>--}}
-                {{--                                </div>--}}
-                {{--                            </div>--}}
-                {{--                            <div id="growthChart"></div>--}}
-                {{--                            <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>--}}
-
-                {{--                            <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">--}}
-                {{--                                <div class="d-flex">--}}
-                {{--                                    <div class="me-2">--}}
-                {{--                                        <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>--}}
-                {{--                                    </div>--}}
-                {{--                                    <div class="d-flex flex-column">--}}
-                {{--                                        <small>2022</small>--}}
-                {{--                                        <h6 class="mb-0">$32.5k</h6>--}}
-                {{--                                    </div>--}}
-                {{--                                </div>--}}
-                {{--                                <div class="d-flex">--}}
-                {{--                                    <div class="me-2">--}}
-                {{--                                        <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>--}}
-                {{--                                    </div>--}}
-                {{--                                    <div class="d-flex flex-column">--}}
-                {{--                                        <small>2021</small>--}}
-                {{--                                        <h6 class="mb-0">$41.2k</h6>--}}
-                {{--                                    </div>--}}
-                {{--                                </div>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--            </div>--}}
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                                        <div
+                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                                            <div class="card-title">
+                                                <h5 class="text-nowrap mb-2">Hướng dẫn nạp</h5>
+                                            </div>
+                                            <div class="mt-sm-auto">
+                                                <h6>- Chuyển khoản theo mốc nạp 20k, 50k, 100k, 200k, 500k,..... <br></h6>
+                                                <h6>- Chọn nạp kvcoin chuyển tiền theo mốc kèm lời nhắn : "KV tentaikhoan" <br></h6>
+                                                <h6>- Nếu 5p chưa được cộng kvcoin thì liên hệ ad gửi ảnh chuyển khoản + tên tk <br></h6>
+                                                <h6>- Đổi KVcoin sang đồng theo các mệnh giá để có đồng trong game <br></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                                        <div
+                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                                            <div class="card-title">
+                                                <h5 class="text-nowrap mb-2">Mốc quy đổi</h5>
+                                            </div>
+                                            <div class="mt-sm-auto">
+                                                20.000 VNĐ  &nbsp; - &nbsp;  20 KVcoin <br>
+                                                50.000 VNĐ  &nbsp; - &nbsp;  50 KVcoin <br>
+                                                100.000 VNĐ  &nbsp; - &nbsp;  100 KVcoin <br>
+                                                200.000 VNĐ  &nbsp; - &nbsp;  200 KVcoin <br>
+                                                500.000 VNĐ  &nbsp; - &nbsp;  500 KVcoin <br>
+                                                1.000.000 VNĐ  &nbsp; - &nbsp;  1000 KVcoin <br>
+                                                2.000.000 VNĐ  &nbsp; - &nbsp;  2000 KVcoin <br>
+                                                5.000.000 VNĐ  &nbsp; - &nbsp;  5000 KVcoin <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                    <div class="row">
+                        @php
+                            $kvcoin = App\Http\Controllers\Money::getKTcoin();
+                            $dong = App\Http\Controllers\Money::getDong();
+                        @endphp
+                        @include('cms.layout.currentMoney', ['kvcoin' => $kvcoin, 'dong' => $dong])
+                    </div>
+                </div>
 {{--                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">--}}
+{{--                    <div class="card">--}}
+{{--                        <div class="row row-bordered g-0">--}}
+{{--                            <div class="col-md-8">--}}
+{{--                                <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>--}}
+{{--                                <div id="totalRevenueChart" class="px-2"></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-4">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <div class="text-center">--}}
+{{--                                        <div class="dropdown">--}}
+{{--                                            <button--}}
+{{--                                                class="btn btn-sm btn-outline-primary dropdown-toggle"--}}
+{{--                                                type="button"--}}
+{{--                                                id="growthReportId"--}}
+{{--                                                data-bs-toggle="dropdown"--}}
+{{--                                                aria-haspopup="true"--}}
+{{--                                                aria-expanded="false"--}}
+{{--                                            >--}}
+{{--                                                2022--}}
+{{--                                            </button>--}}
+{{--                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">--}}
+{{--                                                <a class="dropdown-item" href="javascript:void(0);">2024</a>--}}
+{{--                                                <a class="dropdown-item" href="javascript:void(0);">2023</a>--}}
+{{--                                                <a class="dropdown-item" href="javascript:void(0);">2022</a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div id="growthChart"></div>--}}
+{{--                                <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>--}}
+
+{{--                                <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">--}}
+{{--                                    <div class="d-flex">--}}
+{{--                                        <div class="me-2">--}}
+{{--                                            <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="d-flex flex-column">--}}
+{{--                                            <small>2022</small>--}}
+{{--                                            <h6 class="mb-0">$32.5k</h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="d-flex">--}}
+{{--                                        <div class="me-2">--}}
+{{--                                            <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="d-flex flex-column">--}}
+{{--                                            <small>2021</small>--}}
+{{--                                            <h6 class="mb-0">$41.2k</h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4"><h3>Lịch sử nạp</h3>--}}
 {{--                    <table class="table display" style="text-align: center;">--}}
 {{--                        <thead>--}}
 {{--                        <tr>--}}
@@ -318,40 +374,6 @@
 {{--                        </tbody>--}}
 {{--                    </table>--}}
 {{--                </div>--}}
-                <!--/ Total Revenue -->
-                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-                    <div class="row">
-                        @php
-                            $kvcoin = App\Http\Controllers\Money::getKTcoin();
-                            $dong = App\Http\Controllers\Money::getDong();
-                        @endphp
-                        @include('cms.layout.currentMoney', ['kvcoin' => $kvcoin, 'dong' => $dong])
-                        <!-- </div>
-    <div class="row"> -->
-{{--                        <div class="col-12 mb-4">--}}
-{{--                            <div class="card">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">--}}
-{{--                                        <div--}}
-{{--                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">--}}
-{{--                                            <div class="card-title">--}}
-{{--                                                <h5 class="text-nowrap mb-2">Profile Report</h5>--}}
-{{--                                                <span class="badge bg-label-warning rounded-pill">Year 2024</span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="mt-sm-auto">--}}
-{{--                                                <small class="text-success text-nowrap fw-semibold"--}}
-{{--                                                ><i class="bx bx-chevron-up"></i> 68.2%</small--}}
-{{--                                                >--}}
-{{--                                                <h3 class="mb-0">$84,686k</h3>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div id="profileReportChart"></div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <!-- Order Statistics -->

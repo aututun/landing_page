@@ -17,7 +17,7 @@
                 <i class="bx bx-reset d-block d-sm-none"></i>
                 <span class="d-none d-sm-block">Nạp KV coin</span>
             </button>
-            <small class="text-danger fw-semibold">100.000 Đồng = 100 KVcoin</small>
+            <small class="text-danger fw-semibold">100.000 VNĐ = 100 KVcoin</small>
         </div>
     </div>
 </div>
@@ -36,11 +36,12 @@
 {{--                </div>--}}
             </div>
             <span class="d-block mb-1"><h4>Đồng</h4></span>
-            <button data-bs-toggle="modal" data-bs-target="#modalDong" type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+            <button data-bs-toggle="modal" data-bs-target="#modalDong" type="button" class="btn btn-outline-secondary account-image-reset">
                 <i class="bx bx-reset d-block d-sm-none"></i>
-                <span class="d-none d-sm-block">Nạp đồng</span>
+                <span class="d-none d-sm-block">&nbsp;&nbsp;&nbsp; Nạp đồng &nbsp;&nbsp;&nbsp;</span>
             </button>
-            {{--                                <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>--}}
+            <small class="text-danger fw-semibold"> 100 KVcoin = 1,8 vạn Đồng </small>
+{{--                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>--}}
         </div>
     </div>
 </div>
