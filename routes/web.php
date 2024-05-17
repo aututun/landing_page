@@ -32,6 +32,8 @@ Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');
 Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
 Route::post('/postChangePassword', 'App\Http\Controllers\User@postChangePassword');
 Route::post('/postChangeInfo', 'App\Http\Controllers\User@postChangeInfo');
+Route::post('/congKTcoin', 'App\Http\Controllers\Money@congKTcoin');
+Route::post('/truKTcoin', 'App\Http\Controllers\Money@truKTcoin');
 
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
 Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');

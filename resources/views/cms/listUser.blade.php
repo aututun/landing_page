@@ -7,6 +7,16 @@
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
+                @if(session()->get('status') == 'success')
+                    <div class="alert alert-success alert-dismissible" role="alert">Thành công
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @elseif(session()->get('status') == 'error')
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        Thất bại
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <h5 class="card-header"></h5>
 {{--                <h5 class="card-header">Table Basic</h5>--}}
                 <div class="table-responsive text-nowrap">
@@ -39,8 +49,8 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Nạp KTCoin</a>
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Trừ KTCoin</a>
+                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Nạp KVCoin</a>
+                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Trừ KVCoin</a>
                                     </div>
                                 </div>
                             </td>

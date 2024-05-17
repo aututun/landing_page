@@ -12,7 +12,8 @@
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="align-items: center;">
+                        <img height="500px" width="100%" src="{{asset('/qr.png')}}" alt="">
 {{--                        <div class="row">--}}
 {{--                            <div class="col mb-3">--}}
 {{--                                <label for="nameBasic" class="form-label">Name</label>--}}
@@ -29,7 +30,8 @@
 {{--                                <input type="text" id="dobBasic" class="form-control" placeholder="DD / MM / YY" />--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-                        Hiện tại chúng tôi chưa hỗ trợ chức năng này. Xin cảm ơn !
+                        <hr>
+                        <h4>Nội dung nạp là : nap tentaikhoan</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>

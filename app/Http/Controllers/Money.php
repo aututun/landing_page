@@ -18,16 +18,37 @@ class Money extends Controller
         $this->rate = env('RATE_NAP', 180);
     }
 
-//    function postNapKTCoin(Request $request){
-//        $kvCoin = $request['KVcoin'];
-//        $success = KTcoinModel::setKTcoin($kvCoin);
-//        if ($success) {
-//            return 111111;
-//        }
-//        else {
-//            return 222222222;
-//        }
-//    }
+    function congKTcoin(Request $request){
+        $kvCoin = $request['KVcoin'];
+        $userId = $request['userDuocNap'];
+        $curentKTcoin = KTcoinModel::getKTcoin($userId);
+        $newKTcoin = $curentKTcoin + $kvCoin;
+        $status = 'error';
+        $result = KTcoinModel::setKTcoin($newKTcoin);
+        if ($result) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/listUser/1');
+    }
+
+    function truKTcoin(Request $request){
+        $kvCoin = $request['KVcoin'];
+        $userId = $request['userDuocNap'];
+        $curentKTcoin = KTcoinModel::getKTcoin($userId);
+        $status = 'error';
+        if ($curentKTcoin < $kvCoin) {
+            $newKTcoin = 0;
+        } else {
+            $newKTcoin = $curentKTcoin - $kvCoin;
+        }
+        $result = KTcoinModel::setKTcoin($newKTcoin);
+        if ($result) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/listUser/1');
+    }
     function postNapDong(Request $request){
         $kvCoin = $request['KVcoin'];
         $serverId = $request['ServerID'];
