@@ -24,7 +24,7 @@ class Money extends Controller
         $curentKTcoin = KTcoinModel::getKTcoin($userId);
         $newKTcoin = $curentKTcoin + $kvCoin;
         $status = 'error';
-        $result = KTcoinModel::setKTcoin($newKTcoin);
+        $result = KTcoinModel::setKTcoin($newKTcoin,$userId);
         if ($result) {
             $status = 'success';
         }
@@ -42,7 +42,7 @@ class Money extends Controller
         } else {
             $newKTcoin = $curentKTcoin - $kvCoin;
         }
-        $result = KTcoinModel::setKTcoin($newKTcoin);
+        $result = KTcoinModel::setKTcoin($newKTcoin,$userId);
         if ($result) {
             $status = 'success';
         }

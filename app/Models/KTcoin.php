@@ -42,23 +42,26 @@ class KTcoin extends Model
         return null;
     }
 
-    static public function setKTcoin($ktCoin){
-        $user = self::getUserInformationById();
+    static public function setKTcoin($ktCoin,$userId){
+        $user = self::getUserInformationById($userId);
         if ($user) {
             return static::query()->where('ID', $user->ID)->update([
                 'KCoin' => $ktCoin,
                 'UpdateTime' => date_format(now(),"Y/m/d H:i:s"),
             ]);
         } else {
-            return self::addKTcoin($ktCoin);
+            return self::addKTcoin($ktCoin,$userId);
         }
     }
 
-    static public function addKTcoin($ktCoin){
-        $user = self::getUserInformationByIdFromLogin();
+    static public function addKTcoin($ktCoin,$userId){
+        if (!$userId) {
+            $user = self::getUserInformationByIdFromLogin();
+            $userId = $user->ID;
+        }
         if ($user) {
             return static::query()->create([
-                'UserID' => $user->ID,
+                'UserID' => $userId,
                 'UserName' => $user->LoginName,
                 'KCoin' => $ktCoin,
                 'UpdateTime' => date_format(now(),"Y/m/d H:i:s"),
