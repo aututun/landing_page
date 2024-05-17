@@ -23,17 +23,14 @@ class Dashboard extends Controller
     }
 
     static function getListMoneyHistory(){
-        $user = UserModel::getCurrentUser();
 
     }
+
+
 
     static function listGiftCode(){
         $giftCodeModel = new GiftcodeModel();
         $giftCode = $giftCodeModel->getListGiftCode();
         return view('cms/listGiftCode')->with('listGiftCode',$giftCode);
-    }
-
-    static function getListHistory(){
-
     }
 }

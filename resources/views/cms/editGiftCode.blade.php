@@ -11,8 +11,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @elseif(session()->get('success') == 'error')
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                Thành công
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                Thất bại
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif

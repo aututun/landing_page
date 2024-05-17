@@ -79,6 +79,11 @@
                         <div data-i18n="Account">Đổi thông tin cá nhân</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="{{asset('/changePassword')}}" class="menu-link">
+                        <div data-i18n="Account">Đổi mật khẩu</div>
+                    </a>
+                </li>
 {{--                <li class="menu-item">--}}
 {{--                    <a href="{{asset('/connections')}}" class="menu-link">--}}
 {{--                        <div data-i18n="Connections">Connections</div>--}}

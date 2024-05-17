@@ -43,13 +43,57 @@ class User extends Controller
 //        $this->sendWelcomeEmail($user);
         // 3. Optional: Send Welcome Email or Perform Other Actions
 
-        // 4. Redirect or Login User (Choose one)
-        // Option A: Redirect to Login Page with Success Message
         return redirect('/login')->with('signup_success', true);
     }
 
     public function sendWelcomeEmail($user){
         \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\WelcomeEmail($user->username));
+    }
+
+    public function postChangePassword(Request $request){
+        $oldPassword = $request['oldPassword'];
+        $newPassword = $request['newPassword'];
+        $reNewPassword = $request['reNewPassword'];
+        $user = UserModel::getCurrentUser();
+        $currentPass = $user->Password;
+        $same_pass = 0;
+        $wrong_pass = 0;
+        $wrong_retype = 0;
+        $status = 'error';
+        if ($currentPass != strtoupper(hash('md5', $newPassword, false))) {
+            if (strtoupper(hash('md5', $oldPassword, false)) == $user->Password) {
+                if ($newPassword == $reNewPassword) {
+                    $userModel = new UserModel();
+                    $status = $userModel->updatePassword($newPassword);
+                    if ($status) {
+                        $status = 'success';
+                    }
+                } else {
+                    $wrong_retype = 'wrong_retype';
+
+                }
+            } else {
+                $wrong_pass = 'wrong_pass';
+            }
+        } else {
+            $same_pass = 'same_pass';
+        }
+        session()->flash('wrong_retype', $wrong_retype);
+        session()->flash('wrong_pass', $wrong_pass);
+        session()->flash('same_pass', $same_pass);
+        session()->flash('status', $status);
+        return redirect('/changePassword');
+    }
+    public function postChangeInfo(Request $request){
+        $status = 'error';
+        $userModel = new UserModel();
+        $data = $request->all();
+        $status = $userModel->updateUser($data);
+        if ($status) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/account');
     }
 
     function logout(Request $request){
@@ -68,8 +112,12 @@ class User extends Controller
         return view('cms/listUser', ['listUser' => $listUser, 'page' => $page]);
     }
 
-    static function getTotalPage()
-    {
+    function getDetailsUser(){
+        $user = UserModel::getCurrentUser();
+        return view('cms/account')->with('user', $user);
+    }
+
+    static function getTotalPage(){
         $UserModel = new UserModel();
         return $UserModel->getTotalPage();
     }

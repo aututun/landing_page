@@ -81,7 +81,7 @@ class User extends Authenticatable
         $user = [
             'LoginName' => $data['LoginName'],
             'Email' => $data['Email'],
-            'Password' => hash('md5', $data['Password'], false),
+            'Password' => strtoupper(hash('md5', $data['Password'], false)),
             'RoleCms' => 0,
             'Date' => date_format(now(),"Y/m/d H:i:s"),
         ];
@@ -91,14 +91,24 @@ class User extends Authenticatable
         return static::query()->create($user);
     }
 
-    static public function updateUser($data){
-        return static::query()->update([
-            'Email' => $data['Email'],
-            'Password' => Hash::make($data['Password']),
-        ]);
+     public function updateUser($data){
+        $user = self::getCurrentUser();
+        $userId = $user->ID;
+        if ($data['FullName']) $userInfo['FullName'] = $data['FullName'];
+        if ($data['Phone']) $userInfo['Phone'] = $data['Phone'];
+        if ($data['Email']) $userInfo['Email'] = $data['Email'];
+        $userInfo['Date'] = date('Y/m/d H:i:s');
+        return static::where('ID', $userId)->update($userInfo);
     }
 
-    public function getListUsers($page = 0){
+    public function updatePassword($password){
+        $user = self::getCurrentUser();
+        $userId = $user->ID;
+        return static::where('ID', $userId)->update(['Password' => strtoupper(hash('md5', $password,false))]);
+    }
+
+    public function getListUsers($page = 1){
+        $page = $page - 1;
         $skip = $page * $this->itemsPerPage;
         $listUsers = User::all()->skip($skip)->take($this->itemsPerPage);
         $newListUsers = array();

@@ -9,6 +9,7 @@
             @yield('dashboard')
             @yield('listUser')
             @yield('account')
+            @yield('changePassword')
             @yield('connections')
             @yield('giftcode')
             @php($kvcoin = App\Http\Controllers\Money::getKTcoin())

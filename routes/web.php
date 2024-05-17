@@ -18,8 +18,9 @@ Route::get('/heroes', 'App\Http\Controllers\Heroes@getListHeroes');
 Route::get('/heroDetails/{id}', 'App\Http\Controllers\Heroes@getDetailHero');
 Route::get('/gallery', function () {return view('main/gallery');});
 
-Route::get('/account', function () {return view('cms/account');});
-Route::get('/connections', function () {return view('cms/connections');});
+Route::get('/account', 'App\Http\Controllers\User@getDetailsUser');
+//Route::get('/connections', function () {return view('cms/connections');});
+Route::get('/changePassword', function () {return view('cms/changePassword');});
 Route::get('/listGiftCode', 'App\Http\Controllers\Dashboard@listGiftCode');
 Route::get('/editGiftCode/{id}', 'App\Http\Controllers\Money@editGiftCode');
 Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
@@ -29,6 +30,8 @@ Route::get('/dashboard',  'App\Http\Controllers\Dashboard@checkLogin');
 Route::get('/logout', 'App\Http\Controllers\User@logout');
 Route::post('/loginPost', 'App\Http\Controllers\User@postLogin');
 Route::post('/signUpPost', 'App\Http\Controllers\User@postSignUp');
+Route::post('/postChangePassword', 'App\Http\Controllers\User@postChangePassword');
+Route::post('/postChangeInfo', 'App\Http\Controllers\User@postChangeInfo');
 
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
 Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
