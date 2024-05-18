@@ -24,15 +24,17 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                                         <div
-                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                                            class="flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
                                                 <h5 class="text-nowrap mb-2">Hướng dẫn nạp</h5>
                                             </div>
                                             <div class="mt-sm-auto">
-                                                <h6>- Chuyển khoản theo mốc nạp 20k, 50k, 100k, 200k, 500k,..... <br></h6>
-                                                <h6>- Chọn nạp kvcoin chuyển tiền theo mốc kèm lời nhắn : "KV tentaikhoan" <br></h6>
-                                                <h6>- Nếu 5p chưa được cộng kvcoin thì liên hệ ad gửi ảnh chuyển khoản + tên tk <br></h6>
-                                                <h6>- Đổi KVcoin sang đồng theo các mệnh giá để có đồng trong game <br></h6>
+                                                <ul>
+                                                    <li><h6> Chuyển khoản theo mốc nạp 20k, 50k, 100k, 200k, 500k,..... </h6></li>
+                                                    <li><h6> Chọn nạp kvcoin chuyển tiền theo mốc kèm lời nhắn : "KV tentaikhoan" </h6></li>
+                                                    <li><h6> Nếu 5p chưa được cộng kvcoin thì liên hệ ad gửi ảnh chuyển khoản + tên tk </h6></li>
+                                                    <li><h6> Đổi KVcoin sang đồng theo các mệnh giá để có đồng trong game </h6></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -44,19 +46,21 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                                         <div
-                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                                            class="flex-sm-column flex-row align-items-start justify-content-between">
                                             <div class="card-title">
                                                 <h5 class="text-nowrap mb-2">Mốc quy đổi</h5>
                                             </div>
                                             <div class="mt-sm-auto">
-                                                20.000 VNĐ  &nbsp; - &nbsp;  20 KVcoin <br>
-                                                50.000 VNĐ  &nbsp; - &nbsp;  50 KVcoin <br>
-                                                100.000 VNĐ  &nbsp; - &nbsp;  100 KVcoin <br>
-                                                200.000 VNĐ  &nbsp; - &nbsp;  200 KVcoin <br>
-                                                500.000 VNĐ  &nbsp; - &nbsp;  500 KVcoin <br>
-                                                1.000.000 VNĐ  &nbsp; - &nbsp;  1000 KVcoin <br>
-                                                2.000.000 VNĐ  &nbsp; - &nbsp;  2000 KVcoin <br>
-                                                5.000.000 VNĐ  &nbsp; - &nbsp;  5000 KVcoin <br>
+                                                <ul>
+                                                    <li>20.000 VNĐ  &nbsp; - &nbsp;  20 KVcoin</li>
+                                                    <li>50.000 VNĐ  &nbsp; - &nbsp;  50 KVcoin</li>
+                                                    <li>100.000 VNĐ  &nbsp; - &nbsp;  100 KVcoin</li>
+                                                    <li>200.000 VNĐ  &nbsp; - &nbsp;  200 KVcoin</li>
+                                                    <li>500.000 VNĐ  &nbsp; - &nbsp;  500 KVcoin</li>
+                                                    <li>1.000.000 VNĐ  &nbsp; - &nbsp;  1000 KVcoin</li>
+                                                    <li>2.000.000 VNĐ  &nbsp; - &nbsp;  2000 KVcoin</li>
+                                                    <li>5.000.000 VNĐ  &nbsp; - &nbsp;  5000 KVcoin</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
