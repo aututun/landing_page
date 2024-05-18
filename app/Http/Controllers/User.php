@@ -121,4 +121,11 @@ class User extends Controller
         $UserModel = new UserModel();
         return $UserModel->getTotalPage();
     }
+
+    function listUserByName(Request $request){
+        $loginName = $request['LoginName'];
+        $UserModel = new UserModel();
+        $listUser = $UserModel->getListUserByName($loginName);
+        return view('cms/listUserSearch', ['listUser' => $listUser, 'loginName' => $loginName]);
+    }
 }

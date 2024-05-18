@@ -40,6 +40,7 @@ Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
 Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/getListCardLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/giftCodeRep', 'App\Http\Controllers\Money@getGiftCodeRep');
+Route::post('/listUserByName', 'App\Http\Controllers\User@listUserByName');
 
 
 Route::get('/clear-cache-all', function() {Artisan::call('cache:clear');dd("Cache Clear All");});

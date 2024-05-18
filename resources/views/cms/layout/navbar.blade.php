@@ -7,17 +7,22 @@
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
+        @if(session()->get('roleCms') == 1)
         <div class="navbar-nav align-items-center">
             <div class="nav-item d-flex align-items-center">
                 <i class="bx bx-search fs-4 lh-0"></i>
+                <form action="{{asset('/listUserByName')}}" method="post">
+                    @csrf
                 <input
-                    type="text"
+                    type="text" name="LoginName"
                     class="form-control border-0 shadow-none"
                     placeholder="Tìm username"
                     aria-label="Tìm username"
                 />
+                </form>
             </div>
         </div>
+        @endif
         <!-- /Search -->
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">

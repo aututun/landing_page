@@ -129,5 +129,14 @@ class User extends Authenticatable
         }
         return null;
     }
+    public function getListUserByName($userName){
+        $listUsers = User::where('LoginName','like', "%$userName%")->get();
+        $newListUsers = array();
+        foreach ($listUsers as $user) {
+            $user->KTcoin = KTcoin::getKTcoin($user->ID);
+            $newListUsers[$user->ID] = $user;
+        }
+        return $newListUsers;
+    }
 
 }

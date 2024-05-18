@@ -8,6 +8,7 @@
             @include('cms.layout.navbar',['user' => $user])
             @yield('dashboard')
             @yield('listUser')
+            @yield('listUserSearch')
             @yield('account')
             @yield('changePassword')
             @yield('connections')
