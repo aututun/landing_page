@@ -4694,6 +4694,17 @@ textarea.form-control-lg {
   margin: -0.125rem -0.75rem -0.125rem auto;
 }
 
+#qr_img {
+    width: 500px;
+    height: 500px;
+}
+@media screen and (max-width: 768px) {
+    #qr_img {
+        width: 250px;
+        height: 300px;
+    }
+}
+
 .modal-title {
   margin-bottom: 0;
   line-height: 1.53;

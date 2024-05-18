@@ -13,7 +13,7 @@
                         ></button>
                     </div>
                     <div class="modal-body" style="align-items: center;">
-                        <img height="500px" width="100%" src="{{asset('/qr.png')}}" alt="">
+                        <img id="qr_img" src="{{asset('/qr.png')}}" alt="">
 {{--                        <div class="row">--}}
 {{--                            <div class="col mb-3">--}}
 {{--                                <label for="nameBasic" class="form-label">Name</label>--}}
