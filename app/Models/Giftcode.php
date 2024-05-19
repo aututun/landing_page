@@ -81,6 +81,20 @@ class Giftcode extends Model
         }
         $maxActive = '';
         if ($queryFindGiftCodeMaxResult) {
+            $userNameList = explode('|',$queryFindGiftCodeMaxResult[0]->UserName);
+            if ($userNameList) {
+                $userGetCodeModel = UserModel::getUserInformationById($UserId);
+                $code = false;
+                foreach ($userNameList as $userName) {
+                    if ($userGetCodeModel->LoginName == $userName) {
+                        $code = true;
+                        break;
+                    }
+                }
+                if (!$code) {
+                    Return array('Bạn không có quyền nhập code này',-5);
+                }
+            }
             $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
             $isActive = $queryFindGiftCodeMaxResult[0]->Status;
             if ($isActive == 0) {
@@ -142,7 +156,7 @@ class Giftcode extends Model
             $data->Status = $status;
             $data->Msg = $Msg;
             $data->GiftItem = "";
-            $data->UserName = $userModel->LoginName;
+            $data->UserName = $userModel ? $userModel->LoginName : 'Không tồn tại user';
         }
         return $data;
     }

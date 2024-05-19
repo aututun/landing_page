@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class AddColumnDeleteGiftcode extends Migration
@@ -15,6 +16,7 @@ class AddColumnDeleteGiftcode extends Migration
     {
         Schema::table('GiftCodes', function (Blueprint $table) {
             $table->integer('Deleted')->default(0);
+            DB::statement("alter table [GiftCodes] alter column [UserName] nvarchar(500) null");
         });
     }
 
