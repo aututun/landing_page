@@ -10,7 +10,17 @@
                 </li>
             </ul>
             <!-- Basic Bootstrap Table -->
+
             <div class="card">
+                @if(session()->get('statusGiftCode') == 'success')
+                    <div class="alert alert-success alert-dismissible" role="alert">Xóa thành công
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @elseif(session()->get('statusGiftCode') == 'error')
+                    <div class="alert alert-danger alert-dismissible" role="alert">Xóa thất bại
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <h5 class="card-header"></h5>
                 {{--                <h5 class="card-header">Table Basic</h5>--}}
                 <div class="table-responsive text-nowrap">
@@ -48,9 +58,7 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{asset('/editGiftCode')}}/{{$giftCode->ID}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-{{--                                        <a class="dropdown-item" href="javascript:void(0);"--}}
-{{--                                        ><i class="bx bx-trash me-1"></i> Delete</a--}}
-{{--                                        >--}}
+                                        <a class="dropdown-item" href="{{asset('/deleteGiftCode')}}/{{$giftCode->ID}}"><i class="bx bx-trash me-1"></i> Delete</a>
                                     </div>
                                 </div>
                             </td>

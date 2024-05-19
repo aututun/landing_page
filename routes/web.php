@@ -23,6 +23,7 @@ Route::get('/account', 'App\Http\Controllers\User@getDetailsUser');
 Route::get('/changePassword', function () {return view('cms/changePassword');});
 Route::get('/listGiftCode', 'App\Http\Controllers\Dashboard@listGiftCode');
 Route::get('/editGiftCode/{id}', 'App\Http\Controllers\Money@editGiftCode');
+Route::get('/deleteGiftCode/{id}', 'App\Http\Controllers\Money@deleteGiftCode');
 Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
 Route::get('/login',  'App\Http\Controllers\Dashboard@checkLogin');
 Route::get('/listUser/{page}',  'App\Http\Controllers\User@getListUser');

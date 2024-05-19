@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                     <div class="row">
-                        <div class="col-6 mb-4">
+                        <div class="col-12 mb-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-12 mb-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">

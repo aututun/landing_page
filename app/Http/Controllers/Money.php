@@ -105,6 +105,18 @@ class Money extends Controller
         }
         return view('cms/editGiftCode')->with('id', $id);
     }
+
+    function deleteGiftCode($id){
+        $giftCodeObj = new GiftCode();
+        $status = 'error';
+        if ($id != 0) {
+            $giftCodeModel = $giftCodeObj->updateGiftCode($id);
+            if ($giftCodeModel) $status = 'success';
+        }
+        session()->flash('statusGiftCode', $status);
+        return redirect('/listGiftCode');
+    }
+
     function getListBankLog(Request $request){
         list($id,$serverId) = $this->extractIdAndServerIdFromUrl($request->getRequestUri());
         return MoneyLogModel::getListBankLog($id,$serverId);

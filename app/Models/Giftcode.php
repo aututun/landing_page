@@ -49,11 +49,17 @@ class Giftcode extends Model
     }
 
     function getListGiftCode(){
-        return Giftcode::all();
+        return Giftcode::all()->where('Deleted', 0);
     }
 
     function getGiftCodeById($id){
         return Giftcode::where('ID', $id)->first();
+    }
+
+    function updateGiftCode($id){
+        return static::query()->where('ID', $id)->update([
+            'Deleted' => 1,
+        ]);
     }
 
     static function insertGiftCodeRep($CodeActive,$RoleID,$ServerID,$UserId){

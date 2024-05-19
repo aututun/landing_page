@@ -75,9 +75,8 @@
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Username</label>
-                                    <input
-                                        type="text" class="form-control-plaintext" name="UserName" value="@if($id != 0){{$giftCode->UserName}}@endif"/>
+                                    <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Người chơi nhận code</label>
+                                    <textarea class="form-control" name="UserName" id="exampleFormControlTextarea1" rows="3">@if($id != 0){{$giftCode->UserName}}@endif</textarea>
                                 </div>
                                 <br>
                                 @if($id != 0)
