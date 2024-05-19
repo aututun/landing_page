@@ -27,6 +27,7 @@
                     <table class="table display" style="text-align: center;">
                         <thead>
                         <tr>
+                            <th>Action</th>
                             <th>Server</th>
                             <th>Code</th>
                             <th>Status</th>
@@ -34,23 +35,11 @@
                             <th>Time Created</th>
                             <th>Max Active</th>
                             <th>User Name</th>
-                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
                         @foreach($listGiftCode as $giftCode)
                         <tr>
-                            <td>{{$giftCode->ServerID}}</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$giftCode->Code}}</strong></td>
-                            @if($giftCode->Status == 1)
-                                <td><span class="badge bg-label-success me-1">Active</span></td>
-                            @else
-                                <td><span class="badge bg-label-danger me-1">InActive</span></td>
-                            @endif
-                            <td>{{$giftCode->ItemList}}</td>
-                            <td>{{$giftCode->TimeCreate}}</td>
-                            <td>{{$giftCode->MaxActive}}</td>
-                            <td>{{$giftCode->UserName}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -62,6 +51,17 @@
                                     </div>
                                 </div>
                             </td>
+                            <td>{{$giftCode->ServerID}}</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$giftCode->Code}}</strong></td>
+                            @if($giftCode->Status == 1)
+                                <td><span class="badge bg-label-success me-1">Active</span></td>
+                            @else
+                                <td><span class="badge bg-label-danger me-1">InActive</span></td>
+                            @endif
+                            <td>{{$giftCode->ItemList}}</td>
+                            <td>{{$giftCode->TimeCreate}}</td>
+                            <td>{{$giftCode->MaxActive}}</td>
+                            <td>{{$giftCode->UserName}}</td>
                         </tr>
                         @endforeach
                         </tbody>
