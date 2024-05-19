@@ -84,16 +84,7 @@ class Giftcode extends Model
             $userNameList = explode('|',$queryFindGiftCodeMaxResult[0]->UserName);
             if ($userNameList) {
                 $userGetCodeModel = UserModel::getUserInformationById($UserId);
-                $code = false;
-                foreach ($userNameList as $userName) {
-                    if ($userGetCodeModel->LoginName == $userName) {
-                        $code = true;
-                        break;
-                    }
-                }
-                if (!$code) {
-                    Return array('Bạn không có quyền nhập code này',-5);
-                }
+                foreach ($userNameList as $userName) {}
             }
             $maxActive = $queryFindGiftCodeMaxResult[0]->MaxActive;
             $isActive = $queryFindGiftCodeMaxResult[0]->Status;
