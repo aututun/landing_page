@@ -59,12 +59,12 @@
                                         <option @if($id != 0) @if($giftCode->Status == 1) selected @endif @endif value="1">Active</option>
                                     </select>
                                 </div>
-                                {{--                            <div class="mb-3 row">--}}
-                                {{--                                <label for="html5-datetime-local-input" class="col-md-2 col-form-label">Datetime</label>--}}
-                                {{--                                <div class="col-md-10">--}}
-                                {{--                                    <input class="form-control" type="datetime-local" value="2021-06-18T12:30:00" id="html5-datetime-local-input">--}}
-                                {{--                                </div>--}}
-                                {{--                            </div>--}}
+                                <div class="mb-3 row">
+                                    <label for="html5-datetime-local-input" class="col-md-2 col-form-label">Datetime</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="datetime-local" value="2021-06-18T12:30:00" id="html5-datetime-local-input">
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Max Active</label>
                                     <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="@if($id != 0){{$giftCode->MaxActive}}@endif"/>

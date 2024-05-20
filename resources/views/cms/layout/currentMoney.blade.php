@@ -1,4 +1,4 @@
-<div class="col-6 mb-4">
+<div class="col-12 mb-4">
     <div class="card">
         <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
@@ -13,15 +13,20 @@
 {{--                </div>--}}
             </div>
             <span class="d-block mb-1"><h4>KV coin : {{number_format($kvcoin)}}</h4></span>
-            <button data-bs-toggle="modal" data-bs-target="#modalKvcoin" type="button" class="btn btn-outline-secondary account-image-reset">
+            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinQR" type="button" class="btn btn-outline-secondary account-image-reset">
                 <i class="bx bx-reset d-block d-sm-none"></i>
-                <span class="d-none d-sm-block">Nạp KV coin</span>
+                <span class="d-none d-sm-block">Thanh toán qua QR</span>
             </button>
+            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas" type="button" class="btn btn-outline-secondary account-image-reset">
+                <i class="bx bx-reset d-block d-sm-none"></i>
+                <span class="d-none d-sm-block">Thanh toán qua Napas</span>
+            </button>
+            <hr>
             <small class="text-danger fw-semibold">100.000 VNĐ = 100 KVcoin</small>
         </div>
     </div>
 </div>
-<div class="col-6 mb-4">
+<div class="col-12 mb-4">
     <div class="card">
         <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
@@ -40,6 +45,7 @@
                 <i class="bx bx-reset d-block d-sm-none"></i>
                 <span class="d-none d-sm-block">&nbsp;&nbsp;&nbsp; Nạp đồng &nbsp;&nbsp;&nbsp;</span>
             </button>
+            <hr>
             <small class="text-danger fw-semibold"> 100 KVcoin = 1,8 vạn Đồng </small>
 {{--                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>--}}
         </div>

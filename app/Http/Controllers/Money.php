@@ -174,4 +174,25 @@ class Money extends Controller
 
         return [$ServerID,$UserID];
     }
+
+    function createUrl(Request $request){
+        $KVCoin = $request['KVcoin'];
+        $LoginName = $request['LoginName'];
+        $buyerEmail = $request['Email'] ?: '';
+        $buyerPhone = $request['Phone'] ?: '';
+        $webhookData = array(
+            "orderCode" => "00",
+            "amount" => $KVCoin,
+            "buyerName" => $LoginName,
+            "buyerEmail" => $buyerEmail,
+            "buyerPhone" => $buyerPhone,
+            "items" => array(
+                "name"       => 'KVCoin',
+                "quantity"   => 1,
+                "price"      => $KVCoin,
+            ),
+            "signature" => "412e915d2871504ed31be63c8f62a149a4410d34c4c42affc9006ef9917eaa03"
+        );
+        KTcoinModel::isValidData($webhookData['data'], $webhookData['signature'], $checksum_key);
+    }
 }

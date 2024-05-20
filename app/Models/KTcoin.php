@@ -83,4 +83,30 @@ class KTcoin extends Model
         }
         return 0;
     }
+
+    function isValidData($transaction, $transaction_signature, $checksum_key)
+    {
+        ksort($transaction);
+        $transaction_str_arr = [];
+        foreach ($transaction as $key => $value) {
+            if (in_array($value, ["undefined", "null"]) || gettype($value) == "NULL") {
+                $value = "";
+            }
+
+            if (is_array($value)) {
+                $valueSortedElementObj = array_map(function ($ele) {
+                    ksort($ele);
+                    return $ele;
+                }, $value);
+                $value = json_encode($valueSortedElementObj, JSON_UNESCAPED_UNICODE);
+            }
+            $transaction_str_arr[] = $key . "=" . $value;
+        }
+        $transaction_str = implode("&", $transaction_str_arr);
+        dump($transaction_str);
+        $signature = hash_hmac("sha256", $transaction_str, $checksum_key);
+        dump($signature);
+        return $signature == $transaction_signature;
+    }
+
 }
