@@ -38,9 +38,12 @@ Route::post('/truKTcoin', 'App\Http\Controllers\Money@truKTcoin');
 
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');
 Route::post('/napDong', 'App\Http\Controllers\Money@postNapDong');
+Route::post('/createUrl', 'App\Http\Controllers\Money@createUrl');
 Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/getListCardLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/giftCodeRep', 'App\Http\Controllers\Money@getGiftCodeRep');
+Route::get('/cancelBuyUrl', 'App\Http\Controllers\Money@cancelBuy');
+
 Route::post('/listUserByName', 'App\Http\Controllers\User@listUserByName');
 
 

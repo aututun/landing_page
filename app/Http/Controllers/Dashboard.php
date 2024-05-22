@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
-use App\Models\User as UserModel;
+use App\Models\Money as MoneyModel;
 
+use App\Models\User as UserModel;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
@@ -23,7 +24,11 @@ class Dashboard extends Controller
     }
 
     static function getListMoneyHistory(){
-
+        $userModel = new UserModel();
+        $user = $userModel->getCurrentUser();
+        $moneyModel = new MoneyModel;
+        $listMoneyHistory = $moneyModel->getListMoneyHistory($user->ID);
+        return $listMoneyHistory;
     }
 
 

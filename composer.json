@@ -11,7 +11,8 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "ext-sqlsrv": "*"
+        "ext-sqlsrv": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

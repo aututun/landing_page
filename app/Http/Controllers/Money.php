@@ -176,23 +176,33 @@ class Money extends Controller
     }
 
     function createUrl(Request $request){
+        $url = 'http://58.187.155.207:3000/create';
         $KVCoin = $request['KVcoin'];
         $LoginName = $request['LoginName'];
-        $buyerEmail = $request['Email'] ?: '';
-        $buyerPhone = $request['Phone'] ?: '';
-        $webhookData = array(
-            "orderCode" => "00",
-            "amount" => $KVCoin,
-            "buyerName" => $LoginName,
-            "buyerEmail" => $buyerEmail,
-            "buyerPhone" => $buyerPhone,
-            "items" => array(
-                "name"       => 'KVCoin',
-                "quantity"   => 1,
+        $data = array(
+                "createUser"   => $LoginName,
                 "price"      => $KVCoin,
-            ),
-            "signature" => "412e915d2871504ed31be63c8f62a149a4410d34c4c42affc9006ef9917eaa03"
+                "itemName"       => 'KVCoin',
         );
-        KTcoinModel::isValidData($webhookData['data'], $webhookData['signature'], $checksum_key);
+        $json_data = json_encode($data);
+        $ch = curl_init($url);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($json_data)
+        ));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+        $response = curl_exec($ch);
+        if(curl_errno($ch)){
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        echo $response;
+    }
+
+    public function cancelBuy(Request $request){
+        echo $request;
     }
 }

@@ -30,12 +30,15 @@
                                             </div>
                                             <div class="mt-sm-auto">
                                                 <ul>
+                                                    <li><h4> Khuyến mãi giftcode + 100% đồng khóa khi nạp kvcoin lần đầu </h4></li>
                                                     <li><h6> Chuyển khoản theo mốc nạp 20k, 50k, 100k, 200k, 500k,..... </h6></li>
                                                     <li><h6> Chọn nạp kvcoin chuyển tiền theo mốc kèm lời nhắn : "KV tentaikhoan" </h6></li>
                                                     <li><h6> Nếu 5p chưa được cộng kvcoin thì liên hệ ad gửi ảnh chuyển khoản + tên tk </h6></li>
                                                     <li><h6> Đổi KVcoin sang đồng theo các mệnh giá để có đồng trong game </h6></li>
                                                 </ul>
                                             </div>
+                                            <small style="font-style: italic" class="text-danger fw-semibold"> Nên chuyển 500 kvcoin sang đồng mỗi ngày để nhận mốc nạp ngày hiệu quả - liên hệ <a href="https://zalo.me/g/qdfoeh733">zalo</a> ad sau khi nạp để lấy code. </small> <br>
+                                            <small style="font-style: italic" class="text-danger fw-semibold"> Quy đổi đồng nhận 70 xu mốc nạp ngày. </small>
                                         </div>
                                     </div>
                                 </div>
@@ -134,251 +137,42 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-{{--                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4"><h3>Lịch sử nạp</h3>--}}
-{{--                    <table class="table display" style="text-align: center;">--}}
-{{--                        <thead>--}}
-{{--                        <tr>--}}
-{{--                            <th>Server</th>--}}
-{{--                            <th>Code</th>--}}
-{{--                            <th>Status</th>--}}
-{{--                            <th>Item List</th>--}}
-{{--                            <th>Time Created</th>--}}
-{{--                            <th>Max Active</th>--}}
-{{--                            <th>User Name</th>--}}
-{{--                            <th>Action</th>--}}
-{{--                        </tr>--}}
-{{--                        </thead>--}}
-{{--                        <tbody class="table-border-bottom-0">--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_ABC</strong></td>--}}
-{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:18:29.000</td>--}}
-{{--                            <td>12</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/6"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
 
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>153</strong></td>--}}
-{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:16:14.000</td>--}}
-{{--                            <td>34</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/7"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>`235`</strong></td>--}}
-{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:16:14.000</td>--}}
-{{--                            <td>43</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/8"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>2346</strong></td>--}}
-{{--                            <td><span class="badge bg-label-danger me-1">InActive</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:16:14.000</td>--}}
-{{--                            <td>6</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/9"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>1</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123_123</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:44:54.000</td>--}}
-{{--                            <td>12</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/10"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td>1074|1|0#506|1|0</td>--}}
-{{--                            <td>2024-05-16 17:46:15.000</td>--}}
-{{--                            <td>1000</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/11"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>1</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>ASD</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>2024-05-16 17:48:07.000</td>--}}
-{{--                            <td>22</td>--}}
-{{--                            <td>admin</td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/12"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>1</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123456</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td>1074|1|0#506|1|0</td>--}}
-{{--                            <td>2024-05-16 17:50:44.000</td>--}}
-{{--                            <td>24</td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/13"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>4</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1234567</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td>1074|1|0#506|1|0</td>--}}
-{{--                            <td>2024-05-16 19:24:14.000</td>--}}
-{{--                            <td>123</td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/14"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>2</td>--}}
-{{--                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>123123</strong></td>--}}
-{{--                            <td><span class="badge bg-label-success me-1">Active</span></td>--}}
-{{--                            <td>1074|1|0#506|1|0</td>--}}
-{{--                            <td>2024-05-16 19:30:02.000</td>--}}
-{{--                            <td>10</td>--}}
-{{--                            <td></td>--}}
-{{--                            <td>--}}
-{{--                                <div class="dropdown">--}}
-{{--                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"--}}
-{{--                                            data-bs-toggle="dropdown">--}}
-{{--                                        <i class="bx bx-dots-vertical-rounded"></i>--}}
-{{--                                    </button>--}}
-{{--                                    <div class="dropdown-menu">--}}
-{{--                                        <a class="dropdown-item" href="https://kiemvo.com/editGiftCode/15"><i--}}
-{{--                                                class="bx bx-edit-alt me-1"></i> Edit</a>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-            </div>
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4"><h3>Lịch sử nạp</h3>
+                    <div class="card">
+                        <div class="table-responsive text-nowrap">
+                            <table class="table display" style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th>Server</th>
+                                    <th>Số tiền nạp</th>
+                                    <th>Số tiền trước nạp</th>
+                                    <th>Số tiền sau nạp</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày thực hiện giao dịch</th>
+                                </tr>
+                                </thead>
+                                @php($listMoneyHistory = App\Http\Controllers\Dashboard::getListMoneyHistory())
+                                <tbody class="table-border-bottom-0">
+                                @foreach($listMoneyHistory as $moneyHistory)
+                                <tr>
+                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$moneyHistory->ServerName}}</strong></td>
+                                    <td>{{$moneyHistory->KTCoin}}</td>
+                                    <td>{{$moneyHistory->KTCoinBefore}}</td>
+                                    <td>{{$moneyHistory->KTCoinAfter}}</td>
+                                    @if($moneyHistory->IsDone == 1)
+                                        <td><span class="badge bg-label-success me-1">Thành công</span></td>
+                                    @else
+                                        <td><span class="badge bg-label-danger me-1">Thất bại</span></td>
+                                    @endif
+                                    <td>{{$moneyHistory->AddedDate}}</td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             <div class="row">
                 <!-- Order Statistics -->
                 {{--            <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">--}}

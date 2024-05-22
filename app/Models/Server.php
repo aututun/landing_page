@@ -18,4 +18,9 @@ class Server extends Model
     public function getListServer(){
         return Server::all();
     }
+
+    static public function getServerById($id){
+        $server = Server::where('nServerID', $id)->first();
+        return $server;
+    }
 }
