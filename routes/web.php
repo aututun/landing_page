@@ -43,6 +43,9 @@ Route::get('/getListBankLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/getListCardLog', 'App\Http\Controllers\Money@getListBankLog');
 Route::get('/giftCodeRep', 'App\Http\Controllers\Money@getGiftCodeRep');
 Route::get('/cancelBuyUrl', 'App\Http\Controllers\Money@cancelBuy');
+Route::get('/listServer', function () {return view('cms/listServer')->with('serverDetails',false);});
+Route::get('/serverDetails/{serverID}', 'App\Http\Controllers\Dashboard@getServerDetails');
+Route::get('/listFile/{location}', 'App\Http\Controllers\Dashboard@getFile');
 
 Route::post('/listUserByName', 'App\Http\Controllers\User@listUserByName');
 

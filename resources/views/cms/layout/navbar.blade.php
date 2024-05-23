@@ -31,7 +31,13 @@
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
 {{--                    <div class="avatar avatar-online">--}}
 {{--                        <img src="{{asset('cms/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />--}}
+                    @if($user)
                         <span class="fw-semibold d-block">{{$user->LoginName}}</span>
+                    @elseif(!session()->get('user_id'))
+                        <script>window.location = "/login";</script>
+                    @else
+                        <script>window.location = "/login";</script>
+                    @endif
 {{--                    </div>--}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">

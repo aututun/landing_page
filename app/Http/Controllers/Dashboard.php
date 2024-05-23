@@ -10,9 +10,15 @@ use Illuminate\Http\Request;
 
 class Dashboard extends Controller
 {
-    public function checkLogin(Request $request){
+    function __construct(){
+        if (!session()->has('user_id')) {
+            redirect('/login');
+        }
+    }
+
+    public function checkLogin(){
         if (session()->has('user_id')) {
-            return view('cms/dashboard',);
+            return view('cms/dashboard');
         }
         return view('main/login');
     }
@@ -31,7 +37,24 @@ class Dashboard extends Controller
         return $listMoneyHistory;
     }
 
+    function getServerDetails($serverID){
+        $serverModel = new ServerModel;
+        $serverDetails = $serverModel->getServerById($serverID);
+        $listServer = self::getListServer();
+        return view("cms/listServer")->with('listServer',$listServer)->with('serverDetails',$serverDetails);
+    }
 
+    public function getFile($location = 'long_kiem'){
+        $path = public_path($location);
+        $files = scandir($path);
+        $filePath = array();
+        foreach ($files as $index => $file) {
+            if ($file != "." && $file != "..") {
+                $filePath[] = $path."/".$file;
+            }
+        }
+        return view('cms/listSql')->with('listFilePath',$filePath);
+    }
 
     static function listGiftCode(){
         $giftCodeModel = new GiftcodeModel();

@@ -20,7 +20,7 @@ class Money extends Model
     public $timestamps = false;
 
     function getListMoneyHistory($userId){
-        $listMoneyHistory = Money::all()->where('UserID', $userId);
+        $listMoneyHistory = Money::all()->where('UserID', $userId)->where('KTCoin','>' ,0);
         $newListMoneyHistory = array();
         foreach ($listMoneyHistory as $historyLog) {
             $serverModel = ServerModel::getServerById($historyLog->ServerID);

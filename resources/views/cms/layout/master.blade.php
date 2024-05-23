@@ -8,7 +8,9 @@
             @include('cms.layout.navbar',['user' => $user])
             @yield('dashboard')
             @yield('listUser')
+            @yield('listServer')
             @yield('listUserSearch')
+            @yield('listSql')
             @yield('account')
             @yield('changePassword')
             @yield('connections')
@@ -20,7 +22,7 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <div class="buy-now">
-        <a class="btn btn-danger btn-buy-now" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalKvcoin">Nạp tiền</a>
+        <a class="btn btn-danger btn-buy-now" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalKvcoinQR">Nạp tiền</a>
     </div>
 </div>
 </body>
