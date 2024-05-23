@@ -31,32 +31,32 @@
             <div class="flex-c-m">
             </div>
             <br>
-            <div style="text-align: center">Or Login Using</div>
-            <div class="flex-c-m">
-                <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>
-                <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>
-                <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>
-            </div>
+{{--            <div style="text-align: center">Or Login Using</div>--}}
+{{--            <div class="flex-c-m">--}}
+{{--                <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>--}}
+{{--                <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>--}}
+{{--                <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>--}}
+{{--            </div>--}}
         </form>
     </div>
-    <div class="signup">
-        <form action="{{asset('/signUpPost')}}" method="post">
-            {{ csrf_field() }}
-            @csrf
-            <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="hidden" name="action" value="signup">
-            <input type="text" name="LoginName" placeholder="User name" required="">
-            <input type="email" name="Email" placeholder="Email" required="">
-            <input type="password" name="Password" placeholder="Password" required="">
-            <button>Sign up</button>
-            <br>
-            <div style="text-align: center">Or Sign Up Using</div>
-        </form>
-        <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>
-        <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>
-        <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>
+{{--    <div class="signup">--}}
+{{--        <form action="{{asset('/signUpPost')}}" method="post">--}}
+{{--            {{ csrf_field() }}--}}
+{{--            @csrf--}}
+{{--            <label for="chk" aria-hidden="true">Sign up</label>--}}
+{{--            <input type="hidden" name="action" value="signup">--}}
+{{--            <input type="text" name="LoginName" placeholder="User name" required="">--}}
+{{--            <input type="email" name="Email" placeholder="Email" required="">--}}
+{{--            <input type="password" name="Password" placeholder="Password" required="">--}}
+{{--            <button>Sign up</button>--}}
+{{--            <br>--}}
+{{--            <div style="text-align: center">Or Sign Up Using</div>--}}
+{{--        </form>--}}
+{{--        <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>--}}
+{{--        <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>--}}
+{{--        <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>--}}
 
-    </div>
+{{--    </div>--}}
 </div>
 </body>
 </html>
