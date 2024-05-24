@@ -17,10 +17,10 @@
                 <i class="bx bx-reset d-block d-sm-none"></i>
                 <span class="d-none d-sm-block">Thanh toán qua QR</span>
             </button>
-{{--            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas" type="button" class="btn btn-outline-secondary account-image-reset">--}}
-{{--                <i class="bx bx-reset d-block d-sm-none"></i>--}}
-{{--                <span class="d-none d-sm-block">Thanh toán qua Napas</span>--}}
-{{--            </button>--}}
+            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas" type="button" class="btn btn-outline-secondary account-image-reset">
+                <i class="bx bx-reset d-block d-sm-none"></i>
+                <span class="d-none d-sm-block">Thanh toán qua Napas</span>
+            </button>
             <hr>
             <small class="text-danger fw-semibold">100.000 VNĐ = 100 KVcoin</small>
         </div>

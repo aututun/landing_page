@@ -52,31 +52,14 @@
                         <h5 class="modal-title" id="exampleModalLabel1">Nạp KV coin trực tuyến qua Napas</h5>
                         <button
                             type="button"
-                            class="btn-close"
+                            class="btn-close remove_qr"
                             data-bs-dismiss="modal"
                             aria-label="Close"
                         ></button>
                     </div>
-                    <form action="{{asset('/createUrl')}}" method="post">
+                    <form id="kvcoinForm">
                         @csrf
                         <div class="modal-body" style="align-items: center;">
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <label for="nameBasic" class="form-label">Tên đăng nhập (<small style="color: red"> yêu cầu </small>) </label>
-                                    <input required type="text" id="LoginName" name="LoginName" class="form-control" placeholder="Tên đăng nhập game của bạn" />
-                                </div>
-                            </div>
-{{--                            <div class="row g-2">--}}
-{{--                                <div class="col mb-0">--}}
-{{--                                    <label for="emailBasic" class="form-label">Email (<small> tùy chọn </small>)</label>--}}
-{{--                                    <input type="email" id="Email" class="form-control" placeholder="ten@email.com" />--}}
-{{--                                </div>--}}
-{{--                                <div class="col mb-0">--}}
-{{--                                    <label for="dobBasic" class="form-label">Điện thoại (<small> tùy chọn </small>)</label>--}}
-{{--                                    <input type="tel" id="Phone" class="form-control" placeholder="VD: 0981234567" pattern="^(0?)(3[2-9]|5[689]|7[06789]|8[1-689]|9[0-46-9])[0-9]{7}$"/>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                            <br>
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="KVcoin" class="form-label">Số Coin nạp</label>
@@ -92,24 +75,36 @@
                                     </select>
                                 </div>
                             </div>
-{{--                            <div class="row">--}}
-{{--                                <div class="col mb-3">--}}
-{{--                                    <label for="Desc" class="form-label">Lời nhắn (<small> tùy chọn </small>) </label>--}}
-{{--                                    <input type="text" id="Desc" name="Desc" class="form-control" placeholder="Lời nhắn của bạn" />--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col mb-3">--}}
-{{--                                    <label for="Address" class="form-label">Địa chỉ (<small> tùy chọn </small>) </label>--}}
-{{--                                    <input type="text" id="Address" name="Address" class="form-control" placeholder="Lời nhắn của bạn" />--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            <div class="row qr_code" style="height: 550px; display: none"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <button type="submit" class="btn btn-primary">Nạp KV coin</button>
+                            <button type="button" class="btn btn-outline-secondary remove_qr" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" id="submitForm" class="btn btn-primary">Nạp KV coin</button>
                         </div>
                     </form>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $('#submitForm').click(function(e){
+                                e.preventDefault();
+                                $.ajax({
+                                    url: "{{ asset('/createUrl') }}", // Assuming 'create' is the route name
+                                    type: 'POST',
+                                    data: $('#kvcoinForm').serialize(),
+                                    success: function(response) {
+                                        // Handle success response
+                                        $('.qr_code').html('<iframe src="' + response + '" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>').show();
+                                    },
+                                    error: function(xhr, status, error) {
+                                        console.error(xhr.responseText);
+                                    }
+                                });
+                            });
+                        });
+                        $('.remove_qr').on('click', function () {
+                            $('.qr_code').empty().hide();
+                        });
+                    </script>
                 </div>
             </div>
         </div>

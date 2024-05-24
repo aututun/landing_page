@@ -6,6 +6,7 @@ use App\Models\Giftcode;
 use Illuminate\Http\Request;
 use App\Models\KTcoin as KTcoinModel;
 use App\Models\Dong as DongModel;
+use App\Models\User as UserModel;
 use App\Models\MoneyLog as MoneyLogModel;
 use App\Models\Giftcode as GiftcodeModel;
 
@@ -176,30 +177,31 @@ class Money extends Controller
     }
 
     function createUrl(Request $request){
-        $url = 'http://58.187.155.207:3000/create';
+        $url = 'http://58.186.176.132:3000/create';
         $KVCoin = $request['KVcoin'];
-        $LoginName = $request['LoginName'];
+        $userName = UserModel::getCurrentUser();
+        $userId = $userName->ID;
+        $LoginName = $userName->LoginName;
         $data = array(
-                "createUser"   => $LoginName,
-                "price"      => $KVCoin,
-                "itemName"       => 'KVCoin',
+            'userId' => $userId,
+            'createUser' => $LoginName,
+            'price' => $KVCoin,
+            'itemName' => 'KVCoin'
         );
-        $json_data = json_encode($data);
         $ch = curl_init($url);
 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($json_data)
-        ));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+        curl_setopt($ch, CURLOPT_POST, 1); // Set method to POST
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return the response as a string
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); // Set the content type to JSON
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); // Attach the JSON-encoded data
         $response = curl_exec($ch);
-        if(curl_errno($ch)){
+//        $response = 'https://pay.payos.vn/web/26fae30b96934f04918c12a74de7744c/';
+        if (curl_errno($ch)) {
             echo 'Error:' . curl_error($ch);
+        } else {
+            return $response;
         }
         curl_close($ch);
-        echo $response;
     }
 
     public function cancelBuy(Request $request){
