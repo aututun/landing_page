@@ -62,7 +62,7 @@
                         <span class="w3l-text">Đăng nhập</span>
                     </a>
                 @endif
-                <a href="{{asset('apk/KiemVo1.apk')}}">
+                <a href="{{asset('KiemVo1.apk')}}">
                   <span class="w3l-icon -download">
                       <span class="fa fa-download"></span>
                   </span>
