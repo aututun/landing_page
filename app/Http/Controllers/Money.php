@@ -177,7 +177,7 @@ class Money extends Controller
     }
 
     function createUrl(Request $request){
-        $url = 'http://58.186.176.132:3000/create';
+        $url = 'http://103.200.20.220:8080//create';
         $KVCoin = $request['KVcoin'];
         $userName = UserModel::getCurrentUser();
         $userId = $userName->ID;
