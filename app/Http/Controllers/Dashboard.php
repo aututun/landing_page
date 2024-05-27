@@ -74,6 +74,19 @@ class Dashboard extends Controller
             $newsObj = $newsModel->getNewsById($id);
             return view('cms/editNews')->with('id', $id)->with('news', $newsObj);
         }
-        return view('cms/editGiftCode')->with('id', $id);
+        return view('cms/editNews')->with('id', $id);
+    }
+
+    function getUpdateNewsDetails(Request $request){
+        $id = $request['ID'];
+        $data = array(
+            'ID' => $id,
+            'Category' => $request['Category'],
+            'Title' => $request['Title'],
+            'Context' => $request['Context'],
+            'LinkPicture' => $request['LinkPicture'],
+        );
+        $newsModel = new NewsModel();
+        $newsObj = $newsModel->getUpdateNews($data);
     }
 }

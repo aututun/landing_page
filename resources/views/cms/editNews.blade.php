@@ -1,5 +1,5 @@
 @extends('cms.layout.master')
-@section('giftcode')
+@section('editNews')
     <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
@@ -18,73 +18,45 @@
                         @endif
                         {{session()->forget('success')}}
                         @if($id != 0)
-                            <h5 class="card-header">Sửa Giftcode</h5>
+                            <h5 class="card-header">Sửa bài viết</h5>
                         @else
-                            <h5 class="card-header">Tạo Giftcode</h5>
+                            <h5 class="card-header">Tạo bài viết</h5>
                         @endif
                         <div class="card-body">
-                            <form action="{{asset('/postGiftCode')}}" method="post">
+                            <form action="{{asset('/postNews')}}" method="post">
                                 {{ csrf_field() }}
                                 @csrf
                                 @if($id != 0)
-                                    <input type="hidden" name="ID" value="{{$giftCode->ID}}">
+                                    <input type="hidden" name="ID" value="{{$news->ID}}">
                                 @else
                                     <input type="hidden" name="ID" value="0">
                                 @endif
                                 <div class="mb-3">
-                                    <label for="exampleFormControlSelect1" class="form-label">Danh sách Server</label>
-                                    <select required name="ServerID" class="form-select" id="exampleFormControlSelect1">
-                                        @php($serverList = App\Http\Controllers\Dashboard::getListServer())
-                                        @if($id == 0)
-                                            @php($serverIdGC = 0)
-                                        @else
-                                            @php($serverIdGC = $giftCode->ServerID)
-                                        @endif
-
-                                        @foreach($serverList as $server)
-                                            @if($server->isTestServer == 3)
-                                                <option @if($server->nServerID == $serverIdGC) selected @endif value="{{$server->nServerID}}">{{$server->strServerName}}</option>
-                                            @endif
-                                        @endforeach
-                                    </select>
+                                    <label for="Category" class="form-label">Thể loại bài viết</label>
+                                    <input type="text" class="form-control" name="Category" id="Category" value="@if($id != 0){{$news->Category}}@endif"/>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Code</label>
-                                    <input type="text" class="form-control" name="Code" id="exampleFormControlInput1" value="@if($id != 0){{$giftCode->Code}}@endif"/>
+                                    <label for="Title" class="form-label">Tiêu đề bài viết</label>
+                                    <input type="text" class="form-control" name="Title" id="Title" value="@if($id != 0){{$news->Title}}@endif"/>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlSelect1" class="form-label">Status</label>
-                                    <select required name="Status" class="form-select" id="exampleFormControlSelect1">
-                                        <option @if($id != 0) @if($giftCode->Status == 0) selected @endif @endif value="0">In Active</option>
-                                        <option @if($id != 0) @if($giftCode->Status == 1) selected @endif @endif value="1">Active</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 row">
-                                    <label for="html5-datetime-local-input" class="col-md-2 col-form-label">Datetime</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="datetime-local" value="2021-06-18T12:30:00" id="html5-datetime-local-input">
-                                    </div>
+                                    <label for="Context" class="form-label">Nội dung bài viết</label>
+                                    <textarea class="form-control" name="Context" id="Context" rows="10" cols="80">@if($id != 0){{$news->Context}}@endif</textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Max Active</label>
-                                    <input type="number" class="form-control" name="MaxActive" id="exampleFormControlInput1" value="@if($id != 0){{$giftCode->MaxActive}}@endif"/>
+                                    <label for="LinkPicture" class="form-label">Ảnh</label>
+                                    <input class="form-control" type="file" id="LinkPicture" name="LinkPicture" value="@if($id != 0){{$news->LinkPicture}}@endif"/>
                                 </div>
-                                <div>
-                                    <label for="exampleFormControlTextarea1" class="form-label">Danh sách vật phẩm</label>
-                                    <textarea class="form-control" name="ItemList" id="exampleFormControlTextarea1" rows="3">@if($id != 0){{$giftCode->ItemList}}@endif</textarea>
-                                </div>
-                                <br>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Người chơi nhận code</label>
-                                    <textarea class="form-control" name="UserName" id="exampleFormControlTextarea1" rows="3">@if($id != 0){{$giftCode->UserName}}@endif</textarea>
-                                </div>
-                                <br>
                                 @if($id != 0)
-                                    <button type="submit" class="btn btn-primary">Sửa Giftcode</button>
+                                    <button type="submit" class="btn btn-primary">Sửa bài viết</button>
                                 @else
-                                    <button type="submit" class="btn btn-primary">Tạo Giftcode</button>
+                                    <button type="submit" class="btn btn-primary">Tạo bài viết</button>
                                 @endif
                             </form>
+                            <script type="text/javascript" src="{{asset('cms/ckeditor/ckeditor.js')}}"></script>
+                            <script>
+                                CKEDITOR.replace('Context');
+                            </script>
                         </div>
                     </div>
                 </div>
