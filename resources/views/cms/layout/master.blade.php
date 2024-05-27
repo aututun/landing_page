@@ -11,6 +11,7 @@
             @yield('listServer')
             @yield('listUserSearch')
             @yield('listSql')
+            @yield('news')
             @yield('account')
             @yield('changePassword')
             @yield('connections')

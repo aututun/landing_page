@@ -145,9 +145,15 @@
                 <div data-i18n="Tables">Gift code</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{asset('/listNews')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Tables">Tin tức</div>
+            </a>
+        </li>
             <li class="menu-item">
             <a href="{{asset('/listServer')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-file"></i>
+                <i class="menu-icon tf-icons bx bx-copy"></i>
                 <div data-i18n="Tables">Backup server</div>
             </a>
         </li>

@@ -34,6 +34,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="card mb-4">
+                        <h5 class="card-header">Danh sách file backup</h5>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">ID</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">str_ServerName</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endif
         </div>
     </div>

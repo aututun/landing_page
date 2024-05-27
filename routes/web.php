@@ -17,6 +17,7 @@ Route::get('/', function () {return view('main/index');});
 Route::get('/heroes', 'App\Http\Controllers\Heroes@getListHeroes');
 Route::get('/heroDetails/{id}', 'App\Http\Controllers\Heroes@getDetailHero');
 Route::get('/gallery', function () {return view('main/gallery');});
+Route::get('/gioithieu', function () {return view('main/gioithieu');});
 
 Route::get('/account', 'App\Http\Controllers\User@getDetailsUser');
 //Route::get('/connections', function () {return view('cms/connections');});
@@ -46,6 +47,8 @@ Route::get('/cancelBuyUrl', 'App\Http\Controllers\Money@cancelBuy');
 Route::get('/listServer', function () {return view('cms/listServer')->with('serverDetails',false);});
 Route::get('/serverDetails/{serverID}', 'App\Http\Controllers\Dashboard@getServerDetails');
 Route::get('/listFile/{location}', 'App\Http\Controllers\Dashboard@getFile');
+Route::get('/listNews', 'App\Http\Controllers\Dashboard@getListNews');
+Route::get('/editNews/{id}', 'App\Http\Controllers\Dashboard@getNewsDetails');
 
 Route::post('/listUserByName', 'App\Http\Controllers\User@listUserByName');
 

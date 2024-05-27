@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
 use App\Models\Money as MoneyModel;
-
+use App\Models\News as NewsModel;
 use App\Models\User as UserModel;
 use Illuminate\Http\Request;
 
@@ -60,5 +60,20 @@ class Dashboard extends Controller
         $giftCodeModel = new GiftcodeModel();
         $giftCode = $giftCodeModel->getListGiftCode();
         return view('cms/listGiftCode')->with('listGiftCode',$giftCode);
+    }
+
+    function getListNews(){
+        $newsModel = new NewsModel();
+        $listNews = $newsModel->getListNews();
+        return view('cms/listNews')->with('listNews',$listNews);
+    }
+
+    function getNewsDetails($id){
+        $newsModel = new NewsModel();
+        if ($id != 0) {
+            $newsObj = $newsModel->getNewsById($id);
+            return view('cms/editNews')->with('id', $id)->with('news', $newsObj);
+        }
+        return view('cms/editGiftCode')->with('id', $id);
     }
 }

@@ -16,6 +16,7 @@
                     <!--                        <li><a href="about.html" >Về chúng tôi</a></li>-->
                     <!--                        <li><a href="history.html" >Lịch sử</a></li>-->
                     <li><a href="{{asset('heroes')}}">Môn phái</a></li>
+                    <li><a href="{{asset('gioithieu')}}">Giới thiệu</a></li>
                     <li><a href="{{asset('gallery')}}">Thư viện ảnh</a></li>
                     <!--                        <li><a href="contact.html"  >Liên hệ</a></li>-->
                 </ul>
