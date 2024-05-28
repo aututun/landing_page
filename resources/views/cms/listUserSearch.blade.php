@@ -17,6 +17,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                @php(session()->forget('status'))
                 <h5 class="card-header"></h5>
 {{--                <h5 class="card-header">Table Basic</h5>--}}
                 <div class="table-responsive text-nowrap">

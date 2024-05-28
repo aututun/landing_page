@@ -22,7 +22,7 @@ class News extends Model
     public $timestamps = false;
 
     function getListNews(){
-        return News::all();
+        return News::all()->where('Deleted', 0);
     }
 
     function getNewsById($id){
@@ -30,11 +30,15 @@ class News extends Model
     }
 
     function getNewsByCategory($category){
-        return News::where('Catagory', $category);
+        return News::where('Catagory', $category)->orderBy('DateTime', 'DESC')->get();
     }
 
     function getListCategory(){
-        return News::select('Catagory')->groupBy('Catagory')->get();
+        return News::select('Catagory')->where('Deleted', 0)->where('PublicNews', 1)->groupBy('Catagory')->get();
+    }
+
+    function getDeleteNews($id){
+        return static::where('ID', $id)->update(array('Deleted' => 1));
     }
 
     function getUpdateNews($data){
@@ -46,8 +50,10 @@ class News extends Model
             'Context' => $data['Context'],
             'DateTime' => date_format(now(),"Y/m/d H:i:s"),
             'LinkPicture' => $data['LinkPicture'],
+            'PublicNews' => $data['PublicNews'],
+            'Deleted' => 0,
         );
-        if ($newsObj != 0) {
+        if ($newsObj) {
             return static::where('ID', $id)->update($newsObject);
         } else {
             return static::query()->create($newsObject);

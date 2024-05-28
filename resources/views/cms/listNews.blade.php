@@ -12,15 +12,16 @@
             <!-- Basic Bootstrap Table -->
 
             <div class="card">
-                @if(session()->get('statusGiftCode') == 'success')
+                @if(session()->get('statusNews') == 'success')
                     <div class="alert alert-success alert-dismissible" role="alert">Xóa thành công
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @elseif(session()->get('statusGiftCode') == 'error')
+                @elseif(session()->get('statusNews') == 'error')
                     <div class="alert alert-danger alert-dismissible" role="alert">Xóa thất bại
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                @php(session()->forget('statusNews'))
                 <h5 class="card-header"></h5>
                 {{--                <h5 class="card-header">Table Basic</h5>--}}
                 <div class="table-responsive text-nowrap">
@@ -28,13 +29,11 @@
                         <thead>
                         <tr>
                             <th>Action</th>
-                            <th>Server</th>
-                            <th>Code</th>
-                            <th>Status</th>
-                            <th>Item List</th>
-                            <th>Time Created</th>
-                            <th>Max Active</th>
-                            <th>User Name</th>
+                            <th>Xuất bản</th>
+                            <th>Thể loại bài viết</th>
+                            <th>Tiêu đề bài viết</th>
+                            <th>Ngày tạo</th>
+                            <th>Ảnh</th>
                         </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
@@ -47,21 +46,19 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{asset('/editNews')}}/{{$news->ID}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="{{asset('/deleteGiftCode')}}/{{$news->ID}}"><i class="bx bx-trash me-1"></i> Delete</a>
+                                        <a class="dropdown-item" href="{{asset('/deleteNews')}}/{{$news->ID}}"><i class="bx bx-trash me-1"></i> Delete</a>
                                     </div>
                                 </div>
                             </td>
-                            <td>{{$news->ServerID}}</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$news->Code}}</strong></td>
-                            @if($news->Status == 1)
-                                <td><span class="badge bg-label-success me-1">Active</span></td>
+                            @if($news->PublicNews == 1)
+                                <td><span class="badge bg-label-success me-1">Cộng đồng</span></td>
                             @else
-                                <td><span class="badge bg-label-danger me-1">InActive</span></td>
+                                <td><span class="badge bg-label-danger me-1">Riêng tư</span></td>
                             @endif
-                            <td>{{$news->ItemList}}</td>
-                            <td>{{$news->TimeCreate}}</td>
-                            <td>{{$news->MaxActive}}</td>
-                            <td>{{$news->UserName}}</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$news->Catagory}}</strong></td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$news->Title}}</strong></td>
+                            <td>{{$news->DateTime}}</td>
+                            <td>{{$news->LinkPicture}}</td>
                         </tr>
                         @endforeach
                         </tbody>

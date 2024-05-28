@@ -24,7 +24,6 @@
                         @endif
                         <div class="card-body">
                             <form action="{{asset('/postNews')}}" method="post">
-                                {{ csrf_field() }}
                                 @csrf
                                 @if($id != 0)
                                     <input type="hidden" name="ID" value="{{$news->ID}}">
@@ -32,8 +31,15 @@
                                     <input type="hidden" name="ID" value="0">
                                 @endif
                                 <div class="mb-3">
+                                    <label for="PublicNews" class="form-label">Xuất bản bài viết</label>
+                                    <select class="form-select color-dropdown" name="PublicNews" id="PublicNews">
+                                        <option @if($id != 0) @if($news->PublicNews == 0) selected @endif @endif value="0">Riêng tư</option>
+                                        <option @if($id != 0) @if($news->PublicNews == 1) selected @endif @endif value="1">Cộng đồng</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
                                     <label for="Category" class="form-label">Thể loại bài viết</label>
-                                    <input type="text" class="form-control" name="Category" id="Category" value="@if($id != 0){{$news->Category}}@endif"/>
+                                    <input type="text" class="form-control" name="Category" id="Category" value="@if($id != 0){{$news->Catagory}}@endif"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Title" class="form-label">Tiêu đề bài viết</label>
@@ -41,7 +47,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="Context" class="form-label">Nội dung bài viết</label>
-                                    <textarea class="form-control" name="Context" id="Context" rows="10" cols="80">@if($id != 0){{$news->Context}}@endif</textarea>
+                                    <textarea class="form-control" name="Context" id="Context" rows="100" cols="180">@if($id != 0){{$news->Context}}@endif</textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="LinkPicture" class="form-label">Ảnh</label>

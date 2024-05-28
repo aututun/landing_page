@@ -34,6 +34,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
+                        @php(session()->forget('status'))
                         <h5 class="card-header">Đổi mật khẩu</h5>
                         <!-- Account -->
                         <hr class="my-0" />

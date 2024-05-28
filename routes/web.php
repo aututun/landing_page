@@ -51,6 +51,8 @@ Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
 Route::get('/listNews', 'App\Http\Controllers\Dashboard@getListNews');
 Route::get('/editNews/{id}', 'App\Http\Controllers\Dashboard@getNewsDetails');
 Route::post('/postNews', 'App\Http\Controllers\Dashboard@getUpdateNewsDetails');
+Route::post('/deleteNews/{id}', 'App\Http\Controllers\Dashboard@getDeleteNews');
+Route::get('/news/{category}', 'App\Http\Controllers\Dashboard@getNews');
 
 
 // User route

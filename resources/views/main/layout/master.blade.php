@@ -7,7 +7,7 @@
 <div id="content" style="width: 100%">
     @yield('heroes')
     @yield('gallery')
-    @yield('gioithieu')
+    @yield('news')
     @yield('heroDetails')
 </div>
 </body>

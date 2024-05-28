@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-
+{{--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">--}}
     <title>{{env('SITE_NAME','Kiếm Võ')}}</title>
 
     <meta name="description" content="" />
@@ -18,7 +18,7 @@
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{asset('cms/assets/vendor/fonts/boxicons.css')}}" />
-
+    <link rel="stylesheet" href="{{asset('/cms/css/bootstrap.min.css')}}">
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{asset('cms/assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
     <link rel="stylesheet" href="{{asset('cms/assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />

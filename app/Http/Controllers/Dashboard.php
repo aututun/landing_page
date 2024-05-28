@@ -7,6 +7,8 @@ use App\Models\Money as MoneyModel;
 use App\Models\News as NewsModel;
 use App\Models\User as UserModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class Dashboard extends Controller
 {
@@ -68,6 +70,15 @@ class Dashboard extends Controller
         return view('cms/listNews')->with('listNews',$listNews);
     }
 
+    function getDeleteNews($id){
+        $newsModel = new NewsModel();
+        $result = $newsModel->getDeleteNews($id);
+        $status = 'error';
+        if ($result) $status = 'success';
+        session()->flash('statusNews', $status);
+        return view('cms/listNews');
+    }
+
     function getNewsDetails($id){
         $newsModel = new NewsModel();
         if ($id != 0) {
@@ -79,14 +90,50 @@ class Dashboard extends Controller
 
     function getUpdateNewsDetails(Request $request){
         $id = $request['ID'];
+        $status = 'false';
         $data = array(
             'ID' => $id,
             'Category' => $request['Category'],
             'Title' => $request['Title'],
             'Context' => $request['Context'],
             'LinkPicture' => $request['LinkPicture'],
+            'PublicNews' => $request['PublicNews'],
         );
+//        if ($request->hasFile('LinkPicture')) {
+//            $directory = "images/" . $request['Category'];
+//            if (!File::isDirectory(public_path($directory))) {
+//                File::makeDirectory(public_path($directory), 0777, true, true);
+//            }
+//            // Handle the uploaded file
+//            $image = $request->file('LinkPicture');
+//            $imageName = $imageName = $image->getClientOriginalName();
+//            $image->move(public_path($directory), $imageName);
+//            echo '<pre>';
+//            print_r($image);
+//            echo '<pre>';
+//        }
+//        die();
         $newsModel = new NewsModel();
-        $newsObj = $newsModel->getUpdateNews($data);
+        $result = $newsModel->getUpdateNews($data);
+        if ($result) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/editNews/'.$id);
+    }
+
+    static function getListCategory(){
+        $newsModel = new NewsModel();
+        return $newsModel->getListCategory();
+    }
+
+    function getNews($category){
+        $newsModel = new NewsModel();
+        if ($category == 0) {
+            $newCategory = $newsModel->getListCategory();
+            $category = $newCategory->first()->Catagory;
+        }
+        $result = $newsModel->getNewsByCategory($category);
+        return view('main/news')->with('listNews',$result);
     }
 }
