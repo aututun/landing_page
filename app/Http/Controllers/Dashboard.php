@@ -6,6 +6,7 @@ use App\Models\Server as ServerModel;
 use App\Models\Money as MoneyModel;
 use App\Models\News as NewsModel;
 use App\Models\User as UserModel;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -88,6 +89,15 @@ class Dashboard extends Controller
         return view('cms/editNews')->with('id', $id);
     }
 
+    function getNewsDetailsView($id){
+        $newsModel = new NewsModel();
+        if ($id != 0) {
+            $newsObj = $newsModel->getNewsById($id);
+            return view('main/news')->with('id', $id)->with('news', $newsObj);
+        }
+        return view('main/news')->with('id', $id);
+    }
+
     function getUpdateNewsDetails(Request $request){
         $id = $request['ID'];
         $status = 'false';
@@ -127,9 +137,15 @@ class Dashboard extends Controller
         return $newsModel->getListCategory();
     }
 
+    static function countDay($dateTime){
+        $targetDate = new DateTime($dateTime);
+        $formattedTargetDate = $targetDate->format('d-m-Y');
+        return $formattedTargetDate;
+    }
+
     function getNews($category){
         $newsModel = new NewsModel();
-        if ($category == 0) {
+        if ($category === "0") {
             $newCategory = $newsModel->getListCategory();
             $category = $newCategory->first()->Catagory;
         }

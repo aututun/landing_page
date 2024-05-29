@@ -22,15 +22,15 @@ class News extends Model
     public $timestamps = false;
 
     function getListNews(){
-        return News::all()->where('Deleted', 0);
+        return News::all()->where('Deleted', 0)->where('PublicNews', 1);
     }
 
     function getNewsById($id){
-        return News::where('ID', $id)->first();
+        return News::where('ID', $id)->where('Deleted', 0)->where('PublicNews', 1)->first();
     }
 
     function getNewsByCategory($category){
-        return News::where('Catagory', $category)->orderBy('DateTime', 'DESC')->get();
+        return News::where('Catagory', $category)->where('Deleted', 0)->where('PublicNews', 1)->orderBy('DateTime', 'DESC')->get();
     }
 
     function getListCategory(){
