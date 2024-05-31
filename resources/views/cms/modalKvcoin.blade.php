@@ -92,8 +92,8 @@
                                     type: 'POST',
                                     data: $('#kvcoinForm').serialize(),
                                     success: function(response) {
-                                        // Handle success response
-                                        $('.qr_code').html('<iframe src="' + response + '" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>').show();
+                                        window.open(response, '_blank');
+                                        $('#modalKvcoinNapas').modal('hide');
                                     },
                                     error: function(xhr, status, error) {
                                         console.error(xhr.responseText);
