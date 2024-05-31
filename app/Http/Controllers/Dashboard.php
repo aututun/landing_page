@@ -77,7 +77,7 @@ class Dashboard extends Controller
         $status = 'error';
         if ($result) $status = 'success';
         session()->flash('statusNews', $status);
-        return view('cms/listNews');
+        $this->getListNews();
     }
 
     function getNewsDetails($id){
