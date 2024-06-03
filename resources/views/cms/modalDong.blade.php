@@ -26,7 +26,6 @@
                                 <label for="KVcoin" class="form-label">Số đồng quy đổi</label>
                                 <select id="KVcoin" name="KVcoin" class="form-select color-dropdown">
                                     @php($mark = 'disabled')
-                                    <option selected value="0">0 KV coin - {{ 0 * env('RATE_NAP',180) }} Đồng</option>
                                     <option value="20" {{ $kvcoin < 20 ? $mark : '' }}>20 KV coin - {{number_format(20*env('RATE_NAP',180))}} Đồng</option>
                                     <option value="50" {{ $kvcoin < 50 ? $mark : '' }}>50 KV coin - {{number_format(50*env('RATE_NAP',180))}} Đồng</option>
                                     <option value="100" {{ $kvcoin < 100 ? $mark : '' }}>100 KV coin - {{number_format(100*env('RATE_NAP',180))}} Đồng</option>
