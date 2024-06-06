@@ -1,34 +1,214 @@
-<div class="header-w3layouts">
+<nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
     <div class="container">
-        <div class="right-side">
-            <p>
-                <button id="trigger-overlay" type="button">
-                    <span class="fa fa-bars" aria-hidden="true"></span>
-                </button>
-            </p>
+        <div class="nk-nav-table">
+
+            <a href="index.html" class="nk-nav-logo">
+                <img src="assets/images/logo.png" alt="GoodGames" width="199">
+            </a>
+
+            <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+
+                <li class=" nk-drop-item">
+                    <a href="elements.html">
+                        Features
+
+                    </a><ul class="dropdown">
+
+                        <li>
+                            <a href="elements.html">
+                                Elements (Shortcodes)
+
+                            </a>
+                        </li>
+                        <li class=" nk-drop-item">
+                            <a href="forum.html">
+                                Forum
+
+                            </a><ul class="dropdown">
+
+                                <li>
+                                    <a href="forum.html">
+                                        Forum
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="forum-topics.html">
+                                        Topics
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="forum-single-topic.html">
+                                        Single Topic
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="widgets.html">
+                                Widgets
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="coming-soon.html">
+                                Coming Soon
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="offline.html">
+                                Offline
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="404.html">
+                                404
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nk-drop-item">
+                    <a href="blog-list.html">
+                        Blog
+
+                    </a><ul class="dropdown">
+
+                        <li>
+                            <a href="news.html">
+                                News
+
+                            </a>
+                        </li>
+                        <li class=" nk-drop-item">
+                            <a href="blog-grid.html">
+                                Blog With Sidebar
+
+                            </a><ul class="dropdown">
+
+                                <li>
+                                    <a href="blog-grid.html">
+                                        Blog Grid
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blog-list.html">
+                                        Blog List
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="blog-fullwidth.html">
+                                Blog Fullwidth
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog-article.html">
+                                Blog Article
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+
+                    </a>
+                </li>
+                <li class=" nk-drop-item">
+                    <a href="tournaments.html">
+                        Tournaments
+
+                    </a><ul class="dropdown">
+
+                        <li>
+                            <a href="tournaments.html">
+                                Tournament
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tournaments-teams.html">
+                                Teams
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tournaments-teammate.html">
+                                Teammate
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nk-drop-item">
+                    <a href="store.html">
+                        Store
+
+                    </a><ul class="dropdown">
+
+                        <li>
+                            <a href="store.html">
+                                Store
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="store-product.html">
+                                Product
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="store-catalog.html">
+                                Catalog
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="store-catalog-alt.html">
+                                Catalog Alt
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="store-checkout.html">
+                                Checkout
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="store-cart.html">
+                                Cart
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nk-nav nk-nav-right nk-nav-icons">
+
+                <li class="single-icon d-lg-none">
+                    <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                    </a>
+                </li>
+
+
+            </ul>
         </div>
-        <!-- open/close -->
-        <div class="overlay overlay-hugeinc">
-            <button type="button" class="overlay-close">Close</button>
-            <nav>
-                <ul>
-                    <li><a href="{{asset('/')}}">Trang Chủ</a></li>
-                    <!--                        <li><a href="about.html" >Về chúng tôi</a></li>-->
-                    <!--                        <li><a href="history.html" >Lịch sử</a></li>-->
-                    <li><a href="{{asset('heroes')}}">Môn phái</a></li>
-                    <li><a href="{{asset('news/0')}}">Giới thiệu</a></li>
-                    <li><a href="{{asset('gallery')}}">Thư viện ảnh</a></li>
-                    <!--                        <li><a href="contact.html"  >Liên hệ</a></li>-->
-                </ul>
-            </nav>
-        </div>
-        <div class="hedder-logo">
-            <h1><a href="{{asset('/')}}">
-                    <img src="{{asset('main/images/logo.png')}}" class="img-fluid" alt="Responsive image"></a>
-            </h1>
-        </div>
-        <!-- /open/close -->
-        <!-- /navigation section -->
     </div>
-    <div class="clearfix"> </div>
-</div>
+</nav>

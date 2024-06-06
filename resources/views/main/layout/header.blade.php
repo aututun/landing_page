@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <title>{{env('SITE_NAME','Kiếm Võ')}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="{{asset('main/images/favicon512.png')}}">
-    <!--meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Dragon Hunt Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-    <!--//meta tags ends here-->
-    <!--booststrap-->
-    <link href="{{asset('main/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all">
-    <!--//booststrap end-->
-    <!-- font-awesome icons -->
-    <link href="{{asset('main/css/fontawesome-all.min.css')}}" rel="stylesheet" type="text/css" media="all">
-    <!-- //font-awesome icons -->
-    <!-- Nav-CSS -->
-    <link href="{{asset('main/css/nav.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <script src="{{asset('main/js/modernizr.custom.js')}}"></script>
-    <!-- //Nav-CSS -->
-    <!-- banner -->
-    <link rel="stylesheet" type="text/css" href="{{asset('main/css/uncover.css')}}"/>
-    <!--//banner -->
-    <!--stylesheets-->
-    <link href="{{asset('main/css/style.css')}}" rel='stylesheet' type='text/css' media="all">
-    <!--//stylesheets-->
-    <!--      <link href="//fonts.googleapis.com/css?family=Cinzel+Decorative:400,700" rel="stylesheet">-->
-    <!--      <link href="//fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">-->
-    <!--      <link href="//fonts.googleapis.com/css?family=Arimo" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{asset('main/vendor/bootstrap/dist/css/bootstrap.min.css')}}">
+
+    <script defer src="{{asset('main/vendor/fontawesome-free/js/all.js')}}"></script>
+    <script defer src="{{asset('main/vendor/fontawesome-free/js/v4-shims.js')}}"></script>
+
+    <link rel="stylesheet" href="{{asset('main/vendor/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('main/vendor/flickity/dist/flickity.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('main/vendor/photoswipe/dist/photoswipe.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('main/vendor/photoswipe/dist/default-skin/default-skin.css')}}">
+    <link rel="stylesheet" href="{{asset('main/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('main/vendor/summernote/dist/summernote-bs4.css')}}">
+    <link rel="stylesheet" href="{{asset('main/css/goodgames.css')}}">
+
+    <link rel="stylesheet" href="{{asset('main/css/custom.css')}}">
+
+    <script src="{{asset('main/vendor/jquery/dist/jquery.min.js')}}"></script>
 </head>

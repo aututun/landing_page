@@ -1,13 +1,13 @@
 @include('main.layout.header')
 <body>
-@include('main.layout.rightBanner')
-@include('main.layout.navbar')
-@include('main.layout.image')
-<div id="content" style="width: 100%">
+<header class="nk-header nk-header-opaque">
+    @include('main.layout.rightBanner')
+    @include('main.layout.navbar')
+    @include('main.layout.navbarModile')
+</header>
     @yield('heroes')
     @yield('gallery')
     @yield('news')
     @yield('heroDetails')
-</div>
 </body>
 @include('main.layout.footer')
