@@ -1,8 +1,8 @@
 <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
     <div class="nano">
         <div class="nano-content">
-            <a href="index.html" class="nk-nav-logo">
-                <img src="assets/images/logo.png" alt="" width="120">
+            <a href="{{asset('/')}}" class="nk-nav-logo">
+                <img src="{{asset('main/images/logo.png')}}" alt="" width="50px">
             </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav">

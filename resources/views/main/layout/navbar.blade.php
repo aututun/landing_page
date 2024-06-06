@@ -2,8 +2,8 @@
     <div class="container">
         <div class="nk-nav-table">
 
-            <a href="index.html" class="nk-nav-logo">
-                <img src="assets/images/logo.png" alt="GoodGames" width="199">
+            <a href="{{asset('/')}}" class="nk-nav-logo">
+                <img src="{{asset('main/images/logo.png')}}" alt="GoodGames" width="50px">
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">

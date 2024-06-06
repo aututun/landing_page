@@ -1,62 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login / Signup</title>
-    <link href="{{asset('main/login.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('main/css/fontawesome-all.min.css')}}" rel="stylesheet" type="text/css" media="all">
-</head>
-<body>
-<div class="main">
-    <input type="checkbox" id="chk" aria-hidden="true">
-    <div class="login">
-        <form action="{{asset('/loginPost')}}" method="post">
-            {{ csrf_field() }}
-            @csrf
-            <label for="chk" aria-hidden="true">Login</label>
-            @if(session()->has('wrong_credentials'))
-                <label aria-hidden="true">Sai thông tin xác thực</label>
-                {{ session()->forget('wrong_credentials') }}
-            @endif
-            @if(session()->has('exist'))
-                <label aria-hidden="true">Tai khoản này đã tồn tại</label>
-                {{ session()->forget('exist') }}
-            @endif
-            @if(isset($signup_success))
-                <label aria-hidden="true">Đăng ký thành công</label>
-            @endif
-            <input type="hidden" name="action" value="login">
-            <input type="text" name="LoginName" placeholder="User name" required="">
-            <input type="password" name="Password" placeholder="Password" required="">
-            <button>Login</button>
-            <div class="flex-c-m">
-            </div>
-            <br>
-{{--            <div style="text-align: center">Or Login Using</div>--}}
-{{--            <div class="flex-c-m">--}}
-{{--                <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>--}}
-{{--                <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>--}}
-{{--                <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>--}}
-{{--            </div>--}}
-        </form>
-    </div>
-{{--    <div class="signup">--}}
-{{--        <form action="{{asset('/signUpPost')}}" method="post">--}}
-{{--            {{ csrf_field() }}--}}
-{{--            @csrf--}}
-{{--            <label for="chk" aria-hidden="true">Sign up</label>--}}
-{{--            <input type="hidden" name="action" value="signup">--}}
-{{--            <input type="text" name="LoginName" placeholder="User name" required="">--}}
-{{--            <input type="email" name="Email" placeholder="Email" required="">--}}
-{{--            <input type="password" name="Password" placeholder="Password" required="">--}}
-{{--            <button>Sign up</button>--}}
-{{--            <br>--}}
-{{--            <div style="text-align: center">Or Sign Up Using</div>--}}
-{{--        </form>--}}
-{{--        <button class="google-sign-in"><i class="fa fa-google"></i> Google</button>--}}
-{{--        <button class="zalo-sign-in"><i class="fa fa-zalo"></i> Zalo</button>--}}
-{{--        <button class="facebook-sign-in"><i class="fa fa-facebook"></i> Facebook</button>--}}
+<div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="ion-android-close"></span>
+                </button>
 
-{{--    </div>--}}
+                <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
+
+                <div class="nk-gap-1"></div>
+                <form action="#" class="nk-form text-white">
+                    <div class="row vertical-gap">
+                        <div class="col-md-6">
+                            Use email and password:
+
+                            <div class="nk-gap"></div>
+                            <input type="email" value="" name="email" class=" form-control" placeholder="Email">
+
+                            <div class="nk-gap"></div>
+                            <input type="password" value="" name="password" class="required form-control"
+                                   placeholder="Password">
+                        </div>
+                        <div class="col-md-6">
+                            Or social account:
+
+                            <div class="nk-gap"></div>
+
+                            <ul class="nk-social-links-2">
+                                <li><a class="nk-social-facebook" href="#"><span class="fab fa-facebook"></span></a>
+                                </li>
+                                <li><a class="nk-social-google-plus" href="#"><span
+                                            class="fab fa-google-plus"></span></a></li>
+                                <li><a class="nk-social-twitter" href="#"><span class="fab fa-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nk-gap-1"></div>
+                    <div class="row vertical-gap">
+                        <div class="col-md-6">
+                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mnt-5">
+                                <small><a href="#">Forgot your password?</a></small>
+                            </div>
+                            <div class="mnt-5">
+                                <small><a href="#">Not a member? Sign up</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-</body>
-</html>

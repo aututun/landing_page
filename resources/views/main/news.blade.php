@@ -1,111 +1,257 @@
-@extends('main.layout.master')
+@extends('main.index')
 @section('news')
-    <section class="gallery-design py-lg-4 py-md-3 py-sm-3 py-3">
-        <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
-            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Tin tức - sự kiện</h3>
-            <div class="row">
-                @if(!isset($news))
-                    <style>
-                        .carousel-container {
-                            position: relative;
-                            width: 100%;
-                            overflow: hidden;
-                        }
+    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Latest</span> News</span></h3>
+    <div class="nk-gap"></div>
 
-                        .carousel-slider {
-                            display: flex;
-                            transition: transform 0.5s ease-in-out;
-                        }
+    <div class="nk-news-box">
+        <div class="nk-news-box-list">
+            <div class="nano">
+                <div class="nano-content">
 
-                        .carousel-slide {
-                            min-width: 100%;
-                            box-sizing: border-box;
-                        }
-                    </style>
-                    <div class="col-12 col-lg-7 order-3 order-md-2">
-                        <div class="carousel-container">
-                            <div class="carousel-slider" id="carousel-slider">
-                                <div class="carousel-slide">
-                                    <img style="width:100%; height:100%;" class="d-block w-100"
-                                         src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/441546637_122122628678273542_7548781967293658109_n.jpg?stp=dst-jpg_p526x296&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG5c26HvJ76NbZvrQ_NVvqsFklcps4Y_0oWSVymzhj_SmfcHqUlVxE4ggukFbFCrsp1Xlo-e2Vw5-N0Ju5aRKQi&_nc_ohc=--w90bspVt4Q7kNvgGuDtC9&_nc_ht=scontent.fhan14-5.fna&oh=00_AYBc2Bgds7iRuAetPFMW67874V6yjebCG63BrGd7AeRRDA&oe=665D2952">
-                                </div>
-                                <div class="carousel-slide">
-                                    <img style="width:100%; height:100%;" class="d-block w-100"
-                                         src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/441497216_122123436380273542_3406907740346324050_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFVrlMl0e5UKY-kgDpsYRKQ_V_vPyktUk39X-8_KS1STTVoxUrBqtU51ygvb6Nz1W-ihf1Eh8J2yjPOItQ34wm3&_nc_ohc=_nT1TKPQf9kQ7kNvgHdEXLX&_nc_ht=scontent.fhan14-3.fna&oh=00_AYDS2Jd9EamaiKRojNxfmMhytiS5z51GJrmta3TuwZ2-gQ&oe=665D27CE">
-                                </div>
-                                <div class="carousel-slide">
-                                    <img style="width:100%; height:100%;" class="d-block w-100"
-                                         src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/442480982_122122089176273542_5357439815708214773_n.jpg?stp=dst-jpg_p526x296&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFM3BLxJ9AKt0q0FlL9v2mmuItxXr2_7ou4i3Fevb_ui6lmtZbYfo6SSGhenxSr3k8fqMJC39OKwT76P--HqdIr&_nc_ohc=nO9axSB8_r0Q7kNvgFkYIzS&_nc_ht=scontent.fhan14-2.fna&oh=00_AYAmK-dtS8j7PvwxzaaEdGs3hli78sJMJ8CViSgYD7SN4w&oe=665D2EC1">
-                                </div>
-                            </div>
+
+                    <div class="nk-news-box-item nk-news-box-item-active">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-1-sm.jpg" alt="Smell magic in the air. Or maybe barbecue">
                         </div>
+                        <img src="assets/images/post-1.jpg" alt="Smell magic in the air. Or maybe barbecue" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-4">MMO</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 18, 2018</div>
                     </div>
-                    <div class="col-12 col-lg-5 order-3 order-md-2">
-                        @php($listCategory = App\Http\Controllers\Dashboard::getListCategory())
-                        <ul class="header-ul">
-                            @foreach($listCategory as $category)
-                                <li class="float-left-li">
-                                    <a href="{{asset('news')}}/{{$category->Catagory}}">{{$category->Catagory}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        @foreach ($listNews->chunk(2) as $news)
-                            <div class="row grid gallery-info">
-                                <ul style="width: 100%" class="list-group list-group-flush">
-                                    @foreach($news as $newDetails)
-                                        <div style="overflow: hidden"
-                                             class="list-group-item d-flex justify-content-between">
-                                            <div style="float: left" class="left-content"><h5><a
-                                                        href="{{asset('/newsDetails')}}/{{$newDetails->ID}}">{{$newDetails->Title}}</a>
-                                                </h5></div>
-                                            <div style="float: right" class="right-content">
-                                                <small>{{App\Http\Controllers\Dashboard::countDay($newDetails->DateTime)}}</small>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endforeach
+
+
+                    <div class="nk-news-box-item">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-2-sm.jpg" alt="Grab your sword and fight the Horde">
+                        </div>
+                        <img src="assets/images/post-2.jpg" alt="Grab your sword and fight the Horde" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">Grab your sword and fight the Horde</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-1">Action</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>For good, too; though, in consequence of my previous emotions, I was still occasionally seized with a stormy sob . After we had jogged on for some little time, I asked the carrier...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 5, 2018</div>
                     </div>
+
+
+                    <div class="nk-news-box-item">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-3-sm.jpg" alt="We found a witch! May we burn her?">
+                        </div>
+                        <img src="assets/images/post-3.jpg" alt="We found a witch! May we burn her?" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">We found a witch! May we burn her?</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-2">Adventure</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>And she went on planning to herself how she would manage it. `They must go by the carrier,' she thought; `and how funny it'll seem, sending presents to one's own feet!...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 27, 2018</div>
+                    </div>
+
+
+                    <div class="nk-news-box-item">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-4-sm.jpg" alt="For good, too though, in consequence">
+                        </div>
+                        <img src="assets/images/post-4.jpg" alt="For good, too though, in consequence" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">For good, too though, in consequence</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-3">Strategy</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 14, 2018</div>
+                    </div>
+
+
+                    <div class="nk-news-box-item">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-5-sm.jpg" alt="He made his passenger captain of one">
+                        </div>
+                        <img src="assets/images/post-5.jpg" alt="He made his passenger captain of one" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">He made his passenger captain of one</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-5">Indie</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
+                    </div>
+
+
+                    <div class="nk-news-box-item">
+                        <div class="nk-news-box-item-img">
+                            <img src="assets/images/post-6-sm.jpg" alt="At first, for some time, I was not able to answer">
+                        </div>
+                        <img src="assets/images/post-6.jpg" alt="At first, for some time, I was not able to answer" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">At first, for some time, I was not able to answer</h3>
+
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-5">Racing</span>
+                        </span>
+
+                        <div class="nk-news-box-item-text">
+                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                        </div>
+                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                    </div>
+
+                </div>
             </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const slider = document.getElementById('carousel-slider');
-                    const slides = slider.children;
-                    const totalSlides = slides.length;
-                    let currentIndex = 0;
-
-                    function showSlide(index) {
-                        slider.style.transform = `translateX(-${index * 100}%)`;
-                    }
-
-                    function nextSlide() {
-                        currentIndex = (currentIndex + 1) % totalSlides;
-                        showSlide(currentIndex);
-                    }
-
-                    setInterval(nextSlide, 3600);
-                });
-            </script>
-            @else
-                <div style="width: 100%;" class="subweb__main">
-                    <div class="midbar">
-                        <h2 class="text-center">
-                            {{$news->Title}}
-                        </h2>
-                        <div class="text-center">
-                            <small>{{App\Http\Controllers\Dashboard::countDay($news->DateTime)}}</small>
-                        </div>
+        </div>
+        <div class="nk-news-box-each-info">
+            <div class="nano">
+                <div class="nano-content">
+                    <!-- There will be inserted info about selected news-->
+                    <div class="nk-news-box-item-image">
+                        <img src="assets/images/post-1.jpg" alt="">
+                        <span class="nk-news-box-item-categories">
+                            <span class="bg-main-4">MMO</span>
+                        </span>
                     </div>
-                    <div class="subweb__content">
-                        <article class="article">
-                            <div class="article__content">
-                                {!! $news->Context !!}
-                            </div>
-                        </article>
+                    <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                    <div class="nk-news-box-item-text">
+                        <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
+                    </div>
+                    <a href="blog-article.html" class="nk-news-box-item-more">Read More</a>
+                    <div class="nk-news-box-item-date">
+                        <span class="fa fa-calendar"></span> Sep 18, 2018
                     </div>
                 </div>
-            @endif
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="nk-gap-2"></div>
+    <div class="nk-blog-grid">
+        <div class="row">
+
+
+            <div class="col-md-6 col-lg-3">
+                <!-- START: Post -->
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                        <span class="nk-post-comments-count">13</span>
+
+                        <span class="nk-post-categories">
+                                    <span class="bg-main-5">Indie</span>
+                                </span>
+
+                    </a>
+                    <div class="nk-gap"></div>
+                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                    <div class="nk-post-text">
+                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                    </div>
+                    <div class="nk-gap"></div>
+                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
+                </div>
+                <!-- END: Post -->
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+                <!-- START: Post -->
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="assets/images/post-6-mid.jpg" alt="At first, for some time, I was not able to answer">
+                        <span class="nk-post-comments-count">0</span>
+
+                        <span class="nk-post-categories">
+                                    <span class="bg-main-5">Racing</span>
+                                </span>
+
+                    </a>
+                    <div class="nk-gap"></div>
+                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                    <div class="nk-post-text">
+                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                    </div>
+                    <div class="nk-gap"></div>
+                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                </div>
+                <!-- END: Post -->
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+                <!-- START: Post -->
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="assets/images/post-7-mid.jpg" alt="At length one of them called out in a clear">
+                        <span class="nk-post-comments-count">0</span>
+
+                        <span class="nk-post-categories">
+                                    <span class="bg-main-6">MOBA</span>
+                                </span>
+
+                    </a>
+                    <div class="nk-gap"></div>
+                    <h2 class="nk-post-title h4"><a href="blog-article.html">At length one of them called out in a clear</a></h2>
+                    <div class="nk-post-text">
+                        <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                    </div>
+                    <div class="nk-gap"></div>
+                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                </div>
+                <!-- END: Post -->
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+                <!-- START: Post -->
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="assets/images/post-8-mid.jpg" alt="For good, too though, in consequence">
+                        <span class="nk-post-comments-count">0</span>
+
+                        <span class="nk-post-categories">
+                                    <span class="bg-main-2">Adventure</span>
+                                </span>
+
+                    </a>
+                    <div class="nk-gap"></div>
+                    <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>
+                    <div class="nk-post-text">
+                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                    </div>
+                    <div class="nk-gap"></div>
+                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
+                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                </div>
+                <!-- END: Post -->
+            </div>
+
+        </div>
+    </div>
 @endsection

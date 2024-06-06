@@ -39,11 +39,11 @@
         <div class="nk-contacts-right">
             <ul class="nk-contacts-icons">
 
-{{--                <li>--}}
-{{--                    <a href="#" data-toggle="modal" data-target="#modalSearch">--}}
-{{--                        <span class="fa fa-search"></span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modalSearch">
+                        <span class="fa fa-search"></span>
+                    </a>
+                </li>
 
 
                 <li>

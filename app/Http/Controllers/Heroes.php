@@ -92,19 +92,9 @@ class Heroes extends Controller
             "ngoai_cong" => "Đao Phầp hệ ngoại công, số trưởng phong sát tấn công mạnh mẽ như vũ bão",
         ),
     );
-    function getListHeroes(){
-        $listHeroes = $this->listHeroes;
-        return view('main.heroes',["listHeroes"=>$listHeroes]);
-    }
-
-    function getDetailHero($id){
-        $listHeroes = $this->listHeroes;
-        $return = array();
-        foreach ($listHeroes as $hero){
-            if($id == $hero["name"]){
-                $return = $hero;
-            }
-        }
-        return view('main.heroDetails',["hero"=>$return]);
+    static public function getListHeroes(){
+        $heroModel = new Heroes();
+        $listHeroes = $heroModel->listHeroes;
+        return $listHeroes;
     }
 }
