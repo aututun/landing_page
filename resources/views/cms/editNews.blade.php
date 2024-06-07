@@ -6,11 +6,11 @@
                 <!-- Form controls -->
                 <div class="col-md-12">
                     <div class="card mb-4">
-                        @if(session()->get('success') == 'success')
+                        @if(session()->get('status') == 'success')
                             <div class="alert alert-success alert-dismissible" role="alert">Thành công
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                        @elseif(session()->get('success') == 'error')
+                        @elseif(session()->get('status') == 'error')
                             <div class="alert alert-danger alert-dismissible" role="alert">
                                 Thất bại
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

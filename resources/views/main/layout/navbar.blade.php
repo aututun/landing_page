@@ -3,7 +3,7 @@
         <div class="nk-nav-table">
 
             <a href="{{asset('/')}}" class="nk-nav-logo">
-                <img src="{{asset('main/images/logo.png')}}" alt="GoodGames" width="50px">
+                <img src="{{asset('main/images/logo-ngang.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}" width="100">
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">

@@ -2,7 +2,7 @@
     <div class="nano">
         <div class="nano-content">
             <a href="{{asset('/')}}" class="nk-nav-logo">
-                <img src="{{asset('main/images/logo.png')}}" alt="" width="50px">
+                <img src="{{asset('main/images/logo-2.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}" width="150">
             </a>
             <div class="nk-navbar-mobile-content">
                 <ul class="nk-nav">

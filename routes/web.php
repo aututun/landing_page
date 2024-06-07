@@ -47,12 +47,18 @@ Route::get('/deleteGiftCode/{id}', 'App\Http\Controllers\Money@deleteGiftCode');
 Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
 
 
+// Category route
+Route::get('/listCategories', 'App\Http\Controllers\Dashboard@getListCategories');
+Route::get('/editCategory/{id}', 'App\Http\Controllers\Dashboard@getCategoryDetails');
+Route::post('/postCategory', 'App\Http\Controllers\Dashboard@getUpdateCategoryDetails');
+Route::get('/deleteCategory/{id}', 'App\Http\Controllers\Dashboard@getDeleteCategory');
+
 // News route
 Route::get('/listNews', 'App\Http\Controllers\Dashboard@getListNews');
 Route::get('/editNews/{id}', 'App\Http\Controllers\Dashboard@getNewsDetails');
 Route::post('/postNews', 'App\Http\Controllers\Dashboard@getUpdateNewsDetails');
 Route::get('/deleteNews/{id}', 'App\Http\Controllers\Dashboard@getDeleteNews');
-Route::get('/news/{category}', 'App\Http\Controllers\Dashboard@getNews');
+Route::get('/news', 'App\Http\Controllers\Dashboard@getNews');
 Route::get('/newsDetails/{id}', 'App\Http\Controllers\Dashboard@getNewsDetailsView');
 
 

@@ -69,7 +69,7 @@
         <div class="col-lg-4">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-mouse.png')}}" alt="">
+                    <img src="{{asset('main/images/icon-mouse.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
                 </div>
                 <div class="nk-feature-cont">
                     <h3 class="nk-feature-title"><a href="#">PC</a></h3>
@@ -80,7 +80,7 @@
         <div class="col-lg-4">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-gamepad.png')}}" alt="">
+                    <img src="{{asset('main/images/icon-gamepad.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
                 </div>
                 <div class="nk-feature-cont">
                     <h3 class="nk-feature-title"><a href="#">PS4</a></h3>
@@ -91,7 +91,7 @@
         <div class="col-lg-4">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-gamepad-2.png')}}" alt="">
+                    <img src="{{asset('main/images/icon-gamepad-2.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
                 </div>
                 <div class="nk-feature-cont">
                     <h3 class="nk-feature-title"><a href="#">Xbox</a></h3>

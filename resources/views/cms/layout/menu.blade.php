@@ -61,78 +61,51 @@
         <li class="menu-item active">
             <a href="{{asset('/dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <div data-i18n="Analytics">Trang quản lý</div>
             </a>
         </li>
 
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Pages</span>
+            <span class="menu-header-text">Tài khoản</span>
         </li>
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{asset('/account')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Quản lý tài khoản</div>
+                <div data-i18n="Account">Đổi thông tin cá nhân</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{asset('/account')}}" class="menu-link">
-                        <div data-i18n="Account">Đổi thông tin cá nhân</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{asset('/changePassword')}}" class="menu-link">
-                        <div data-i18n="Account">Đổi mật khẩu</div>
-                    </a>
-                </li>
+        </li>
+        <li class="menu-item">
+            <a href="{{asset('/changePassword')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Account">Đổi mật khẩu</div>
+            </a>
+        </li>
+{{--        <li class="menu-item">--}}
+{{--            <a href="{{asset('/connections')}}" class="menu-link">--}}
+{{--                <i class="menu-icon tf-icons bx bx-cube-alt"></i>--}}
+{{--                <div data-i18n="Connections">Tài khoản liên kết</div>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+        @if(session()->get('roleCms') == 1)
+{{--        <li class="menu-item">--}}
+{{--            <a href="javascript:void(0);" class="menu-link menu-toggle">--}}
+{{--                <i class="menu-icon tf-icons bx bx-cube-alt"></i>--}}
+{{--                <div data-i18n="Misc">Misc</div>--}}
+{{--            </a>--}}
+{{--            <ul class="menu-sub">--}}
 {{--                <li class="menu-item">--}}
-{{--                    <a href="{{asset('/connections')}}" class="menu-link">--}}
-{{--                        <div data-i18n="Connections">Connections</div>--}}
+{{--                    <a href="pages-misc-error.html" class="menu-link">--}}
+{{--                        <div data-i18n="Error">Error</div>--}}
 {{--                    </a>--}}
 {{--                </li>--}}
-            </ul>
-        </li>
-        @if(session()->get('roleCms') == 1)
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                        <div data-i18n="Basic">Login</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                        <div data-i18n="Basic">Register</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                        <div data-i18n="Basic">Forgot Password</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Error</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="pages-misc-under-maintenance.html" class="menu-link">
-                        <div data-i18n="Under Maintenance">Under Maintenance</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+{{--                <li class="menu-item">--}}
+{{--                    <a href="pages-misc-under-maintenance.html" class="menu-link">--}}
+{{--                        <div data-i18n="Under Maintenance">Under Maintenance</div>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Quản lý server</span></li>
         <li class="menu-item">
             <a href="{{asset('/listUser/1')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
@@ -145,152 +118,33 @@
                 <div data-i18n="Tables">Gift code</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="{{asset('/listNews')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Tables">Tin tức</div>
-            </a>
-        </li>
             <li class="menu-item">
             <a href="{{asset('/listServer')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-copy"></i>
                 <div data-i18n="Tables">Backup server</div>
             </a>
         </li>
-        <!-- Components -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-        <!-- Cards -->
+
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Tin tức - Bài viết</span></li>
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Cards</div>
+            <a href="{{asset('/listCategories')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Tables">Thể loại bài biết</div>
             </a>
         </li>
-        <!-- User interface -->
         <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="User interface">User interface</div>
+            <a href="{{asset('/listNews')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Tables">Tin tức</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="ui-accordion.html" class="menu-link">
-                        <div data-i18n="Accordion">Accordion</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-alerts.html" class="menu-link">
-                        <div data-i18n="Alerts">Alerts</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-badges.html" class="menu-link">
-                        <div data-i18n="Badges">Badges</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-buttons.html" class="menu-link">
-                        <div data-i18n="Buttons">Buttons</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-carousel.html" class="menu-link">
-                        <div data-i18n="Carousel">Carousel</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-collapse.html" class="menu-link">
-                        <div data-i18n="Collapse">Collapse</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-dropdowns.html" class="menu-link">
-                        <div data-i18n="Dropdowns">Dropdowns</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-footer.html" class="menu-link">
-                        <div data-i18n="Footer">Footer</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-list-groups.html" class="menu-link">
-                        <div data-i18n="List Groups">List groups</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-modals.html" class="menu-link">
-                        <div data-i18n="Modals">Modals</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-navbar.html" class="menu-link">
-                        <div data-i18n="Navbar">Navbar</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-offcanvas.html" class="menu-link">
-                        <div data-i18n="Offcanvas">Offcanvas</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                        <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-progress.html" class="menu-link">
-                        <div data-i18n="Progress">Progress</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-spinners.html" class="menu-link">
-                        <div data-i18n="Spinners">Spinners</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-tabs-pills.html" class="menu-link">
-                        <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-toasts.html" class="menu-link">
-                        <div data-i18n="Toasts">Toasts</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-tooltips-popovers.html" class="menu-link">
-                        <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="ui-typography.html" class="menu-link">
-                        <div data-i18n="Typography">Typography</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
-        <!-- Forms & Tables -->
-{{--        <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>--}}
-        <!-- Tables -->
-        {{--                <li class="menu-item">--}}
-        {{--                    <a href="tables-basic.html" class="menu-link">--}}
-        {{--                        <i class="menu-icon tf-icons bx bx-table"></i>--}}
-        {{--                        <div data-i18n="Tables">Tables</div>--}}
-        {{--                    </a>--}}
-        {{--                </li>--}}
-        <!-- Misc -->
         @endif
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Linh tinh</span></li>
         <li class="menu-item">
-            <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link"
-            >
+            <a href="https://www.facebook.com/messages/t/261312800405649" target="_blank" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
+                <div data-i18n="Liên hệ hỗ trợ">Liên hệ hỗ trợ</div>
             </a>
         </li>
     </ul>

@@ -6,23 +6,23 @@
                     <span class="ion-android-close"></span>
                 </button>
 
-                <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
+                <h4 class="mb-0"><span class="text-main-1">Đăng</span> nhập</h4>
 
                 <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form text-white">
+                <form action="{{asset('/loginPost')}}" method="post" class="nk-form text-white">
+                    @csrf
                     <div class="row vertical-gap">
                         <div class="col-md-6">
-                            Use email and password:
+                            Tài khoản và mật khẩu:
 
                             <div class="nk-gap"></div>
-                            <input type="email" value="" name="email" class=" form-control" placeholder="Email">
+                            <input type="text" name="LoginName" placeholder="Tài khoản" required>
 
                             <div class="nk-gap"></div>
-                            <input type="password" value="" name="password" class="required form-control"
-                                   placeholder="Password">
+                            <input type="password" name="Password" placeholder="Mật khẩu" required>
                         </div>
                         <div class="col-md-6">
-                            Or social account:
+                            Sử dụng tài khoản xã hội:
 
                             <div class="nk-gap"></div>
 
@@ -39,14 +39,14 @@
                     <div class="nk-gap-1"></div>
                     <div class="row vertical-gap">
                         <div class="col-md-6">
-                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</a>
+                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Đăng nhập</button>
                         </div>
                         <div class="col-md-6">
                             <div class="mnt-5">
-                                <small><a href="#">Forgot your password?</a></small>
+                                <small><a href="#">Quên mật khẩu ?</a></small>
                             </div>
                             <div class="mnt-5">
-                                <small><a href="#">Not a member? Sign up</a></small>
+                                <small><a href="#">Chưa có tài khoản ? Đăng ký ngay</a></small>
                             </div>
                         </div>
                     </div>

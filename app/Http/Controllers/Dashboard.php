@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
 use App\Models\Money as MoneyModel;
 use App\Models\News as NewsModel;
+use App\Models\Category as CategoryModel;
 use App\Models\User as UserModel;
 use DateTime;
 use Illuminate\Http\Request;
@@ -71,6 +73,16 @@ class Dashboard extends Controller
         return view('cms/listNews')->with('listNews',$listNews);
     }
 
+    function getDeleteCategory($id){
+        $categoryModel = new CategoryModel();
+        $result = $categoryModel->getDeleteCategory($id);
+        $status = 'error';
+        if ($result) $status = 'success';
+        session()->flash('statusCategory', $status);
+        $listCategories = $categoryModel->getListCategories();
+        return view('cms/listCategories')->with('listCategories',$listCategories);
+    }
+
     function getDeleteNews($id){
         $newsModel = new NewsModel();
         $result = $newsModel->getDeleteNews($id);
@@ -88,6 +100,15 @@ class Dashboard extends Controller
             return view('cms/editNews')->with('id', $id)->with('news', $newsObj);
         }
         return view('cms/editNews')->with('id', $id);
+    }
+
+    function getCategoryDetails($id){
+        $newsModel = new CategoryModel();
+        if ($id != 0) {
+            $categoryObj = $newsModel->getCategoryById($id);
+            return view('cms/editCategory')->with('id', $id)->with('category', $categoryObj);
+        }
+        return view('cms/editCategory')->with('id', $id);
     }
 
     function getNewsDetailsView($id){
@@ -133,9 +154,26 @@ class Dashboard extends Controller
         return redirect('/editNews/'.$id);
     }
 
-    static function getListCategory(){
-        $newsModel = new NewsModel();
-        return $newsModel->getListCategory();
+    function getUpdateCategoryDetails(Request $request){
+        $id = $request['ID'];
+        $status = 'false';
+        $data = array(
+            'ID' => $id,
+            'CategoryName' => $request['CategoryName'],
+        );
+        $newsModel = new CategoryModel();
+        $result = $newsModel->getUpdateCategory($data);
+        if ($result) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/editCategory/'.$id);
+    }
+
+    function getListCategories(){
+        $categoryModel = new CategoryModel();
+        $listCategories = $categoryModel->getListCategories();
+        return view('cms/listCategories')->with('listCategories',$listCategories);
     }
 
     static function countDay($dateTime){
@@ -144,13 +182,13 @@ class Dashboard extends Controller
         return $formattedTargetDate;
     }
 
-    function getNews($category){
-        $newsModel = new NewsModel();
-        if ($category === "0") {
-            $newCategory = $newsModel->getListCategory();
-            $category = $newCategory->first()->Catagory;
-        }
-        $result = $newsModel->getNewsByCategory($category);
-        return view('main/news')->with('listNews',$result);
+    function getNews(){
+//        $newsModel = new NewsModel();
+//        if ($category === "0") {
+//            $newCategory = $newsModel->getListCategory();
+//            $category = $newCategory->first()->Catagory;
+//        }
+//        $result = $newsModel->getNewsByCategory($category);
+        return view('main/news')/*->with('listNews',$result)*/;
     }
 }

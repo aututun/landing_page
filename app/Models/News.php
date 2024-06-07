@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use HasFactory;
-    use HasFactory;
     protected $fillable = [
         'ID',
         'Catagory',
@@ -35,6 +34,10 @@ class News extends Model
 
     function getListCategory(){
         return News::select('Catagory')->where('Deleted', 0)->where('PublicNews', 1)->groupBy('Catagory')->get();
+    }
+
+    function getListCategories(){
+        return News::all('Catagory');
     }
 
     function getDeleteNews($id){

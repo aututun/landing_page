@@ -45,12 +45,19 @@
                     </a>
                 </li>
 
-
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#modalLogin">
-                        <span class="fa fa-user"></span>
-                    </a>
-                </li>
+                @if(session()->has('user_id'))
+                    <li>
+                        <a href="{{asset('dashboard')}}">
+                            <b>Trang quản lý</b>
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#modalLogin">
+                            <span class="fa fa-user"></span>
+                        </a>
+                    </li>
+                @endif
 
 
                 {{--<li>
