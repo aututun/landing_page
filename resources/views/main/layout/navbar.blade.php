@@ -9,188 +9,61 @@
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
                 <li class=" nk-drop-item">
-                    <a href="elements.html">
-                        Features
-
-                    </a><ul class="dropdown">
-
+                    <a href="elements.html">Features</a>
+                    <ul class="dropdown">
                         <li>
-                            <a href="elements.html">
-                                Elements (Shortcodes)
-
-                            </a>
+                            <a href="elements.html">Elements (Shortcodes)</a>
                         </li>
                         <li class=" nk-drop-item">
-                            <a href="forum.html">
-                                Forum
-
-                            </a><ul class="dropdown">
-
+                            <a href="forum.html">Forum</a>
+                            <ul class="dropdown">
                                 <li>
-                                    <a href="forum.html">
-                                        Forum
-
-                                    </a>
+                                    <a href="forum.html">Forum</a>
                                 </li>
                                 <li>
-                                    <a href="forum-topics.html">
-                                        Topics
-
-                                    </a>
+                                    <a href="forum-topics.html">Topics</a>
                                 </li>
                                 <li>
-                                    <a href="forum-single-topic.html">
-                                        Single Topic
-
-                                    </a>
+                                    <a href="forum-single-topic.html">Single Topic</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="widgets.html">
-                                Widgets
-
-                            </a>
+                            <a href="widgets.html">Widgets</a>
                         </li>
                         <li>
-                            <a href="coming-soon.html">
-                                Coming Soon
-
-                            </a>
+                            <a href="coming-soon.html">Coming Soon</a>
                         </li>
                         <li>
-                            <a href="offline.html">
-                                Offline
-
-                            </a>
+                            <a href="offline.html">Offline</a>
                         </li>
                         <li>
-                            <a href="404.html">
-                                404
-
-                            </a>
+                            <a href="404.html">404</a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nk-drop-item">
-                    <a href="blog-list.html">
-                        Blog
-
-                    </a><ul class="dropdown">
-
+                @php($listCategory = App\Http\Controllers\Dashboard::getListCategoriesMenu())
+                    @foreach($listCategory as $category)
                         <li>
-                            <a href="news.html">
-                                News
-
-                            </a>
+                            <a href="test/{{$category->ID}}">{{$category->CategoryName}}</a>
                         </li>
-                        <li class=" nk-drop-item">
-                            <a href="blog-grid.html">
-                                Blog With Sidebar
-
-                            </a><ul class="dropdown">
-
-                                <li>
-                                    <a href="blog-grid.html">
-                                        Blog Grid
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog-list.html">
-                                        Blog List
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="blog-fullwidth.html">
-                                Blog Fullwidth
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="blog-article.html">
-                                Blog Article
-
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
+                    @endforeach
+                <li class="nk-drop-item">
                     <a href="gallery.html">
-                        Gallery
-
+                        Cộng đồng
                     </a>
-                </li>
-                <li class=" nk-drop-item">
-                    <a href="tournaments.html">
-                        Tournaments
-
-                    </a><ul class="dropdown">
-
+                    <ul class="dropdown">
                         <li>
-                            <a href="tournaments.html">
-                                Tournament
-
-                            </a>
+                            <a href="widgets.html">Fanpage</a>
                         </li>
                         <li>
-                            <a href="tournaments-teams.html">
-                                Teams
-
-                            </a>
+                            <a href="coming-soon.html">Group</a>
                         </li>
                         <li>
-                            <a href="tournaments-teammate.html">
-                                Teammate
-
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nk-drop-item">
-                    <a href="store.html">
-                        Store
-
-                    </a><ul class="dropdown">
-
-                        <li>
-                            <a href="store.html">
-                                Store
-
-                            </a>
+                            <a href="offline.html">Zalo</a>
                         </li>
                         <li>
-                            <a href="store-product.html">
-                                Product
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="store-catalog.html">
-                                Catalog
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="store-catalog-alt.html">
-                                Catalog Alt
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="store-checkout.html">
-                                Checkout
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="store-cart.html">
-                                Cart
-
-                            </a>
+                            <a href="404.html">Youtube</a>
                         </li>
                     </ul>
                 </li>
@@ -206,8 +79,6 @@
                                 </span>
                     </a>
                 </li>
-
-
             </ul>
         </div>
     </div>

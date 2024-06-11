@@ -21,19 +21,26 @@ class News extends Model
     public $timestamps = false;
 
     function getListNews(){
-        return News::all()->where('Deleted', 0)->skip(0)->take($limit);
+        return News::all()->where('Deleted', 0);
+    }
+
+    function getRandom($limit = 3){
+        return News::select()->where('Deleted', 0)->inRandomOrder()->limit($limit)->get();
     }
 
     function getListNewsSlide($limit = 5){
-        return News::all()->where('Deleted', 0)->where('PublicNews', 1)->skip(0)->take($limit);
+        return News::all()->where('Deleted', 0)->where('Catagory','!=', 1)->where('PublicNews', 1)->skip(0)->take($limit);
     }
 
     function getNewsById($id){
-        return News::where('ID', $id)->where('Deleted', 0)->where('PublicNews', 1)->first();
+        return News::where('ID', $id)->where('Deleted', 0)->where('Catagory','!=', 1)->where('Catagory','!=', 1)->where('PublicNews', 1)->first();
     }
 
-    function getNewsByCategory($category){
-        return News::where('Catagory', $category)->where('Deleted', 0)->where('PublicNews', 1)->orderBy('DateTime', 'DESC')->get();
+    function getNewsByCategory($category,$limit = null){
+        if (!$limit) {
+            return News::where('Catagory', $category)->where('Deleted', 0)->where('Catagory','!=', 1)->where('PublicNews', 1)->orderBy('DateTime', 'DESC')->get();
+        }
+        return News::where('Catagory', $category)->where('Deleted', 0)->where('Catagory','!=', 1)->where('PublicNews', 1)->skip(0)->take($limit)->orderBy('DateTime', 'DESC')->get();
     }
 
     function getNewsByFilder($filterPublic,$filterCategory){

@@ -91,6 +91,12 @@ class Dashboard extends Controller
         return view('cms/listNews')->with('listNews',$listNews)->with('listCategories',$listCategories);
     }
 
+    function getListCategoriesMenu(){
+        $categoryModel = new CategoryModel();
+        $listCategories = $categoryModel->getListCategories();
+        return $listCategories->getDictionary();
+    }
+
     function getDeleteCategory($id){
         $categoryModel = new CategoryModel();
         $result = $categoryModel->getDeleteCategory($id);
@@ -212,8 +218,14 @@ class Dashboard extends Controller
         $listCategories = $categoryModel->getListCategories();
         $data = array();
         foreach ($listCategories as $category) {
-            $data[$category->ID] = $newsModel->getNewsByCategory($category->ID)->getDictionary();
+            $data[$category->ID] = $newsModel->getNewsByCategory($category->ID,3)->getDictionary();
         }
+        return $data;
+    }
+
+    static function getRandomNews(){
+        $newsModel = new NewsModel();
+        $data = $newsModel->getRandom(3)->getDictionary();
         return $data;
     }
 

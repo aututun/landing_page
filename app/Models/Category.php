@@ -17,7 +17,7 @@ class Category extends Model
     public $timestamps = false;
 
     function getListCategories(){
-        return Category::all()->where('Deleted', 0);
+        return Category::all()->where('Deleted', 0)->where('ID','!=', 1);
     }
 
     function getCategoryById($id){
