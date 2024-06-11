@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Category as CategoryModel;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
 use App\Models\Money as MoneyModel;
 use App\Models\News as NewsModel;
-use App\Models\Category as CategoryModel;
 use App\Models\User as UserModel;
 use DateTime;
+use HTMLPurifier;
+use HTMLPurifier_Config;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class Dashboard extends Controller
 {
@@ -70,7 +70,25 @@ class Dashboard extends Controller
     function getListNews(){
         $newsModel = new NewsModel();
         $listNews = $newsModel->getListNews();
-        return view('cms/listNews')->with('listNews',$listNews);
+        $categoryModel = new CategoryModel();
+        $listCategories = $categoryModel->getListCategories();
+        return view('cms/listNews')->with('listNews',$listNews)->with('listCategories',$listCategories);
+    }
+
+    public static function getListNewsMenu($limit){
+        $newsModel = new NewsModel();
+        $listNews = $newsModel->getListNewsSlide($limit);
+        return $listNews;
+    }
+
+    function getListNewsByFilter(Request $request){
+        $newsModel = new NewsModel();
+        $filterPublic = $request['filterPublic'] ?: 'all';
+        $filterCategory = $request['filterCategory'] ?: 'all';
+        $listNews = $newsModel->getNewsByFilder($filterPublic,$filterCategory);
+        $categoryModel = new CategoryModel();
+        $listCategories = $categoryModel->getListCategories();
+        return view('cms/listNews')->with('listNews',$listNews)->with('listCategories',$listCategories);
     }
 
     function getDeleteCategory($id){
@@ -109,6 +127,18 @@ class Dashboard extends Controller
             return view('cms/editCategory')->with('id', $id)->with('category', $categoryObj);
         }
         return view('cms/editCategory')->with('id', $id);
+    }
+
+    static function getCategoryById($id){
+        $newsModel = new CategoryModel();
+        $categoryObj = $newsModel->getCategoryById($id);
+        return $categoryObj;
+    }
+
+    public static function getCategoryColorClass($categoryId){
+        $colorClasses = ['bg-main-1', 'bg-main-2', 'bg-main-3', 'bg-main-4', 'bg-main-5', 'bg-main-6'];
+        $colorIndex = ($categoryId - 1) % count($colorClasses);
+        return $colorClasses[$colorIndex];
     }
 
     function getNewsDetailsView($id){
@@ -172,8 +202,19 @@ class Dashboard extends Controller
 
     function getListCategories(){
         $categoryModel = new CategoryModel();
-        $listCategories = $categoryModel->getListCategories();
+        $listCategories = $categoryModel->getListCategories()->getDictionary();
         return view('cms/listCategories')->with('listCategories',$listCategories);
+    }
+
+    static function getListCategoriesAndPostMenu(){
+        $categoryModel = new CategoryModel();
+        $newsModel = new NewsModel();
+        $listCategories = $categoryModel->getListCategories();
+        $data = array();
+        foreach ($listCategories as $category) {
+            $data[$category->ID] = $newsModel->getNewsByCategory($category->ID)->getDictionary();
+        }
+        return $data;
     }
 
     static function countDay($dateTime){
@@ -182,13 +223,19 @@ class Dashboard extends Controller
         return $formattedTargetDate;
     }
 
-    function getNews(){
-//        $newsModel = new NewsModel();
-//        if ($category === "0") {
-//            $newCategory = $newsModel->getListCategory();
-//            $category = $newCategory->first()->Catagory;
-//        }
-//        $result = $newsModel->getNewsByCategory($category);
-        return view('main/news')/*->with('listNews',$result)*/;
+    public static function getShortenedContext($string, $length = 150, $append = '...'){
+        $config = HTMLPurifier_Config::createDefault();
+        $purifier = new HTMLPurifier($config);
+        $cleanHtml = $purifier->purify($string);
+
+        // Truncate the clean HTML
+        $truncatedString = mb_substr(strip_tags($cleanHtml), 0, $length);
+
+        // Add append if necessary
+        if (mb_strlen(strip_tags($cleanHtml)) > $length) {
+            $truncatedString .= $append;
+        }
+
+        return $truncatedString;
     }
 }

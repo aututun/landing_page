@@ -8,6 +8,24 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{asset('/editNews')}}/0"><i class="menu-icon tf-icons bx bx-detail"></i>Tạo bài viết</a>
                 </li>
+                <form method="GET" action="{{asset('/listNews/filter')}}">
+                    <li class="nav-item">
+                        <select required="" name="filterPublic" class="form-select">
+                            <option value="all">Tất cả bài viết</option>
+                            <option value="0">Bài viết riêng tư</option>
+                            <option value="1">Bài viết cộng đồng</option>
+                        </select>
+                    </li>
+                    <li class="nav-item">
+                        <select required="" name="filterCategory" class="form-select">
+                            <option value="all">Tất cả thể loại</option>
+                            @foreach($listCategories as $category)
+                                <option value="{{$category->ID}}">{{$category->CategoryName}}</option>
+                            @endforeach
+                        </select>
+                    </li>
+                    <button type="submit">Lọc</button>
+                </form>
             </ul>
             <!-- Basic Bootstrap Table -->
 
@@ -55,7 +73,8 @@
                             @else
                                 <td><span class="badge bg-label-danger me-1">Riêng tư</span></td>
                             @endif
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$news->Catagory}}</strong></td>
+                            @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($news->Catagory))
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$categoryObj->CategoryName}}</strong></td>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$news->Title}}</strong></td>
                             <td>{{$news->DateTime}}</td>
                             <td>{{$news->LinkPicture}}</td>

@@ -66,36 +66,68 @@
     <!-- START: Categories -->
     <div class="nk-gap-2"></div>
     <div class="row vertical-gap">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-mouse.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
+                    <a target="_blank" href="https://kiemvo.com/KiemVo1.apk">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
+                            <path fill="#7cb342" d="M12 29c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V29zM40 29c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V29zM22 40c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V40zM30 40c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V40z"></path><path fill="#7cb342" d="M14 18v15c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V18H14zM24 8c-6 0-9.7 3.6-10 8h20C33.7 11.6 30 8 24 8zM20 13.6c-.6 0-1-.4-1-1 0-.6.4-1 1-1s1 .4 1 1C21 13.1 20.6 13.6 20 13.6zM28 13.6c-.6 0-1-.4-1-1 0-.6.4-1 1-1s1 .4 1 1C29 13.1 28.6 13.6 28 13.6z"></path><path fill="#7cb342" d="M28.3 10.5c-.2 0-.4-.1-.6-.2-.5-.3-.6-.9-.3-1.4l1.7-2.5c.3-.5.9-.6 1.4-.3.5.3.6.9.3 1.4l-1.7 2.5C29 10.3 28.7 10.5 28.3 10.5zM19.3 10.1c-.3 0-.7-.2-.8-.5l-1.3-2.1c-.3-.5-.2-1.1.3-1.4.5-.3 1.1-.2 1.4.3l1.3 2.1c.3.5.2 1.1-.3 1.4C19.7 10 19.5 10.1 19.3 10.1z"></path>
+                        </svg>
+                    </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PC</a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="https://kiemvo.com/KiemVo1.apk">Tải</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="https://kiemvo.com/KiemVo1.apk">Apk</a></h3>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-gamepad.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
+                    <a target="_blank" href="https://testflight.apple.com/join/VP23baO6">
+                        <svg fill="#e6ebff" xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 384 512">
+                            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+                        </svg>
+                    </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PS4</a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="https://testflight.apple.com/join/VP23baO6">Tải</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="https://testflight.apple.com/join/VP23baO6">iOS</a></h3>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <img src="{{asset('main/images/icon-gamepad-2.png')}}" alt="{{env('SITE_NAME','Kiếm Võ')}}">
+                    <a target="_blank" href="https://www.facebook.com/KiemVo.KiemTheMobile">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
+                            <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
+                        </svg>
+                    </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">Xbox</a></h3>
-                    <h4 class="nk-feature-title text-main-1"><a href="#">View Games</a></h4>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="https://www.facebook.com/KiemVo.KiemTheMobile">Trang</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="https://www.facebook.com/KiemVo.KiemTheMobile">Facebook</a></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="nk-feature-1">
+                <div class="nk-feature-icon">
+                    <a target="_blank" href="https://zalo.me/g/qdfoeh733">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
+                            <path fill="#2962ff" d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10	c4.722,0,8.883-2.348,11.417-5.931V36H15z"></path>
+                            <path fill="#eee" d="M29,5H19c-1.845,0-3.601,0.366-5.214,1.014C10.453,9.25,8,14.528,8,19	c0,6.771,0.936,10.735,3.712,14.607c0.216,0.301,0.357,0.653,0.376,1.022c0.043,0.835-0.129,2.365-1.634,3.742	c-0.162,0.148-0.059,0.419,0.16,0.428c0.942,0.041,2.843-0.014,4.797-0.877c0.557-0.246,1.191-0.203,1.729,0.083	C20.453,39.764,24.333,40,28,40c4.676,0,9.339-1.04,12.417-2.916C42.038,34.799,43,32.014,43,29V19C43,11.268,36.732,5,29,5z"></path>
+                            <path fill="#2962ff" d="M36.75,27C34.683,27,33,25.317,33,23.25s1.683-3.75,3.75-3.75s3.75,1.683,3.75,3.75	S38.817,27,36.75,27z M36.75,21c-1.24,0-2.25,1.01-2.25,2.25s1.01,2.25,2.25,2.25S39,24.49,39,23.25S37.99,21,36.75,21z"></path>
+                            <path fill="#2962ff" d="M31.5,27h-1c-0.276,0-0.5-0.224-0.5-0.5V18h1.5V27z"></path>
+                            <path fill="#2962ff" d="M27,19.75v0.519c-0.629-0.476-1.403-0.769-2.25-0.769c-2.067,0-3.75,1.683-3.75,3.75	S22.683,27,24.75,27c0.847,0,1.621-0.293,2.25-0.769V26.5c0,0.276,0.224,0.5,0.5,0.5h1v-7.25H27z M24.75,25.5	c-1.24,0-2.25-1.01-2.25-2.25S23.51,21,24.75,21S27,22.01,27,23.25S25.99,25.5,24.75,25.5z"></path>
+                            <path fill="#2962ff" d="M21.25,18h-8v1.5h5.321L13,26h0.026c-0.163,0.211-0.276,0.463-0.276,0.75V27h7.5	c0.276,0,0.5-0.224,0.5-0.5v-1h-5.321L21,19h-0.026c0.163-0.211,0.276-0.463,0.276-0.75V18z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nk-feature-cont">
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="https://zalo.me/g/qdfoeh733">Nhóm</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="https://zalo.me/g/qdfoeh733">Zalo</a></h3>
                 </div>
             </div>
         </div>
@@ -104,128 +136,36 @@
 
     <!-- START: Latest News -->
     <div class="nk-gap-2"></div>
-    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Latest</span> News</span></h3>
+    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tin</span> Mới nhất</span></h3>
     <div class="nk-gap"></div>
 
     <div class="nk-news-box">
         <div class="nk-news-box-list">
             <div class="nano">
                 <div class="nano-content">
-
-
-                    <div class="nk-news-box-item nk-news-box-item-active">
+                    @php($listNews = App\Http\Controllers\Dashboard::getListNewsMenu(5))
+                    @foreach($listNews as $news)
+                    <div class="nk-news-box-item @if ($loop->first) nk-news-box-item-active @endif ">
                         <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-1-sm.jpg')}}" alt="Smell magic in the air. Or maybe barbecue">
+                            <img src="{{asset('main/images/post-1-sm.jpg')}}" alt="{{$news->Title}}">
                         </div>
-                        <img src="{{asset('main/images/post-1.jpg')}}" alt="Smell magic in the air. Or maybe barbecue" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                        <img src="{{asset('main/images/post-1.jpg')}}" alt="{{$news->Title}}" class="nk-news-box-item-full-img">
+                        <h3 class="nk-news-box-item-title">{{$news->Title}}</h3>
 
                         <span class="nk-news-box-item-categories">
-                            <span class="bg-main-4">MMO</span>
+                            @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($news->Catagory))
+                            @php($categoryColor = App\Http\Controllers\Dashboard::getCategoryColorClass($news->Catagory))
+                            <span class="{{$categoryColor}}">{{$categoryObj->CategoryName}}</span>
                         </span>
 
                         <div class="nk-news-box-item-text">
-                            <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
+                            @php($context = App\Http\Controllers\Dashboard::getShortenedContext($news->Context))
+                            <p>{{$context}}</p>
                         </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 18, 2018</div>
+                        <a href="#" class="nk-news-box-item-url">Đọc thêm</a>
+                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> {{$news->DateTime}}</div>
                     </div>
-
-
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-2-sm.jpg')}}" alt="Grab your sword and fight the Horde">
-                        </div>
-                        <img src="{{asset('main/images/post-2.jpg')}}" alt="Grab your sword and fight the Horde" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">Grab your sword and fight the Horde</h3>
-
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-1">Action</span>
-                        </span>
-
-                        <div class="nk-news-box-item-text">
-                            <p>For good, too; though, in consequence of my previous emotions, I was still occasionally seized with a stormy sob . After we had jogged on for some little time, I asked the carrier...</p>
-                        </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Sep 5, 2018</div>
-                    </div>
-
-
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-3-sm.jpg')}}" alt="We found a witch! May we burn her?">
-                        </div>
-                        <img src="{{asset('main/images/post-3.jpg')}}" alt="We found a witch! May we burn her?" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">We found a witch! May we burn her?</h3>
-
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-2">Adventure</span>
-                        </span>
-
-                        <div class="nk-news-box-item-text">
-                            <p>And she went on planning to herself how she would manage it. `They must go by the carrier,' she thought; `and how funny it'll seem, sending presents to one's own feet!...</p>
-                        </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 27, 2018</div>
-                    </div>
-
-
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-4-sm.jpg')}}" alt="For good, too though, in consequence">
-                        </div>
-                        <img src="{{asset('main/images/post-4.jpg')}}" alt="For good, too though, in consequence" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">For good, too though, in consequence</h3>
-
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-3">Strategy</span>
-                        </span>
-
-                        <div class="nk-news-box-item-text">
-                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                        </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Aug 14, 2018</div>
-                    </div>
-
-
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-5-sm.jpg')}}" alt="He made his passenger captain of one">
-                        </div>
-                        <img src="{{asset('main/images/post-5.jpg')}}" alt="He made his passenger captain of one" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">He made his passenger captain of one</h3>
-
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-5">Indie</span>
-                        </span>
-
-                        <div class="nk-news-box-item-text">
-                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                        </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
-                    </div>
-
-
-                    <div class="nk-news-box-item">
-                        <div class="nk-news-box-item-img">
-                            <img src="{{asset('main/images/post-6-sm.jpg')}}" alt="At first, for some time, I was not able to answer">
-                        </div>
-                        <img src="{{asset('main/images/post-6.jpg')}}" alt="At first, for some time, I was not able to answer" class="nk-news-box-item-full-img">
-                        <h3 class="nk-news-box-item-title">At first, for some time, I was not able to answer</h3>
-
-                        <span class="nk-news-box-item-categories">
-                            <span class="bg-main-5">Racing</span>
-                        </span>
-
-                        <div class="nk-news-box-item-text">
-                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                        </div>
-                        <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
-                        <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -236,501 +176,204 @@
                     <div class="nk-news-box-item-image">
                         <img src="{{asset('main/images/post-1.jpg')}}" alt="">
                         <span class="nk-news-box-item-categories">
-                            <span class="bg-main-4">MMO</span>
+                            <span class="bg-main-4"></span>
                         </span>
                     </div>
-                    <h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                    <h3 class="nk-news-box-item-title"></h3>
                     <div class="nk-news-box-item-text">
-                        <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
+                        <p></p>
                     </div>
-                    <a href="blog-article.html" class="nk-news-box-item-more">Read More</a>
+                    <a href="#" class="nk-news-box-item-more">Đọc thêm</a>
                     <div class="nk-news-box-item-date">
-                        <span class="fa fa-calendar"></span> Sep 18, 2018
+                        <span class="fa fa-calendar"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="nk-gap-2"></div>
-    <div class="nk-blog-grid">
-        <div class="row">
+{{--    <div class="nk-gap-2"></div>--}}
+{{--    <div class="nk-blog-grid">--}}
+{{--        <div class="row">--}}
 
 
-            <div class="col-md-6 col-lg-3">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.html" class="nk-post-img">
-                        <img src="{{asset('main/images/post-5-mid.jpg')}}" alt="He made his passenger captain of one">
-                        <span class="nk-post-comments-count">13</span>
+{{--            <div class="col-md-6 col-lg-3">--}}
+{{--                <!-- START: Post -->--}}
+{{--                <div class="nk-blog-post">--}}
+{{--                    <a href="blog-article.html" class="nk-post-img">--}}
+{{--                        <img src="{{asset('main/images/post-5-mid.jpg')}}" alt="He made his passenger captain of one">--}}
+{{--                        <span class="nk-post-comments-count">13</span>--}}
 
-                        <span class="nk-post-categories">
-                                    <span class="bg-main-5">Indie</span>
-                                </span>
+{{--                        <span class="nk-post-categories">--}}
+{{--                                    <span class="bg-main-5">Indie</span>--}}
+{{--                                </span>--}}
 
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
-                    <div class="nk-post-text">
-                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
-
-
-            <div class="col-md-6 col-lg-3">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.html" class="nk-post-img">
-                        <img src="{{asset('main/images/post-6-mid.jpg')}}" alt="At first, for some time, I was not able to answer">
-                        <span class="nk-post-comments-count">0</span>
-
-                        <span class="nk-post-categories">
-                                    <span class="bg-main-5">Racing</span>
-                                </span>
-
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
-                    <div class="nk-post-text">
-                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
+{{--                    </a>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>--}}
+{{--                    <div class="nk-post-text">--}}
+{{--                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>--}}
+{{--                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>--}}
+{{--                </div>--}}
+{{--                <!-- END: Post -->--}}
+{{--            </div>--}}
 
 
-            <div class="col-md-6 col-lg-3">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.html" class="nk-post-img">
-                        <img src="{{asset('main/images/post-7-mid.jpg')}}" alt="At length one of them called out in a clear">
-                        <span class="nk-post-comments-count">0</span>
+{{--            <div class="col-md-6 col-lg-3">--}}
+{{--                <!-- START: Post -->--}}
+{{--                <div class="nk-blog-post">--}}
+{{--                    <a href="blog-article.html" class="nk-post-img">--}}
+{{--                        <img src="{{asset('main/images/post-6-mid.jpg')}}" alt="At first, for some time, I was not able to answer">--}}
+{{--                        <span class="nk-post-comments-count">0</span>--}}
 
-                        <span class="nk-post-categories">
-                                    <span class="bg-main-6">MOBA</span>
-                                </span>
+{{--                        <span class="nk-post-categories">--}}
+{{--                                    <span class="bg-main-5">Racing</span>--}}
+{{--                                </span>--}}
 
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.html">At length one of them called out in a clear</a></h2>
-                    <div class="nk-post-text">
-                        <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
+{{--                    </a>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>--}}
+{{--                    <div class="nk-post-text">--}}
+{{--                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>--}}
+{{--                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>--}}
+{{--                </div>--}}
+{{--                <!-- END: Post -->--}}
+{{--            </div>--}}
 
 
-            <div class="col-md-6 col-lg-3">
-                <!-- START: Post -->
-                <div class="nk-blog-post">
-                    <a href="blog-article.html" class="nk-post-img">
-                        <img src="{{asset('main/images/post-8-mid.jpg')}}" alt="For good, too though, in consequence">
-                        <span class="nk-post-comments-count">0</span>
+{{--            <div class="col-md-6 col-lg-3">--}}
+{{--                <!-- START: Post -->--}}
+{{--                <div class="nk-blog-post">--}}
+{{--                    <a href="blog-article.html" class="nk-post-img">--}}
+{{--                        <img src="{{asset('main/images/post-7-mid.jpg')}}" alt="At length one of them called out in a clear">--}}
+{{--                        <span class="nk-post-comments-count">0</span>--}}
 
-                        <span class="nk-post-categories">
-                                    <span class="bg-main-2">Adventure</span>
-                                </span>
+{{--                        <span class="nk-post-categories">--}}
+{{--                                    <span class="bg-main-6">MOBA</span>--}}
+{{--                                </span>--}}
 
-                    </a>
-                    <div class="nk-gap"></div>
-                    <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>
-                    <div class="nk-post-text">
-                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                    </div>
-                    <div class="nk-gap"></div>
-                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>
-                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
-                </div>
-                <!-- END: Post -->
-            </div>
+{{--                    </a>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <h2 class="nk-post-title h4"><a href="blog-article.html">At length one of them called out in a clear</a></h2>--}}
+{{--                    <div class="nk-post-text">--}}
+{{--                        <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>--}}
+{{--                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>--}}
+{{--                </div>--}}
+{{--                <!-- END: Post -->--}}
+{{--            </div>--}}
 
-        </div>
-    </div>
+
+{{--            <div class="col-md-6 col-lg-3">--}}
+{{--                <!-- START: Post -->--}}
+{{--                <div class="nk-blog-post">--}}
+{{--                    <a href="blog-article.html" class="nk-post-img">--}}
+{{--                        <img src="{{asset('main/images/post-8-mid.jpg')}}" alt="For good, too though, in consequence">--}}
+{{--                        <span class="nk-post-comments-count">0</span>--}}
+
+{{--                        <span class="nk-post-categories">--}}
+{{--                                    <span class="bg-main-2">Adventure</span>--}}
+{{--                                </span>--}}
+
+{{--                    </a>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>--}}
+{{--                    <div class="nk-post-text">--}}
+{{--                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="nk-gap"></div>--}}
+{{--                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Read More</a>--}}
+{{--                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>--}}
+{{--                </div>--}}
+{{--                <!-- END: Post -->--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- END: Latest News -->
 
     <div class="nk-gap-2"></div>
     <div class="row vertical-gap">
         <div class="col-lg-8">
-
-            <!-- START: Tabbed News  -->
-            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tabbed</span> News</span></h3>
+            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tin mới</span> theo chủ đề</span></h3>
             <div class="nk-gap"></div>
             <div class="nk-tabs">
-                <!--
-                    Additional Classes:
-                        .nav-tabs-fill
-                -->
                 <ul class="nav nav-tabs nav-tabs-fill" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#tabs-1-1" role="tab" data-toggle="tab">Action</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tabs-1-2" role="tab" data-toggle="tab">MMO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tabs-1-3" role="tab" data-toggle="tab">Strategy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tabs-1-4" role="tab" data-toggle="tab">Adventure</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tabs-1-5" role="tab" data-toggle="tab">Racing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tabs-1-6" role="tab" data-toggle="tab">Indie</a>
-                    </li>
+                    @php($listCategory = App\Http\Controllers\Dashboard::getListCategoriesAndPostMenu())
+                    @foreach($listCategory as $categoryID => $category)
+                        @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($categoryID))
+                        <li class="nav-item">
+                            <a class="nav-link @if ($loop->first) active @endif" href="#tabs-{{$categoryID}}" role="tab" data-toggle="tab">{{$categoryObj->CategoryName}}</a>
+                        </li>
+                    @endforeach
                 </ul>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade show active" id="tabs-1-1">
-                        <div class="nk-gap"></div>
-                        <!-- START: Action Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-2-fw.jpg')}}" alt="Grab your sword and fight the Horde">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-1">Action</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">Grab your sword and fight the Horde</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Sep 5, 2018
-                                <span class="fa fa-comments"></span> <a href="#">7 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>For good, too; though, in consequence of my previous emotions, I was still occasionally seized with a stormy sob . After we had jogged on for some little time, I asked the carrier...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-7-mid-square.jpg')}}" alt="At length one of them called out in a clear">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-1">Action</span>
-                </span>
-
-                                    </a>
+                    @foreach($listCategory as $categoryID => $category)
+                        @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($categoryID))
+                        @php($categoryColor = App\Http\Controllers\Dashboard::getCategoryColorClass($news->Catagory))
+                        <div role="tabpanel" class="tab-pane fade @if ($loop->first) show active @endif" id="tabs-{{$categoryID}}">
+                            @if($category)
+                                @foreach($category as $news)
+                                    <div class="nk-gap"></div>
+                                    @if ($loop->first)
+                                        <div class="nk-blog-post nk-blog-post-border-bottom">
+                                            <a href="blog-article.html" class="nk-post-img">
+                                                <img src="{{asset('main/images/post-2-fw.jpg')}}" alt="{{$news->Title}}">
+                                                <span class="nk-post-categories">
+                                                    <span class="{{$categoryColor}}">{{$categoryObj->CategoryName}}</span>
+                                                </span>
+                                            </a>
+                                            <div class="nk-gap-1"></div>
+                                            <h2 class="nk-post-title h4"><a href="blog-article.html">{{$news->Title}}</a></h2>
+                                            <div class="nk-post-date mt-10 mb-10">
+                                                <span class="fa fa-calendar"></span> {{$news->DateTime}}
+                                            </div>
+                                            <div class="nk-post-text">
+                                                @php($context = App\Http\Controllers\Dashboard::getShortenedContext($news->Context))
+                                                <p>{{$context}}</p>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="nk-blog-post nk-blog-post-border-bottom">
+                                            <div class="row vertical-gap">
+                                                <div class="col-lg-3 col-md-5">
+                                                    <a href="blog-article.html" class="nk-post-img">
+                                                        <img src="{{asset('main/images/post-7-mid-square.jpg')}}" alt="{{$news->Title}}">
+                                                        <span class="nk-post-categories">
+                                                            <span class="{{$categoryColor}}">{{$categoryObj->CategoryName}}</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-9 col-md-7">
+                                                    <h2 class="nk-post-title h4"><a href="blog-article.html">{{$news->Title}}</a></h2>
+                                                    <div class="nk-post-date mt-10 mb-10">
+                                                        <span class="fa fa-calendar"></span> {{$news->DateTime}}
+                                                    </div>
+                                                    <div class="nk-post-text">
+                                                        @php($context = App\Http\Controllers\Dashboard::getShortenedContext($news->Context))
+                                                        <p>{{$context}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @else
+                                <div class="nk-gap"></div>
+                                <div class="d-flex justify-content-center">
+                                    <h3>Thể loại này chưa có bài viết nào</h3>
                                 </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">At length one of them called out in a clear</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Jul 3, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">0 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endif
                         </div>
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-9-mid-square.jpg')}}" alt="He made his passenger captain of one">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-1">Action</span>
-                </span>
-
-                                    </a>
-                                </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Jul 3, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">0 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: Action Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tabs-1-2">
-                        <div class="nk-gap"></div>
-                        <!-- START: MMO Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-1-fw.jpg')}}" alt="Smell magic in the air. Or maybe barbecue">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-4">MMO</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">Smell magic in the air. Or maybe barbecue</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Sep 18, 2018
-                                <span class="fa fa-comments"></span> <a href="#">4 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-5-mid-square.jpg')}}" alt="He made his passenger captain of one">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-4">MMO</span>
-                </span>
-
-                                    </a>
-                                </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Jul 23, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">13 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: MMO Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tabs-1-3">
-                        <div class="nk-gap"></div>
-                        <!-- START: Strategy Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-3-fw.jpg')}}" alt="We found a witch! May we burn her?">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-3">Strategy</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">We found a witch! May we burn her?</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Aug 27, 2018
-                                <span class="fa fa-comments"></span> <a href="#">7 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>And she went on planning to herself how she would manage it. `They must go by the carrier,' she thought; `and how funny it'll seem, sending presents to one's own feet!...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-4-mid-square.jpg')}}" alt="For good, too though, in consequence">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-3">Strategy</span>
-                </span>
-
-                                    </a>
-                                </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Aug 14, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">23 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: Strategy Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tabs-1-4">
-                        <div class="nk-gap"></div>
-                        <!-- START: Adventure Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-6-fw.jpg')}}" alt="At first, for some time, I was not able to answer">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-2">Adventure</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Jul 3, 2018
-                                <span class="fa fa-comments"></span> <a href="#">0 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: Adventure Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tabs-1-5">
-                        <div class="nk-gap"></div>
-                        <!-- START: Racing Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-7-fw.jpg')}}" alt="At length one of them called out in a clear">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-5">Racing</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">At length one of them called out in a clear</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Jul 3, 2018
-                                <span class="fa fa-comments"></span> <a href="#">0 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-3-mid-square.jpg')}}" alt="We found a witch! May we burn her?">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-5">Racing</span>
-                </span>
-
-                                    </a>
-                                </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">We found a witch! May we burn her?</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Aug 27, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">7 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>And she went on planning to herself how she would manage it. `They must go by the carrier,' she thought; `and how funny it'll seem, sending presents to one's own feet!...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <div class="row vertical-gap">
-                                <div class="col-lg-3 col-md-5">
-                                    <a href="blog-article.html" class="nk-post-img">
-                                        <img src="{{asset('main/images/post-4-mid-square.jpg')}}" alt="For good, too though, in consequence">
-
-                                        <span class="nk-post-categories">
-                    <span class="bg-main-5">Racing</span>
-                </span>
-
-                                    </a>
-                                </div>
-                                <div class="col-lg-9 col-md-7">
-                                    <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>
-                                    <div class="nk-post-date mt-10 mb-10">
-                                        <span class="fa fa-calendar"></span> Aug 14, 2018
-                                        <span class="fa fa-comments"></span> <a href="#">23 comments</a>
-                                    </div>
-                                    <div class="nk-post-text">
-                                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: Racing Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tabs-1-6">
-                        <div class="nk-gap"></div>
-                        <!-- START: Indie Tab -->
-
-
-                        <div class="nk-blog-post nk-blog-post-border-bottom">
-                            <a href="blog-article.html" class="nk-post-img">
-                                <img src="{{asset('main/images/post-5-fw.jpg')}}" alt="He made his passenger captain of one">
-
-                                <span class="nk-post-categories">
-            <span class="bg-main-2">Indie</span>
-        </span>
-
-                            </a>
-                            <div class="nk-gap-1"></div>
-                            <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
-                            <div class="nk-post-date mt-10 mb-10">
-                                <span class="fa fa-calendar"></span> Jul 23, 2018
-                                <span class="fa fa-comments"></span> <a href="#">13 comments</a>
-                            </div>
-                            <div class="nk-post-text">
-                                <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
-                            </div>
-                        </div>
-
-
-
-                        <!-- END: Indie Tab -->
-                        <div class="nk-gap"></div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!-- END: Tabbed News -->

@@ -133,7 +133,7 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{asset('/listNews')}}" class="menu-link">
+            <a href="{{asset('/listNews/all')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Tables">Tin tức</div>
             </a>
