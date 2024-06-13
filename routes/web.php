@@ -47,11 +47,13 @@ Route::get('/deleteGiftCode/{id}', 'App\Http\Controllers\Money@deleteGiftCode');
 Route::post('/postGiftCode',  'App\Http\Controllers\Money@postGiftCode');
 
 
-// Category route
+// Category cms route
 Route::get('/listCategories', 'App\Http\Controllers\Dashboard@getListCategories');
 Route::get('/editCategory/{id}', 'App\Http\Controllers\Dashboard@getCategoryDetails');
 Route::post('/postCategory', 'App\Http\Controllers\Dashboard@getUpdateCategoryDetails');
 Route::get('/deleteCategory/{id}', 'App\Http\Controllers\Dashboard@getDeleteCategory');
+// Category user route
+Route::get('/category/{id}', 'App\Http\Controllers\Dashboard@getListNewsByCategories');
 
 // News route
 Route::get('/listNews', 'App\Http\Controllers\Dashboard@getListNews');

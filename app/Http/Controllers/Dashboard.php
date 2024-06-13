@@ -77,7 +77,13 @@ class Dashboard extends Controller
 
     public static function getListNewsMenu($limit){
         $newsModel = new NewsModel();
-        $listNews = $newsModel->getListNewsSlide($limit);
+        $listNews = $newsModel->getListNewsMenu($limit);
+        return $listNews;
+    }
+
+    public static function getListSlide(){
+        $newsModel = new NewsModel();
+        $listNews = $newsModel->getListNewsForSlide();
         return $listNews;
     }
 
@@ -91,7 +97,7 @@ class Dashboard extends Controller
         return view('cms/listNews')->with('listNews',$listNews)->with('listCategories',$listCategories);
     }
 
-    function getListCategoriesMenu(){
+    static function getListCategoriesMenu(){
         $categoryModel = new CategoryModel();
         $listCategories = $categoryModel->getListCategories();
         return $listCategories->getDictionary();
@@ -210,6 +216,12 @@ class Dashboard extends Controller
         $categoryModel = new CategoryModel();
         $listCategories = $categoryModel->getListCategories()->getDictionary();
         return view('cms/listCategories')->with('listCategories',$listCategories);
+    }
+
+    function getListNewsByCategories($id){
+        $newsModel = new NewsModel();
+        $listNewsByCategories = $newsModel->getNewsByCategory($id)->getDictionary();
+        return view('main/categories')->with('listNewsByCategories',$listNewsByCategories);
     }
 
     static function getListCategoriesAndPostMenu(){

@@ -7,64 +7,32 @@
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
-
-                <li class=" nk-drop-item">
-                    <a href="elements.html">Features</a>
-                    <ul class="dropdown">
-                        <li>
-                            <a href="elements.html">Elements (Shortcodes)</a>
-                        </li>
-                        <li class=" nk-drop-item">
-                            <a href="forum.html">Forum</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="forum.html">Forum</a>
-                                </li>
-                                <li>
-                                    <a href="forum-topics.html">Topics</a>
-                                </li>
-                                <li>
-                                    <a href="forum-single-topic.html">Single Topic</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="widgets.html">Widgets</a>
-                        </li>
-                        <li>
-                            <a href="coming-soon.html">Coming Soon</a>
-                        </li>
-                        <li>
-                            <a href="offline.html">Offline</a>
-                        </li>
-                        <li>
-                            <a href="404.html">404</a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modalLogin">Đăng nhập</a>
                 </li>
                 @php($listCategory = App\Http\Controllers\Dashboard::getListCategoriesMenu())
                     @foreach($listCategory as $category)
                         <li>
-                            <a href="test/{{$category->ID}}">{{$category->CategoryName}}</a>
+                            <a href="{{asset('category')}}/{{$category->ID}}">{{$category->CategoryName}}</a>
                         </li>
                     @endforeach
                 <li class="nk-drop-item">
-                    <a href="gallery.html">
+                    <a href="#">
                         Cộng đồng
                     </a>
                     <ul class="dropdown">
                         <li>
-                            <a href="widgets.html">Fanpage</a>
+                            <a href="https://www.facebook.com/KiemVo.KiemTheMobile">Fanpage</a>
                         </li>
                         <li>
-                            <a href="coming-soon.html">Group</a>
+                            <a href="https://www.facebook.com/groups/1129603218325456">Group</a>
                         </li>
                         <li>
-                            <a href="offline.html">Zalo</a>
+                            <a href="https://zalo.me/g/qdfoeh733">Zalo</a>
                         </li>
-                        <li>
-                            <a href="404.html">Youtube</a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="404.html">Youtube</a>--}}
+{{--                        </li>--}}
                     </ul>
                 </li>
             </ul>

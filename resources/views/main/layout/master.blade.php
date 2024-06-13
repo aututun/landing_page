@@ -7,6 +7,7 @@
     <div class="container">
         @yield('index')
         @yield('news')
+        @yield('categories')
     </div>
     <div class="nk-gap-4"></div>
 </div>

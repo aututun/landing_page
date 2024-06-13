@@ -28,8 +28,12 @@ class News extends Model
         return News::select()->where('Deleted', 0)->inRandomOrder()->limit($limit)->get();
     }
 
-    function getListNewsSlide($limit = 5){
+    function getListNewsMenu($limit = 5){
         return News::all()->where('Deleted', 0)->where('Catagory','!=', 1)->where('PublicNews', 1)->skip(0)->take($limit);
+    }
+
+    function getListNewsForSlide(){
+        return News::all()->where('Deleted', 0)->where('Catagory',1)->where('PublicNews', 1);
     }
 
     function getNewsById($id){
