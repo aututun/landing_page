@@ -292,10 +292,10 @@
                 <div class="tab-content">
                     @foreach($listCategory as $categoryID => $category)
                         @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($categoryID))
-                        @php($categoryColor = App\Http\Controllers\Dashboard::getCategoryColorClass($news->Catagory))
                         <div role="tabpanel" class="tab-pane fade @if ($loop->first) show active @endif" id="tabs-{{$categoryID}}">
                             @if($category)
                                 @foreach($category as $news)
+                                    @php($categoryColor = App\Http\Controllers\Dashboard::getCategoryColorClass($news->Catagory))
                                     <div class="nk-gap"></div>
                                     @if ($loop->first)
                                         <div class="nk-blog-post nk-blog-post-border-bottom">
