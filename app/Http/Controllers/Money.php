@@ -20,11 +20,18 @@ class Money extends Controller
     }
 
     function congKTcoin(Request $request){
+        $status = 'error';
         $kvCoin = $request['KVcoin'];
         $userId = $request['userDuocNap'];
+        $currentLoginUserRole = session()->get('roleCms');
+        $currentLoginUserID = session()->get('user_id');
+        if ($currentLoginUserRole == 2) {
+            $currentLoginKTcoin = KTcoinModel::getKTcoin($currentLoginUserID);
+            $newLoginKTcoin = $currentLoginKTcoin - $kvCoin;
+            KTcoinModel::setKTcoin($newLoginKTcoin,$currentLoginUserID);
+        }
         $curentKTcoin = KTcoinModel::getKTcoin($userId);
         $newKTcoin = $curentKTcoin + $kvCoin;
-        $status = 'error';
         $result = KTcoinModel::setKTcoin($newKTcoin,$userId);
         if ($result) {
             $status = 'success';

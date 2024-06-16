@@ -40,9 +40,13 @@
                             <td>{{$user->Email}}</td>
                             <td>{{$user->KTcoin}}</td>
                             @if($user->RoleCms == 1)
-                                <td><span class="badge bg-label-success me-1">Admin</span></td>
+                                <td><span class="badge bg-label-success me-1">Admin (quản trị viên)</span></td>
+                            @elseif($user->RoleCms == 2)
+                                <td><span class="badge bg-label-info me-1">Agency (đại lý)</span></td>
+                            @elseif($user->RoleCms == 3)
+                                <td><span class="badge bg-label-primary me-1">Author (tác giả)</span></td>
                             @else
-                                <td><span class="badge bg-label-primary me-1">User</span></td>
+                                <td><span class="badge bg-label-secondary me-1">User (người chơi)</span></td>
                             @endif
                             <td>
                                 <div class="dropdown">
@@ -50,8 +54,19 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Nạp KVCoin</a>
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Trừ KVCoin</a>
+                                        @if(session()->get('roleCms') == 1)
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Trừ KVCoin
+                                            </a>
+                                        @endif
+                                        @if(session()->get('roleCms') == 3)
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </td>
@@ -70,13 +85,13 @@
                         <div class="demo-inline-spacing">
                             <!-- Basic Pagination -->
                             <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center">
+                                <ul style="list-style:none; display:flex;flex-wrap : wrap;" class="pagination justify-content-center">
 {{--                                    <li class="page-item prev">--}}
 {{--                                        <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-left"></i></a>--}}
 {{--                                    </li>--}}
                                     @php($total = App\Http\Controllers\User::getTotalPage())
                                     @for ($i = 1; $i < $total; $i++)
-                                    <li class="page-item">
+                                    <li style="border-radius : 3px ; margin:4px ;text-align : center ;" class="page-item">
                                         <a class="page-link @if($i == $page) active @endif" href="{{asset('/listUser/'.$i)}}">{{$i}}</a>
                                     </li>
                                     @endfor

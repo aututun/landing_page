@@ -52,8 +52,11 @@ Route::get('/listCategories', 'App\Http\Controllers\Dashboard@getListCategories'
 Route::get('/editCategory/{id}', 'App\Http\Controllers\Dashboard@getCategoryDetails');
 Route::post('/postCategory', 'App\Http\Controllers\Dashboard@getUpdateCategoryDetails');
 Route::get('/deleteCategory/{id}', 'App\Http\Controllers\Dashboard@getDeleteCategory');
+
+
 // Category user route
 Route::get('/category/{id}', 'App\Http\Controllers\Dashboard@getListNewsByCategories');
+
 
 // News route
 Route::get('/listNews', 'App\Http\Controllers\Dashboard@getListNews');
@@ -76,9 +79,10 @@ Route::post('/loginPost','App\Http\Controllers\User@postLogin');
 Route::post('/signUpPost','App\Http\Controllers\User@postSignUp');
 Route::post('/postChangePassword','App\Http\Controllers\User@postChangePassword');
 Route::post('/postChangeInfo','App\Http\Controllers\User@postChangeInfo');
-Route::get('/account','App\Http\Controllers\User@getDetailsUser');
+Route::post('/postCreateAccount','App\Http\Controllers\User@postCreateAccount');
 Route::post('/listUserByName','App\Http\Controllers\User@listUserByName');
-
+Route::get('/account','App\Http\Controllers\User@getDetailsUser');
+Route::get('/createAccount', function () {return view('cms/createAccountForm');});
 
 
 // Other

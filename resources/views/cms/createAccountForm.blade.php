@@ -4,63 +4,55 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Quản lý tài khoản /</span> Thông tin cá nhân</h4>
-
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="nav nav-pills flex-column flex-md-row mb-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{asset('/account')}}"><i class="bx bx-user me-1"></i> Thông tin cá nhân</a>
-                        </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link" href="{{asset('/connections')}}"--}}
-{{--                            ><i class="bx bx-link-alt me-1"></i> Connections</a--}}
-{{--                            >--}}
-{{--                        </li>--}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/changePassword')}}"
-                            ><i class="bx bx-lock me-1"></i> Đổi mật khẩu</a
-                            >
-                        </li>
-                    </ul>
                     <div class="card mb-4">
-                        @if(session()->get('status') == 'success')
+                        @if(session()->get('statusCreateAccount') == 'success')
                             <div class="alert alert-success alert-dismissible" role="alert">Thành công
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                        @elseif(session()->get('status') == 'error')
+                        @elseif(session()->get('statusCreateAccount') == 'error')
                             <div class="alert alert-danger alert-dismissible" role="alert">
                                 Thất bại
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
-                        @php(session()->forget('status'))
+                        @php(session()->forget('statusCreateAccount'))
                         <h5 class="card-header">Thông tin cá nhân</h5>
                         <!-- Account -->
                         <hr class="my-0" />
                         <div class="card-body">
-                            <form action="{{asset('/postChangeInfo')}}" method="post">
+                            <form action="{{asset('/postCreateAccount')}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <label for="FallName" class="form-label">Họ và tên</label>
+                                        <label for="FullName" class="form-label">Họ và tên</label>
                                         <input class="form-control" type="text" name="FullName" id="FullName" value="@if(!empty($user)){{$user->FullName}}@endif"/>
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label for="firstName" class="form-label">Tên đăng nhập</label>
-                                        <input disabled class="form-control" type="text" value="@if(!empty($user)){{$user->LoginName}}@endif" />
+                                        <label for="LoginName" class="form-label">Tên đăng nhập</label>
+                                        <input class="form-control" name="LoginName"  type="text" required/>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="Phone" class="form-label">Số điện thoại</label>
-                                        <input class="form-control" type="text" name="Phone" id="Phone" value="@if(!empty($user)){{$user->Phone}}@endif" />
+                                        <input class="form-control" type="tel" name="Phone" id="Phone"/>
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label for="firstName" class="form-label">Lần cuối đăng nhập</label>
-                                        <input disabled class="form-control" type="text" value="@if(!empty($user)){{$user->LastLoginTime}}@endif" />
+                                        <label for="Password" class="form-label">Mật khẩu</label>
+                                        <input class="form-control" type="text" name="Password" id="Password" required/>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="Email" class="form-label">E-mail</label>
-                                        <input class="form-control" type="email" id="Email" name="Email" value="@if(!empty($user)){{$user->Email}}@endif" placeholder="john.doe@example.com"/>
+                                        <input class="form-control" type="email" id="Email" name="Email" placeholder="john.doe@example.com"/>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label for="Email" class="form-label">Vai trò</label>
+                                        <select required="" name="RoleCms" class="form-select">
+                                            <option value="0">Ngươi chơi</option>
+                                            <option value="1">Quản trị viên</option>
+                                            <option value="2">Đại lý</option>
+                                            <option value="3">Tác giả</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="mt-2">

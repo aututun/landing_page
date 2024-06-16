@@ -7,18 +7,13 @@
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
-        @if(session()->get('roleCms') == 1)
+        @if(session()->get('roleCms') != 0)
         <div class="navbar-nav align-items-center">
             <div class="nav-item d-flex align-items-center">
                 <i class="bx bx-search fs-4 lh-0"></i>
                 <form action="{{asset('/listUserByName')}}" method="post">
                     @csrf
-                <input
-                    type="text" name="LoginName"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Tìm username"
-                    aria-label="Tìm username"
-                />
+                <input type="text" name="LoginName" class="form-control border-0 shadow-none" placeholder="Tìm username" aria-label="Tìm username"/>
                 </form>
             </div>
         </div>
@@ -60,7 +55,7 @@
 {{--                        <div class="dropdown-divider"></div>--}}
 {{--                    </li>--}}
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{asset('/account')}}">
                             <i class="bx bx-user me-2"></i>
                             <span class="align-middle">Thông tin cá nhân</span>
                         </a>

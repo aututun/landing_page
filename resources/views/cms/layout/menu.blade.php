@@ -87,24 +87,15 @@
 {{--            </a>--}}
 {{--        </li>--}}
         @if(session()->get('roleCms') == 1)
-{{--        <li class="menu-item">--}}
-{{--            <a href="javascript:void(0);" class="menu-link menu-toggle">--}}
-{{--                <i class="menu-icon tf-icons bx bx-cube-alt"></i>--}}
-{{--                <div data-i18n="Misc">Misc</div>--}}
-{{--            </a>--}}
-{{--            <ul class="menu-sub">--}}
-{{--                <li class="menu-item">--}}
-{{--                    <a href="pages-misc-error.html" class="menu-link">--}}
-{{--                        <div data-i18n="Error">Error</div>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="menu-item">--}}
-{{--                    <a href="pages-misc-under-maintenance.html" class="menu-link">--}}
-{{--                        <div data-i18n="Under Maintenance">Under Maintenance</div>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
+            <li class="menu-item">
+                <a href="{{asset('/createAccount')}}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-user"></i>
+                    <div data-i18n="Account">Tạo tài khoản</div>
+                </a>
+            </li>
+        @endif
+
+        @if(session()->get('roleCms') == 1)
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Quản lý server</span></li>
         <li class="menu-item">
             <a href="{{asset('/listUser/1')}}" class="menu-link">
@@ -112,6 +103,9 @@
                 <div data-i18n="Tables">Danh sách người chơi</div>
             </a>
         </li>
+        @endif
+
+        @if(session()->get('roleCms') == 1)
         <li class="menu-item">
             <a href="{{asset('/listGiftCode')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-file"></i>
@@ -124,7 +118,9 @@
                 <div data-i18n="Tables">Backup server</div>
             </a>
         </li>
+        @endif
 
+        @if(session()->get('roleCms') == 1 || session()->get('roleCms') == 3)
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Tin tức - Bài viết</span></li>
         <li class="menu-item">
             <a href="{{asset('/listCategories')}}" class="menu-link">
@@ -138,8 +134,8 @@
                 <div data-i18n="Tables">Tin tức</div>
             </a>
         </li>
-
         @endif
+
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Linh tinh</span></li>
         <li class="menu-item">
             <a href="https://www.facebook.com/messages/t/261312800405649" target="_blank" class="menu-link">

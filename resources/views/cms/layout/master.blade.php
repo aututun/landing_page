@@ -26,7 +26,7 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <div class="buy-now">
-        <a class="btn btn-danger btn-buy-now" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalKvcoinQR">Nạp tiền</a>
+        <a class="btn btn-danger btn-buy-now" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas">Nạp tiền</a>
     </div>
 </div>
 </body>

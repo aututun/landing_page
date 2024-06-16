@@ -25,6 +25,10 @@ class User extends Controller
         }
     }
 
+    function getCreateAccountForm(Request $request){
+        return view('cms/account');
+    }
+
     function postSignUp(Request $request){
         $username = $request['LoginName'];
         $email = $request['Email'];
@@ -40,14 +44,26 @@ class User extends Controller
             session()->flash('exist', true);
             return redirect('/login')->with('exist', false);
         }
-//        $this->sendWelcomeEmail($user);
-        // 3. Optional: Send Welcome Email or Perform Other Actions
-
         return redirect('/login')->with('signup_success', true);
     }
 
-    public function sendWelcomeEmail($user){
-        \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\WelcomeEmail($user->username));
+    public function postCreateAccount(Request $request){
+        $status = 'error';
+        $data = array(
+            'FullName' => $request['FullName'],
+            'LoginName' => $request['LoginName'],
+            'Phone' => $request['Phone'] ?: '01234567891',
+            'Password' => $request['Password'],
+            'Email' => $request['Email'] ?: 'unknow@email.com',
+            'RoleCms' => $request['RoleCms'] ?: 0,
+        );
+        $user = UserModel::getUserRegisterInformation($data['LoginName']);
+        if (!$user) {
+            UserModel::createUser($data);
+            $status = 'success';
+        }
+        session()->flash('statusCreateAccount', $status);
+        return redirect('/createAccount');
     }
 
     public function postChangePassword(Request $request){
@@ -85,6 +101,18 @@ class User extends Controller
         return redirect('/changePassword');
     }
     public function postChangeInfo(Request $request){
+        $status = 'error';
+        $userModel = new UserModel();
+        $data = $request->all();
+        $status = $userModel->updateUser($data);
+        if ($status) {
+            $status = 'success';
+        }
+        session()->flash('status', $status);
+        return redirect('/account');
+    }
+
+    public function postCreateUser(Request $request){
         $status = 'error';
         $userModel = new UserModel();
         $data = $request->all();

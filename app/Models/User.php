@@ -21,10 +21,26 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'LoginName',
-        'Email',
         'Password',
-        'RoleCms',
+        'Phone',
+        'Status',
         'Date',
+        'ActiveRoleID',
+        'ActiveRoleName',
+        'FullName',
+        'Email',
+        'TokenTimeExp',
+        'AccessToken',
+        'LastServerLogin',
+        'LastLoginTime',
+        'LastIPLogin',
+        'RoleCms',
+    ];
+
+    protected $attributes = [
+        'ActiveRoleID' => 0,
+        'Status' => 0,
+        'LastServerLogin' => 0,
     ];
 
     /**
@@ -47,6 +63,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
 
+
     function getTotalPage()
     {
         $count = User::count();
@@ -66,6 +83,10 @@ class User extends Authenticatable
         return null;
     }
 
+    static public function getUserRegisterInformation($username){
+        return User::where('LoginName', $username)->first();
+    }
+
     static public function getCurrentUser($usernameId = null){
         if (!$usernameId) {
             $usernameId = session()->get('user_id');
@@ -77,18 +98,10 @@ class User extends Authenticatable
         return null;
     }
 
-    static public function createUser($data,$isAdmin = false){
-        $user = [
-            'LoginName' => $data['LoginName'],
-            'Email' => $data['Email'],
-            'Password' => strtoupper(hash('md5', $data['Password'], false)),
-            'RoleCms' => 0,
-            'Date' => date_format(now(),"Y/m/d H:i:s"),
-        ];
-        if($isAdmin) {
-            $user['RoleCms'] = 1;
-        }
-        return static::query()->create($user);
+    static public function createUser($data){
+        $data['Password'] = strtoupper(hash('md5', $data['Password'], false));
+        $data['Date'] = date_format(now(),"Y/m/d H:i:s");
+        return static::query()->create($data);
     }
 
      public function updateUser($data){
@@ -130,7 +143,12 @@ class User extends Authenticatable
         return null;
     }
     public function getListUserByName($userName){
-        $listUsers = User::where('LoginName','like', "%$userName%")->get();
+        $userRole = session()->get('roleCms');
+        if ($userRole == 1) {
+            $listUsers = User::where('LoginName','like', "%$userName%")->get();
+        } else {
+            $listUsers = User::where('LoginName','like', "%$userName%")->where('RoleCms','!=', 1)->get();
+        }
         $newListUsers = array();
         foreach ($listUsers as $user) {
             $user->KTcoin = KTcoin::getKTcoin($user->ID);

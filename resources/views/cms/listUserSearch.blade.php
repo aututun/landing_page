@@ -40,9 +40,13 @@
                             <td>{{$user->Email}}</td>
                             <td>{{$user->KTcoin}}</td>
                             @if($user->RoleCms == 1)
-                                <td><span class="badge bg-label-success me-1">Admin</span></td>
+                                <td><span class="badge bg-label-success me-1">Admin (quản trị viên)</span></td>
+                            @elseif($user->RoleCms == 2)
+                                <td><span class="badge bg-label-info me-1">Agency (đại lý)</span></td>
+                            @elseif($user->RoleCms == 3)
+                                <td><span class="badge bg-label-primary me-1">Author (tác giả)</span></td>
                             @else
-                                <td><span class="badge bg-label-primary me-1">User</span></td>
+                                <td><span class="badge bg-label-secondary me-1">User (người chơi)</span></td>
                             @endif
                             <td>
                                 <div class="dropdown">
@@ -50,8 +54,18 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Nạp KVCoin</a>
-                                        <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}"><i class="bx bx-edit-alt me-1"></i> Trừ KVCoin</a>
+                                        @if(session()->get('roleCms') == 1)
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Trừ KVCoin
+                                            </a>
+                                        @elseif(session()->get('roleCms') == 2)
+                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
+                                                <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </td>
