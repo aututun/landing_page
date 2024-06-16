@@ -56,12 +56,13 @@
                                     <div class="dropdown-menu">
                                         @if(session()->get('roleCms') == 1)
                                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
-                                                <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
+                                                <i class="bx bx-plus me-1"></i> Nạp KVCoin
                                             </a>
                                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalMinusTKCoin_{{$user->ID}}">
-                                                <i class="bx bx-edit-alt me-1"></i> Trừ KVCoin
+                                                <i class="bx bx-minus me-1"></i> Trừ KVCoin
                                             </a>
-                                        @elseif(session()->get('roleCms') == 2)
+                                        @endif
+                                        @if(session()->get('roleCms') == 3)
                                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
                                                 <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
                                             </a>

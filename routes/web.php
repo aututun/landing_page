@@ -29,6 +29,7 @@ Route::get('/listFile/{location}', 'App\Http\Controllers\Dashboard@getFile');
 
 
 // Money route
+Route::post('/historyKTcoin', 'App\Http\Controllers\Money@historyKTcoin');
 Route::post('/congKTcoin', 'App\Http\Controllers\Money@congKTcoin');
 Route::post('/truKTcoin', 'App\Http\Controllers\Money@truKTcoin');
 Route::post('/napKTCoin', 'App\Http\Controllers\Money@postNapKTCoin');

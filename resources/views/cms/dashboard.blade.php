@@ -138,7 +138,7 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 
-                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4"><h3>Lịch sử nạp</h3>
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4"><h3>Lịch sử nạp đồng</h3>
                     <div class="card">
                         <div class="table-responsive text-nowrap">
                             <table class="table display" style="text-align: center;">
