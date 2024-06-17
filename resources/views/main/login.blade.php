@@ -35,11 +35,11 @@
 {{--                        </div>--}}
                     </div>
 
-{{--                    <div class="nk-gap-1"></div>--}}
-{{--                    <div class="row vertical-gap">--}}
-{{--                        <div class="col-md-6">--}}
-{{--                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Đăng nhập</button>--}}
-{{--                        </div>--}}
+                    <div class="nk-gap-1"></div>
+                    <div class="row vertical-gap">
+                        <div class="col-md-6">
+                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Đăng nhập</button>
+                        </div>
 {{--                        <div class="col-md-6">--}}
 {{--                            <div class="mnt-5">--}}
 {{--                                <small><a href="#">Quên mật khẩu ?</a></small>--}}
@@ -48,7 +48,7 @@
 {{--                                <small><a href="#">Chưa có tài khoản ? Đăng ký ngay</a></small>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-{{--                    </div>--}}
+                    </div>
                 </form>
             </div>
         </div>
