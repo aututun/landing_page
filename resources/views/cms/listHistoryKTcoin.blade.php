@@ -15,7 +15,7 @@
                         <tr>
                             <th>Người nạp</th>
                             <th>Số tiền</th>
-                            <th>Phương thức</th>
+{{--                            <th>Phương thức</th>--}}
                             <th>Ngày nạp</th>
                         </tr>
                         </thead>
@@ -24,7 +24,7 @@
                             <tr>
                                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$history->FromUser}}</strong></td>
                                 <td>{{$history->KVcoin}}</td>
-                                <td>{{$history->Method}}</td>
+{{--                                <td>{{$history->Method}}</td>--}}
                                 <td>{{$history->Date}}</td>
                             </tr>
                         @endforeach

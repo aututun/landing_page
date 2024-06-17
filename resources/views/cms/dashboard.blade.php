@@ -16,6 +16,17 @@
                     </div>
                 @endif
             @endisset
+                @if(session()->get('status') == 'success')
+                    <div class="alert alert-success alert-dismissible" role="alert">Thành công
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @elseif(session()->get('status') == 'error')
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        Thất bại
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @php(session()->forget('status'))
             <div class="row">
                 <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                     <div class="row">

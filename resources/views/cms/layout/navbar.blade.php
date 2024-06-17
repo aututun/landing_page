@@ -60,6 +60,13 @@
                             <span class="align-middle">Thông tin cá nhân</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bx bx-coin me-2"></i>
+                            @php($kvcoin = App\Http\Controllers\Money::getKTcoin())
+                            <span class="align-middle">KVcoin : {{$kvcoin}}</span>
+                        </a>
+                    </li>
 {{--                    <li>--}}
 {{--                        <a class="dropdown-item" href="#">--}}
 {{--                            <i class="bx bx-cog me-2"></i>--}}

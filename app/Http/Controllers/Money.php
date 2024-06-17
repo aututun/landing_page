@@ -27,20 +27,24 @@ class Money extends Controller
         $currentLoginUserRole = session()->get('roleCms');
         $method = $request['Method'] ?: 1;
         $currentLoginUserID = session()->get('user_id');
-        KVcoinHistoryModel::createHistory($currentLoginUserID,$userId,$kvCoin,$method);
         if ($currentLoginUserRole == 2) {
             $currentLoginKTcoin = KTcoinModel::getKTcoin($currentLoginUserID);
             $newLoginKTcoin = $currentLoginKTcoin - $kvCoin;
+            if ($newLoginKTcoin < 0) {
+                session()->flash('status', 'error');
+                return redirect('/listUser');
+            }
             KTcoinModel::setKTcoin($newLoginKTcoin,$currentLoginUserID);
         }
         $curentKTcoin = KTcoinModel::getKTcoin($userId);
         $newKTcoin = $curentKTcoin + $kvCoin;
         $result = KTcoinModel::setKTcoin($newKTcoin,$userId);
+        KVcoinHistoryModel::createHistory($currentLoginUserID,$userId,$kvCoin,$method);
         if ($result) {
             $status = 'success';
         }
         session()->flash('status', $status);
-        return redirect('/listUser/1');
+        return redirect('/dashboard');
     }
 
     function truKTcoin(Request $request){
