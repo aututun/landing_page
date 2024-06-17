@@ -10,6 +10,7 @@
             @yield('listUser')
             @yield('listServer')
             @yield('listUserSearch')
+            @yield('listHistoryKTcoin')
             @yield('listSql')
             @yield('news')
             @yield('categories')

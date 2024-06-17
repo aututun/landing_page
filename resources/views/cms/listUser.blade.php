@@ -55,8 +55,8 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         @if(session()->get('roleCms') == 1)
-                                            <a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
-                                                <i class="bx bx-coin me-1"></i> Lịch sử nạp KV coin
+                                            <a class="dropdown-item" href="{{asset('/historyKVcoin')}}/{{$user->ID}}">
+                                                <i class="bx bx-history me-1"></i> Lịch sử nạp
                                             </a>
                                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
                                                 <i class="bx bx-plus me-1"></i> Nạp KVCoin
@@ -65,7 +65,7 @@
                                                 <i class="bx bx-minus me-1"></i> Trừ KVCoin
                                             </a>
                                         @endif
-                                        @if(session()->get('roleCms') == 3)
+                                        @if(session()->get('roleCms') == 2)
                                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalAddTKCoin_{{$user->ID}}">
                                                 <i class="bx bx-edit-alt me-1"></i> Nạp KVCoin
                                             </a>

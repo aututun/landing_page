@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User as UserModel;
 
 class KVcoinHistory extends Model
 {
@@ -30,7 +31,19 @@ class KVcoinHistory extends Model
     }
 
     function getHistoryKTcoinByUserTo($id){
-        return KVcoinHistory::all()->where('ToUser', $id);
+        $data = KVcoinHistory::all()->where('ToUser', $id);
+        $newData = array();
+        foreach ($data as $key => $value) {
+            $fromUserId = $value->FromUser;
+            if ($fromUserId == 0) {
+                $value->FromUser = 'Auto';
+            } else {
+                $userModel = UserModel::getUserInformationById($fromUserId);
+                $value->FromUser = $userModel ? $userModel->LoginName : 'Auto';
+            }
+            $newData[$key] = $value;
+        }
+        return $newData;
     }
 
     function getHistoryKTcoin($fromUserID,$toUserID){
@@ -39,12 +52,12 @@ class KVcoinHistory extends Model
 
     public static function createHistory($fromUserID,$toUserID,$KVcoin,$method){
         $obj = array(
-            'fromUser' => $fromUserID,
-            'toUser' => $toUserID,
+            'FromUser' => $fromUserID,
+            'ToUser' => $toUserID,
             'KVcoin' => $KVcoin,
             'Date' => date_format(now(),"Y/m/d H:i:s"),
             'Method' => $method,
         );
-        return static::query()->create($obj);
+        static::query()->create($obj);
     }
 }

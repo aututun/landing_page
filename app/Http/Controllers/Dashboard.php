@@ -25,7 +25,7 @@ class Dashboard extends Controller
         if (session()->has('user_id')) {
             return view('cms/dashboard');
         }
-        return view('main/login');
+        return redirect('/');
     }
 
     static function getListServer(){

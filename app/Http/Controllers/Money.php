@@ -9,6 +9,7 @@ use App\Models\Dong as DongModel;
 use App\Models\User as UserModel;
 use App\Models\MoneyLog as MoneyLogModel;
 use App\Models\Giftcode as GiftcodeModel;
+use App\Models\KVcoinHistory as KVcoinHistoryModel;
 
 class Money extends Controller
 {
@@ -24,7 +25,9 @@ class Money extends Controller
         $kvCoin = $request['KVcoin'];
         $userId = $request['userDuocNap'];
         $currentLoginUserRole = session()->get('roleCms');
+        $method = $request['Method'] ?: 1;
         $currentLoginUserID = session()->get('user_id');
+        KVcoinHistoryModel::createHistory($currentLoginUserID,$userId,$kvCoin,$method);
         if ($currentLoginUserRole == 2) {
             $currentLoginKTcoin = KTcoinModel::getKTcoin($currentLoginUserID);
             $newLoginKTcoin = $currentLoginKTcoin - $kvCoin;
@@ -213,5 +216,12 @@ class Money extends Controller
 
     public function cancelBuy(Request $request){
         echo $request;
+    }
+
+    function getHistoryKTcoin($toUserID){
+        $kvcoinModel = new KVcoinHistoryModel();
+        $user = UserModel::getUserInformationById($toUserID);
+        $listHistoryKTcoin = $kvcoinModel->getHistoryKTcoinByUserTo($toUserID);
+        return view('cms/listHistoryKTcoin')->with('listHistoryKTcoin',$listHistoryKTcoin)->with('loginName', $user->LoginName);
     }
 }

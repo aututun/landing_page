@@ -7,9 +7,16 @@
             </a>
 
             <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#modalLogin">Đăng nhập</a>
-                </li>
+                @if(session()->has('user_id'))
+                    <li>
+                        <a href="{{asset('dashboard')}}">Trang quản lý</a>
+                    </li>
+                @else
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#modalLogin">Đăng nhập</a>
+                    </li>
+                @endif
+
                 @php($listCategory = App\Http\Controllers\Dashboard::getListCategoriesMenu())
                     @foreach($listCategory as $category)
                         <li>
