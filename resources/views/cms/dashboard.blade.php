@@ -85,10 +85,8 @@
                 </div>
                 <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                     <div class="row">
-                        @php
-                            $kvcoin = App\Http\Controllers\Money::getKTcoin();
-                            $dong = App\Http\Controllers\Money::getDong();
-                        @endphp
+                        @php($kvcoin = App\Http\Controllers\Money::getKTcoin())
+                        @php($dong = App\Http\Controllers\Money::getDong())
                         @include('cms.layout.currentMoney', ['kvcoin' => $kvcoin, 'dong' => $dong])
                     </div>
                 </div>
