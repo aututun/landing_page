@@ -15,6 +15,8 @@ class News extends Model
         'Context',
         'DateTime',
         'LinkPicture',
+        'Deleted',
+        'PublicNews',
     ];
     protected $primaryKey = 'ID';
     protected $table = 'NewsTables';
