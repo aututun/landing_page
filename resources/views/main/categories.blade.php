@@ -39,22 +39,22 @@
             </div>
         @endif
         <!-- START: Pagination -->
-        <div class="nk-pagination nk-pagination-center">
-            <a href="#" class="nk-pagination-prev">
-                <span class="ion-ios-arrow-back"></span>
-            </a>
-            <nav>
-                <a class="nk-pagination-current" href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span>...</span>
-                <a href="#">14</a>
-            </nav>
-            <a href="#" class="nk-pagination-next">
-                <span class="ion-ios-arrow-forward"></span>
-            </a>
-        </div>
+{{--        <div class="nk-pagination nk-pagination-center">--}}
+{{--            <a href="#" class="nk-pagination-prev">--}}
+{{--                <span class="ion-ios-arrow-back"></span>--}}
+{{--            </a>--}}
+{{--            <nav>--}}
+{{--                <a class="nk-pagination-current" href="#">1</a>--}}
+{{--                <a href="#">2</a>--}}
+{{--                <a href="#">3</a>--}}
+{{--                <a href="#">4</a>--}}
+{{--                <span>...</span>--}}
+{{--                <a href="#">14</a>--}}
+{{--            </nav>--}}
+{{--            <a href="#" class="nk-pagination-next">--}}
+{{--                <span class="ion-ios-arrow-forward"></span>--}}
+{{--            </a>--}}
+{{--        </div>--}}
         <!-- END: Pagination -->
     </div>
 @endsection

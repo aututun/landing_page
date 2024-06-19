@@ -23,7 +23,7 @@
                             <h5 class="card-header">Tạo bài viết</h5>
                         @endif
                         <div class="card-body">
-                            <form action="{{asset('/postNews')}}" method="post">
+                            <form action="{{asset('/postNews')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @if($id != 0)
                                     <input type="hidden" name="ID" value="{{$news->ID}}">

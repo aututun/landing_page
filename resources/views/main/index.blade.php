@@ -135,7 +135,7 @@
                             @php($context = App\Http\Controllers\Dashboard::getShortenedContext($news->Context))
                             <p>{{$context}}</p>
                         </div>
-                        <a href="#" class="nk-news-box-item-url">Đọc thêm</a>
+                        <a href="{{asset('/newsDetails')}}/{{$news->ID}}" class="nk-news-box-item-url">Đọc thêm</a>
                         <div class="nk-news-box-item-date"><span class="fa fa-calendar"></span> {{$news->DateTime}}</div>
                     </div>
                     @endforeach

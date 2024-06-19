@@ -12,19 +12,20 @@
     <div class="nk-gap-1"></div>
     <div class="nk-blog-post nk-blog-post-single">
         <!-- START: Post Text -->
-        <div class="nk-post-text mt-0">
+        <div class="nk-post-text mt-0" style="; padding: 5px">
 {{--            <div class="nk-post-img">--}}
 {{--                <img src="{{asset('main/images/post-2.jpg')}}" alt="Grab your sword and fight the Horde">--}}
 {{--            </div>--}}
             <div class="nk-gap-1"></div>
             <center><h1 class="nk-post-title">{{$news->Title}}</h1></center>
             <div class="nk-post-by">
-                Sep 5, 2018
+{{--                {{$news->DateTime}}--}}
 
 
                 <div class="nk-post-categories">
                     @php($categoryColor = App\Http\Controllers\Dashboard::getCategoryColorClass($news->Catagory))
-                    <span class="{{$categoryColor}}">Adventure</span>
+                    @php($categoryObj = App\Http\Controllers\Dashboard::getCategoryById($news->Catagory))
+                    <span class="{{$categoryColor}}">{{$categoryObj->CategoryName}}</span>
 
                 </div>
 
