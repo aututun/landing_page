@@ -20,6 +20,10 @@ class Category extends Model
         return Category::all()->where('Deleted', 0)->where('ID','!=', 1);
     }
 
+    function getAllListCategories(){
+        return Category::all()->where('Deleted', 0);
+    }
+
     function getCategoryById($id){
         return Category::where('ID', $id)->where('Deleted', 0)->first();
     }

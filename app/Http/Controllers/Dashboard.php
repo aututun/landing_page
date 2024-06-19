@@ -126,7 +126,7 @@ class Dashboard extends Controller
     function getNewsDetails($id){
         $newsModel = new NewsModel();
         $categoryModel = new CategoryModel();
-        $listCategories = $categoryModel->getListCategories()->getDictionary();
+        $listCategories = $categoryModel->getAllListCategories()->getDictionary();
         if ($id != 0) {
             $newsObj = $newsModel->getNewsByIdCms($id);
             return view('cms/editNews')->with('id', $id)->with('news', $newsObj)->with('listCategories', $listCategories);
