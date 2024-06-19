@@ -54,7 +54,8 @@
                 @else
                     <li>
                         <a href="#" data-toggle="modal" data-target="#modalLogin">
-                            <span class="fa fa-user"></span>
+{{--                            <span class="fa fa-user"></span>--}}
+                            Đăng nhập
                         </a>
                     </li>
                 @endif

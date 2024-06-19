@@ -39,7 +39,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="Category" class="form-label">Thể loại bài viết</label>
-                                    <input type="text" class="form-control" name="Category" id="Category" value="@if($id != 0){{$news->Catagory}}@endif"/>
+                                    <select class="form-select color-dropdown" name="Category" id="Category"><h1></h1>
+                                        @foreach($listCategories as $category)
+                                            <option @if($id != 0) @if($category->ID == $news->Catagory) selected @endif @endif value="{{$category->ID}}">{{$category->CategoryName}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Title" class="form-label">Tiêu đề bài viết</label>

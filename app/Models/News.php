@@ -41,7 +41,7 @@ class News extends Model
     }
 
     function getNewsByIdCms($id){
-        return News::where('ID', $id)->where('Deleted', 0)->where('PublicNews', 1)->first();
+        return News::where('ID', $id)->where('Deleted', 0)->first();
     }
 
     function getNewsByCategory($category,$limit = null){
@@ -68,7 +68,7 @@ class News extends Model
 
     function getUpdateNews($data){
         $id = $data['ID'];
-        $newsObj = $this->getNewsById($id);
+        $newsObj = $this->getNewsByIdCms($id);
         $newsObject = array(
             'Catagory' => $data['Category'],
             'Title' => $data['Title'],
