@@ -48,7 +48,7 @@
                                                     <li><h6> Đổi KVcoin sang đồng theo các mệnh giá để có đồng trong game </h6></li>
                                                 </ul>
                                             </div>
-                                            <small style="font-style: italic" class="text-danger fw-semibold"> Nên chuyển 1000 kvcoin sang đồng mỗi ngày để nhận mốc nạp ngày hiệu quả - liên hệ <a href="https://zalo.me/g/qdfoeh733">zalo</a> ad sau khi nạp để lấy code. </small> <br>
+                                            <small style="font-style: italic" class="text-danger fw-semibold"> Nên chuyển 1000 kvcoin sang đồng mỗi ngày để nhận mốc nạp ngày hiệu quả - liên hệ <a href="{{env('LINK_ZALO')}}">zalo</a> ad sau khi nạp để lấy code. </small> <br>
                                             <small style="font-style: italic" class="text-danger fw-semibold"> Quy đổi đồng nhận 560 xu mốc nạp ngày. </small>
                                         </div>
                                     </div>

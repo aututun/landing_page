@@ -29,13 +29,13 @@
                     </a>
                     <ul class="dropdown">
                         <li>
-                            <a href="https://www.facebook.com/KiemVo.KiemTheMobile">Fanpage</a>
+                            <a href="{{env('LINK_FB_PAGE')}}">Fanpage</a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/groups/1129603218325456">Group</a>
+                            <a href="{{env('LINK_FB_GROUP')}}">Group</a>
                         </li>
                         <li>
-                            <a href="https://zalo.me/g/qdfoeh733">Zalo</a>
+                            <a href="{{env('LINK_ZALO')}}">Zalo</a>
                         </li>
 {{--                        <li>--}}
 {{--                            <a href="404.html">Youtube</a>--}}

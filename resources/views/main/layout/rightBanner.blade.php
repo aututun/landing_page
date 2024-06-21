@@ -5,8 +5,8 @@
 {{--                <li><a class="nk-social-rss" href="#"><span class="fa fa-rss"></span></a></li>--}}
 {{--                <li><a class="nk-social-twitch" href="#"><span class="fab fa-twitch"></span></a></li>--}}
 {{--                <li><a class="nk-social-steam" href="#"><span class="fab fa-steam"></span></a></li>--}}
-                <li><a class="nk-social-facebook" href="https://facebook.com/KiemVo.KiemTheMobile/"><span class="fab fa-facebook"></span></a></li>
-                <li><a href="https://zalo.me/g/qdfoeh733">
+                <li><a class="nk-social-facebook" href="{{env('LINK_FB_PAGE')}}"><span class="fab fa-facebook"></span></a></li>
+                <li><a href="{{env('LINK_ZALO')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 48 48">
                             <path fill="#2962ff" d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10	c4.722,0,8.883-2.348,11.417-5.931V36H15z"></path>
                             <path fill="#eee" d="M29,5H19c-1.845,0-3.601,0.366-5.214,1.014C10.453,9.25,8,14.528,8,19	c0,6.771,0.936,10.735,3.712,14.607c0.216,0.301,0.357,0.653,0.376,1.022c0.043,0.835-0.129,2.365-1.634,3.742	c-0.162,0.148-0.059,0.419,0.16,0.428c0.942,0.041,2.843-0.014,4.797-0.877c0.557-0.246,1.191-0.203,1.729,0.083	C20.453,39.764,24.333,40,28,40c4.676,0,9.339-1.04,12.417-2.916C42.038,34.799,43,32.014,43,29V19C43,11.268,36.732,5,29,5z"></path>
