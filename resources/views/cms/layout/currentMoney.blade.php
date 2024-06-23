@@ -8,9 +8,9 @@
                 </div>
             </div>
             <span class="d-block mb-1"><h4>KV coin : {{number_format($kvcoin)}}</h4></span>
-            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas" type="button" class="btn btn-sm btn-outline-primary">
-                Nạp tự động
-            </button>
+{{--            <button data-bs-toggle="modal" data-bs-target="#modalKvcoinNapas" type="button" class="btn btn-sm btn-outline-primary">--}}
+{{--                Nạp tự động--}}
+{{--            </button>--}}
             <button data-bs-toggle="modal" data-bs-target="#modalKvcoinQR" type="button" class="btn btn-sm btn-outline-primary">
                 Nạp thủ công
             </button>
