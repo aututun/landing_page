@@ -29,7 +29,7 @@
                     🎁KIEMVOTUAN1 <br>
                     🎁KIEMVOTUAN2 <br>
                     🎁KIEMVOTUAN3</p>
-                    <a href="{{env('LINK_FB_PAGE')}}" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Đọc thêm</a>
+                    <a href="{{ config('app.link_fb_page') }}" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Đọc thêm</a>
                 </div>
             </div>
         @endif
@@ -42,52 +42,52 @@
         <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <a target="_blank" href="{{env('LINK_APK')}}">
+                    <a target="_blank" href="{{ config('app.link_apk') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
                             <path fill="#7cb342" d="M12 29c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V29zM40 29c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V29zM22 40c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V40zM30 40c0 1.1-.9 2-2 2s-2-.9-2-2v-9c0-1.1.9-2 2-2s2 .9 2 2V40z"></path><path fill="#7cb342" d="M14 18v15c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V18H14zM24 8c-6 0-9.7 3.6-10 8h20C33.7 11.6 30 8 24 8zM20 13.6c-.6 0-1-.4-1-1 0-.6.4-1 1-1s1 .4 1 1C21 13.1 20.6 13.6 20 13.6zM28 13.6c-.6 0-1-.4-1-1 0-.6.4-1 1-1s1 .4 1 1C29 13.1 28.6 13.6 28 13.6z"></path><path fill="#7cb342" d="M28.3 10.5c-.2 0-.4-.1-.6-.2-.5-.3-.6-.9-.3-1.4l1.7-2.5c.3-.5.9-.6 1.4-.3.5.3.6.9.3 1.4l-1.7 2.5C29 10.3 28.7 10.5 28.3 10.5zM19.3 10.1c-.3 0-.7-.2-.8-.5l-1.3-2.1c-.3-.5-.2-1.1.3-1.4.5-.3 1.1-.2 1.4.3l1.3 2.1c.3.5.2 1.1-.3 1.4C19.7 10 19.5 10.1 19.3 10.1z"></path>
                         </svg>
                     </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{env('LINK_APK')}}">Tải</a></h4>
-                    <h3 class="nk-feature-title"><a target="_blank" href="{{env('LINK_APK')}}">Apk</a></h3>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{ config('app.link_apk') }}">Tải</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="{{ config('app.link_apk') }}">Apk</a></h3>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <a target="_blank" href="{{env('LINK_IOS')}}">
+                    <a target="_blank" href="{{ config('app.link_ios') }}">
                         <svg fill="#e6ebff" xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 384 512">
                             <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
                         </svg>
                     </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{env('LINK_IOS')}}">Tải</a></h4>
-                    <h3 class="nk-feature-title"><a target="_blank" href="{{env('LINK_IOS')}}">iOS</a></h3>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{ config('app.link_ios') }}">Tải</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="{{ config('app.link_ios') }}">iOS</a></h3>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <a target="_blank" href="{{env('LINK_FB_PAGE')}}">
+                    <a target="_blank" href="{{ config('app.link_fb_page') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
                             <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
                         </svg>
                     </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{env('LINK_FB_PAGE')}}">Trang</a></h4>
-                    <h3 class="nk-feature-title"><a target="_blank" href="{{env('LINK_FB_PAGE')}}">Facebook</a></h3>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{ config('app.link_fb_page') }}">Trang</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="{{ config('app.link_fb_page') }}">Facebook</a></h3>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="nk-feature-1">
                 <div class="nk-feature-icon">
-                    <a target="_blank" href="{{env('LINK_ZALO')}}">
+                    <a target="_blank" href="{{ config('app.link_zalo') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="75" viewBox="0 0 48 48">
                             <path fill="#2962ff" d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10	c4.722,0,8.883-2.348,11.417-5.931V36H15z"></path>
                             <path fill="#eee" d="M29,5H19c-1.845,0-3.601,0.366-5.214,1.014C10.453,9.25,8,14.528,8,19	c0,6.771,0.936,10.735,3.712,14.607c0.216,0.301,0.357,0.653,0.376,1.022c0.043,0.835-0.129,2.365-1.634,3.742	c-0.162,0.148-0.059,0.419,0.16,0.428c0.942,0.041,2.843-0.014,4.797-0.877c0.557-0.246,1.191-0.203,1.729,0.083	C20.453,39.764,24.333,40,28,40c4.676,0,9.339-1.04,12.417-2.916C42.038,34.799,43,32.014,43,29V19C43,11.268,36.732,5,29,5z"></path>
@@ -99,8 +99,8 @@
                     </a>
                 </div>
                 <div class="nk-feature-cont">
-                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{env('LINK_ZALO')}}">Nhóm</a></h4>
-                    <h3 class="nk-feature-title"><a target="_blank" href="{{env('LINK_ZALO')}}">Zalo</a></h3>
+                    <h4 class="nk-feature-title text-main-1"><a target="_blank" href="{{ config('app.link_zalo') }}">Nhóm</a></h4>
+                    <h3 class="nk-feature-title"><a target="_blank" href="{{ config('app.link_zalo') }}">Zalo</a></h3>
                 </div>
             </div>
         </div>

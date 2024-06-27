@@ -12,6 +12,12 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'link_ios' => env('LINK_IOS', 'https://testflight.apple.com/join/Gnc2Gtdk'),
+    'link_zalo' => env('LINK_ZALO', 'https://zalo.me/g/qdfoeh733'),
+    'link_fb_page' => env('LINK_FB_PAGE', 'https://www.facebook.com/KiemVo.KiemTheMobile'),
+    'link_fb_group' => env('LINK_FB_GROUP', 'https://www.facebook.com/groups/1129603218325456'),
+    'link_apk' => env('LINK_APK', 'http://52.221.13.4/KiemVo1.apk'),
+
 
     'name' => env('APP_NAME', 'Laravel'),
 

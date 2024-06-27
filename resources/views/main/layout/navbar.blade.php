@@ -29,13 +29,13 @@
                     </a>
                     <ul class="dropdown">
                         <li>
-                            <a href="{{env('LINK_FB_PAGE')}}">Fanpage</a>
+                            <a href="{{ config('app.link_fb_page') }}">Fanpage</a>
                         </li>
                         <li>
-                            <a href="{{env('LINK_FB_GROUP')}}">Group</a>
+                            <a href="{{ config('app.link_fb_group') }}">Group</a>
                         </li>
                         <li>
-                            <a href="{{env('LINK_ZALO')}}">Zalo</a>
+                            <a href="{{ config('app.link_zalo') }}">Zalo</a>
                         </li>
 {{--                        <li>--}}
 {{--                            <a href="404.html">Youtube</a>--}}
