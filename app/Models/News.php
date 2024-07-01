@@ -76,7 +76,7 @@ class News extends Model
         $id = $data['ID'];
         $newsObj = $this->getNewsByIdCms($id);
         $newsObject = array(
-            'Catagory' => $data['Category'],
+            'Catagory' => $data['Catagory'],
             'Title' => $data['Title'],
             'Context' => $data['Context'],
             'DateTime' => date_format(now(),"Y/m/d H:i:s"),

@@ -151,6 +151,7 @@ class Dashboard extends Controller
     }
 
     public static function getCategoryColorClass($categoryId){
+        if (!$categoryId) $categoryId = 1;
         $colorClasses = ['bg-main-1', 'bg-main-2', 'bg-main-3', 'bg-main-4', 'bg-main-5', 'bg-main-6'];
         $colorIndex = ($categoryId - 1) % count($colorClasses);
         return $colorClasses[$colorIndex];
@@ -173,12 +174,11 @@ class Dashboard extends Controller
             'Title' => $request['Title'],
             'Context' => $request['Context'],
             'PublicNews' => $request['PublicNews'],
-            'Category' => $request['Category'],
+            'Catagory' => $request['Category'],
         );
         if (!$request['LinkPicture']) {
             $request['LinkPicture'] = $request['CurrentLinkPicture'];
         }
-        $storage = 'images/';
         $newsModel = new NewsModel();
         $newsObj = $newsModel->getAllNewsById($id);
         if ($request->hasFile('LinkPicture')) {
@@ -192,10 +192,11 @@ class Dashboard extends Controller
                     unlink($oldFilePath);
                 }
             }
+            $storage = 'images/news/';
             $file = $request->file('LinkPicture');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $path = 'images/' . $request['Category'] . '/' . $filename;
-            $file->move(public_path('images/' . $request['Category']), $filename);
+            $filename = $request['Category'] . '_' . $file->getClientOriginalName();
+            $path = $storage . $request['Category'] . '/' . $filename;
+            $file->move(public_path($storage . $request['Category']), $filename);
 
             $newsObj['LinkPicture'] = $path;
         }

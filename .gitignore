@@ -4,6 +4,8 @@
 /public/storage
 /storage/*.key
 /storage/images/*
+/public/images/*
+!/public/images/.gitignore
 /vendor
 .env
 .env.backup
