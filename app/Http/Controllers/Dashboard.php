@@ -12,6 +12,7 @@ use DateTime;
 use HTMLPurifier;
 use HTMLPurifier_Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class Dashboard extends Controller
 {
@@ -169,28 +170,36 @@ class Dashboard extends Controller
         $status = 'false';
         $data = array(
             'ID' => $id,
-            'Category' => $request['Category'],
             'Title' => $request['Title'],
             'Context' => $request['Context'],
-            'LinkPicture' => $request['LinkPicture'],
             'PublicNews' => $request['PublicNews'],
+            'Category' => $request['Category'],
         );
-//        if ($request->hasFile('LinkPicture')) {
-//            $directory = "images/" . $request['Category'];
-//            if (!File::isDirectory(public_path($directory))) {
-//                File::makeDirectory(public_path($directory), 0777, true, true);
-//            }
-//            // Handle the uploaded file
-//            $image = $request->file('LinkPicture');
-//            $imageName = $imageName = $image->getClientOriginalName();
-//            $image->move(public_path($directory), $imageName);
-//            echo '<pre>';
-//            print_r($image);
-//            echo '<pre>';
-//        }
-//        die();
+        if (!$request['LinkPicture']) {
+            $request['LinkPicture'] = $request['CurrentLinkPicture'];
+        }
+        $storage = 'images/';
         $newsModel = new NewsModel();
-        $result = $newsModel->getUpdateNews($data);
+        $newsObj = $newsModel->getAllNewsById($id);
+        if ($request->hasFile('LinkPicture')) {
+            // Xóa ảnh cũ nếu tồn tại (khi chỉnh sửa)
+            if (!$newsObj) {
+                $newsObj = $data;
+            }
+            if ($request->ID != 0 && $newsObj->LinkPicture) {
+                $oldFilePath = public_path($newsObj->LinkPicture);
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
+                }
+            }
+            $file = $request->file('LinkPicture');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'images/' . $request['Category'] . '/' . $filename;
+            $file->move(public_path('images/' . $request['Category']), $filename);
+
+            $newsObj['LinkPicture'] = $path;
+        }
+        $result = $newsModel->getUpdateNews($newsObj);
         if ($result) {
             $status = 'success';
         }

@@ -55,7 +55,15 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="LinkPicture" class="form-label">Ảnh</label>
+                                    @if($id != 0 && $news->LinkPicture)
+                                        <div>
+                                            <img src="{{ asset($news->LinkPicture) }}" alt="Current Image" style="max-width: 200px; max-height: 200px;">
+                                        </div>
+                                    @endif
                                     <input class="form-control" type="file" id="LinkPicture" name="LinkPicture" value="@if($id != 0){{$news->LinkPicture}}@endif"/>
+                                    @if($id != 0 && $news->LinkPicture)
+                                        <input type="hidden" name="CurrentLinkPicture" value="{{ $news->LinkPicture }}">
+                                    @endif
                                 </div>
                                 @if($id != 0)
                                     <button type="submit" class="btn btn-primary">Sửa bài viết</button>

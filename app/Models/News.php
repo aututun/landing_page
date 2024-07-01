@@ -42,6 +42,10 @@ class News extends Model
         return News::where('ID', $id)->where('Deleted', 0)->where('Catagory','!=', 1)->where('PublicNews', 1)->first();
     }
 
+    function getAllNewsById($id){
+        return News::where('ID', $id)->where('Deleted', 0)->where('PublicNews', 1)->first();
+    }
+
     function getNewsByIdCms($id){
         return News::where('ID', $id)->where('Deleted', 0)->first();
     }

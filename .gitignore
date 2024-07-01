@@ -3,6 +3,7 @@
 /public/apk
 /public/storage
 /storage/*.key
+/storage/images/*
 /vendor
 .env
 .env.backup
