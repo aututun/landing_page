@@ -147,7 +147,6 @@
                 <div class="nano-content">
                     <!-- There will be inserted info about selected news-->
                     <div class="nk-news-box-item-image">
-                        <img src="@if($news->LinkPicture) {{asset($news->LinkPicture)}} @else {{asset('main/images/post-1.jpg')}} @endif" alt="">
                         <span class="nk-news-box-item-categories">
                             <span class="bg-main-4"></span>
                         </span>

@@ -9,7 +9,7 @@ class Dong extends Model
 {
     use HasFactory;
 
-    protected $connection = 'mysql';
+    protected $connection = 'mysql_game';
     protected $fillable = [
         'userid',
         'money',
