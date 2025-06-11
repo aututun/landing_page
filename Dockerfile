@@ -23,11 +23,7 @@ RUN apt-get update -y \
     nano \
     net-tools \
     libldap2-dev \
-    libldb-dev \
-    openssl \
-    libwebp-dev \
-    libxpm-dev \
-    libavif-dev
+    openssl 
 
 # PHP_CPPFLAGS are used by the docker-php-ext-* scripts
 ENV PHP_CPPFLAGS="$PHP_CPPFLAGS -std=c++11"
@@ -35,7 +31,6 @@ ENV PHP_CPPFLAGS="$PHP_CPPFLAGS -std=c++11"
 RUN docker-php-ext-install pdo_mysql \
     && docker-php-ext-install opcache \
     && docker-php-ext-install sockets \
-    && docker-php-ext-enable mongodb \
     && apt-get install libicu-dev -y \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
@@ -55,7 +50,7 @@ RUN { \
         echo 'max_input_vars=5000'; \
     } > /usr/local/etc/php/conf.d/php-opocache-cfg.ini
 RUN apt-get install --no-install-recommends -y apt-utils zlib1g-dev libc-client-dev libkrb5-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxml2-dev libzip-dev cron rsyslog zip unzip socat nano net-tools libldap2-dev libldb-dev openssl
-RUN docker-php-ext-configure gd --with-jpeg --with-freetype --with-webp --with-xpm --with-avif \
+RUN docker-php-ext-configure gd --with-jpeg --with-freetype --with-webp --with-xpm \
     && docker-php-ext-install gd \
     && docker-php-ext-install exif \
     && docker-php-ext-install mysqli \
@@ -64,6 +59,8 @@ RUN docker-php-ext-configure gd --with-jpeg --with-freetype --with-webp --with-x
     && docker-php-ext-install xml \
     && PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install imap \
+    && docker-php-ext-install mbstring \
+    && docker-php-ext-install iconv \
     && docker-php-ext-install soap
 
 # Cài đặt Composer
@@ -72,10 +69,11 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 # Cài đặt các phụ thuộc PHP qua Composer
 COPY ./composer.json ./
-RUN composer install --no-dev --optimize-autoloader
 
 COPY --chown=www-data:www-data ./ /var/www/html
 
 WORKDIR /var/www/html
+
+RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 80
