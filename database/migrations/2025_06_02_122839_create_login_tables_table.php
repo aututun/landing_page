@@ -32,6 +32,17 @@ class CreateLoginTablesTable extends Migration
             $table->tinyInteger('RoleCms')->nullable(); // Role trong CMS
             $table->timestamps(); // Thêm created_at và updated_at
         });
+
+        DB::table('LoginTables')->insert([
+            'LoginName' => 'admin',
+            'Password' => md5('AUTUTUN2'),
+            'Status' => 1,
+            'FullName' => 'Administrator',
+            'Email' => 'noisyboyy98@gmail.com',
+            'RoleCms' => 1,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
     }
 
     /**
