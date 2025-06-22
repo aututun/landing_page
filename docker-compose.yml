@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+        container_name: kiemthe-webapp
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - mysql
+        environment:
+            DB_CONNECTION: mysql_main
+            DB_HOST: mysql
+            DB_PORT: 3306
+            DB_DATABASE: KiemTheDbCMS
+            DB_USERNAME: root
+            DB_PASSWORD: Aututun2
+            DB_GAME_CONNECTION: mysql_game
+            DB_GAME_HOST: mysql
+            DB_GAME_PORT: 3306
+            DB_GAME_DATABASE: ktgamedb
+            DB_GAME_USERNAME: root
+            DB_GAME_PASSWORD: Aututun2
+        networks:
+            - laravel
+        command: >
+            sh -c "
+              composer install --no-dev --optimize-autoloader &&
+              php artisan migrate --force &&
+              php-fpm
+            "
+
+    web:
+        image: nginx:alpine
+        container_name: nginx-web
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/var/www/html
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - app
+        networks:
+            - laravel
+
+    mysql:
+        image: mysql:8.0
+        container_name: mysql-db
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: Aututun2
+            MYSQL_DATABASE: KiemTheDbCMS
+        volumes:
+            - mysql_data:/var/lib/mysql
+            - ./init-mysql:/docker-entrypoint-initdb.d
+        ports:
+            - "3306:3306"
+        networks:
+            - laravel
+
+volumes:
+    mysql_data:
+
+networks:
+    laravel:
+        driver: bridge

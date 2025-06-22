@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Category;
 use App\Models\Category as CategoryModel;
 use App\Models\Giftcode as GiftcodeModel;
 use App\Models\Server as ServerModel;
@@ -12,7 +11,6 @@ use DateTime;
 use HTMLPurifier;
 use HTMLPurifier_Config;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class Dashboard extends Controller
 {
@@ -21,6 +19,10 @@ class Dashboard extends Controller
             redirect('/login');
         }
     }
+
+//    public function checkLogin() {
+//        return view('cms/dashboard');
+//    }
 
     public function checkLogin(){
         if (session()->has('user_id')) {
@@ -259,15 +261,16 @@ class Dashboard extends Controller
         return $formattedTargetDate;
     }
 
-    public static function getShortenedContext($string, $length = 150, $append = '...'){
+    public static function getShortenedContext(string $string, int $length = 150, string $append = '...'): string // Thêm type hinting
+    {
         $config = HTMLPurifier_Config::createDefault();
         $purifier = new HTMLPurifier($config);
         $cleanHtml = $purifier->purify($string);
 
-        // Truncate the clean HTML
+        // Cắt chuỗi sau khi loại bỏ thẻ HTML
         $truncatedString = mb_substr(strip_tags($cleanHtml), 0, $length);
 
-        // Add append if necessary
+        // Thêm dấu ba chấm nếu chuỗi bị cắt
         if (mb_strlen(strip_tags($cleanHtml)) > $length) {
             $truncatedString .= $append;
         }

@@ -35,7 +35,7 @@ class CreateLoginTablesTable extends Migration
 
         DB::table('LoginTables')->insert([
             'LoginName' => 'admin',
-            'Password' => md5('AUTUTUN2'),
+            'Password' => strtoupper(md5('AUTUTUN2')),
             'Status' => 1,
             'FullName' => 'Administrator',
             'Email' => 'noisyboyy98@gmail.com',
