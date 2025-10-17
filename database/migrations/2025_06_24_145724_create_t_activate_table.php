@@ -15,7 +15,7 @@ class CreateTActivateTable extends Migration
     {
         Schema::connection('mysql_game')->create('t_activate', function (Blueprint $table) {
             $table->id(); // PRIMARY KEY AUTO_INCREMENT
-            $table->char('userID', 64)->nullable()->collation('utf8mb3_general_ci');
+            $table->char('userID', 64)->nullable()->collation('utf8mb4_general_ci');
             $table->integer('zoneID')->nullable();
             $table->integer('roleID')->nullable();
             $table->dateTime('logTime')->nullable();

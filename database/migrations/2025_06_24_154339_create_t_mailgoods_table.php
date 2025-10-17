@@ -25,7 +25,7 @@ class CreateTMailgoodsTable extends Migration
             $table->string('otherpramer', 256)->collation('utf8mb3_general_ci')->nullable();
             $table->unsignedInteger('strong')->default(0);
 
-            $table->primary('Id');
+            
             $table->index('mailid');
         });
     }

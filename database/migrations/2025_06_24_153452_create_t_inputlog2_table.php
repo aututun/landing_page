@@ -25,7 +25,6 @@ class CreateTInputlog2Table extends Migration
             $table->char('result', 32)->collation('utf8mb3_general_ci');
             $table->integer('zoneid')->default(0);
 
-            $table->primary('Id');
             $table->index('inputtime');
             $table->index(['inputtime', 'u', 'zoneid', 'result'], 'query_money');
             $table->index('u', 'uid');

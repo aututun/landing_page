@@ -16,7 +16,6 @@ class CreateTInputhistTable extends Migration
         Schema::connection('mysql_game')->create('t_inputhist', function (Blueprint $table) {
             $table->unsignedInteger('Id')->default(0);
             $table->integer('lastid')->default(0);
-            $table->primary('Id');
         });
     }
 
